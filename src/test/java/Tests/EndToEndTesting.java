@@ -15,7 +15,7 @@ import com.sauceLabs.screens.HomeScreen;
 @Feature("End to End")
 public class EndToEndTesting {
     private WebDriver driver;
-    public final JsonFileManager loginTestData = new JsonFileManager("src/test/resources/TestData/loginTestData.json");
+//    public final JsonFileManager loginTestData = new JsonFileManager("src/main/resources/TestData/loginTestData.json");
 
 
 //    private final JsonFileManager checkoutTestData = new JsonFileManager("src/test/resources/testData/checkoutTestData.json");
@@ -29,7 +29,7 @@ public class EndToEndTesting {
         options.addArguments("--remote-allow-origins=*");
          driver = new ChromeDriver(options);
          driver.get("https://gdawel.app/");
-         driver.manage().window().fullscreen();
+         driver.manage().window().maximize();
         //driver=new ChromeDriver();
     }
 
@@ -40,18 +40,12 @@ public class EndToEndTesting {
         try{
             new HomeScreen(driver)
                     .clickOnLogin()
-                    .loginUsingValidEmailAndPassword
-                            (
-                                    loginTestData.getTestData("email"),
-                                    loginTestData.getTestData("password")
-                            );
+                    .loginUsingValidEmailAndPassword();
         }
         catch (Exception e ){
             System.out.println("NullPointerException thrown!");
 
         }
-
-
 
     }
 
