@@ -1,6 +1,5 @@
 package Tests;
 
-import com.sauceLabs.untils.JsonFileManager;
 //import JsonFileManager;
 
 import io.qameta.allure.*;
@@ -11,16 +10,13 @@ import org.testng.annotations.BeforeSuite;
 import org.testng.annotations.Test;
 import com.sauceLabs.screens.HomeScreen;
 
+import java.util.concurrent.TimeUnit;
+
 @Epic("Sauce labs Android App")
 @Feature("End to End")
-public class EndToEndTesting {
+public class FunctionalTesting {
     private WebDriver driver;
 //    public final JsonFileManager loginTestData = new JsonFileManager("src/main/resources/TestData/loginTestData.json");
-
-
-//    private final JsonFileManager checkoutTestData = new JsonFileManager("src/test/resources/testData/checkoutTestData.json");
-//    private final JsonFileManager paymentTestData = new JsonFileManager("src/test/resources/testData/paymentTestData.json");
-
     @BeforeSuite
     public void SetUp() {
         System.setProperty("webdriver.chrome.driver", "/home/hash-pc-8/IdeaProjects/Gadawl/src/test/resources/chromedriver");
@@ -31,22 +27,23 @@ public class EndToEndTesting {
          driver.get("https://gdawel.app/");
          driver.manage().window().maximize();
         //driver=new ChromeDriver();
+        driver.manage().timeouts().implicitlyWait(400, TimeUnit.SECONDS);
+
     }
 
     @Severity(SeverityLevel.CRITICAL)
-    @Story("Buy A product")
+    @Story("Check Functionality of gdawel")
     @Test(description = "End To End Scenario")
-    public void endToEndScenario() {
-        try{
+    public void TestScenario() throws InterruptedException {
+
             new HomeScreen(driver)
                     .clickOnLogin()
-                    .loginUsingValidEmailAndPassword();
-        }
-        catch (Exception e ){
-            System.out.println("NullPointerException thrown!");
-
-        }
-
+                    .loginUsingValidEmailAndPassword()
+                    .clickOnSideMenu()
+                    .openCustomerPage()
+                    .openSupplierList()
+                    .openCustomer_group()
+                    .openCustomerGroup();
     }
 
 //    @AfterMethod
