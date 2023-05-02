@@ -67,7 +67,9 @@ public class FunctionalTesting {
                     .navigateToProducts()
                     .addAndViewProductPage()
                     .navigateToProductsCategory()
-                    .addProductCategory();
+                    .addProductCategory()
+                    .navigateToQtyAdjustment()
+                    ;
     }
 
 
