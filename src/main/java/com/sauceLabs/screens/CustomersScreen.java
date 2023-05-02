@@ -15,9 +15,7 @@ public class CustomersScreen extends HomeScreen{
     private String phone;
     public String vat_number;
     public String CRN_NUMBER ;
-
-//       private final By customers = By.xpath("//*[@id=\"customer-menu\"]");
-        private final By AddClient = By.xpath("(//a[@href='https://gdawel.app/dashboard/customer/create'])[2]");
+     private final By AddClient = By.xpath("(//a[@href='https://gdawel.app/dashboard/customer/create'])[2]");
         private final By clientName = By.cssSelector("#name");
         private final By clientPhone = By.xpath("/html/body/div[2]/div[6]/div/section/form/div/div[2]/div/div[1]/div[5]/div/input");
         private final By clientEmail = By.xpath("/html/body/div[2]/div[6]/div/section/form/div/div[2]/div/div[1]/div[6]/div/input");
@@ -25,11 +23,6 @@ public class CustomersScreen extends HomeScreen{
         private final By CRN = By.xpath("/html/body/div[2]/div[6]/div/section/form/div/div[2]/div/div[1]/div[5]/div/input");
         private final By ClickSaveClient = By.xpath("/html/body/div[2]/div[6]/div/section/form/div/div[1]/div/div/div/input");
         private final By ViewClient = By.xpath("/html/body/div[2]/div[6]/div/section/div/div[2]/div/table/tbody/tr[1]/td[2]/a");
-
-//    private static WebElement element=null;
-    // public int randomInt;
-//    static WebDriver driver = null;
-
     public String getName() {
         return name;
     }
@@ -65,11 +58,8 @@ public class CustomersScreen extends HomeScreen{
         super(driver);
     }
     @Step("open customer page than add new client and view exist client")
-    public HomeScreen openCustomerPage() throws InterruptedException {
+    public HomeScreen addAndViewCustomersPage() throws InterruptedException {
         Faker fakeData=new Faker();
-
-//        driver.findElement(customers).click();
-
         driver.findElement(AddClient).click();
         driver.findElement(clientName).sendKeys(fakeData.name().fullName());
         driver.findElement(clientPhone).sendKeys(fakeData.number().digits(11));
@@ -77,7 +67,6 @@ public class CustomersScreen extends HomeScreen{
 //        driver.findElement(vatNumber).sendKeys(fakeData.number().toString());
 //        driver.findElement(CRN).sendKeys(fakeData.random().hex(20));
         driver.findElement(ClickSaveClient).click();
-//        driver.wait(2000);
         driver.findElement(ViewClient).click();
         return new HomeScreen(driver);
     }

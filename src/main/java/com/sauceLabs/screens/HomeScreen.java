@@ -14,6 +14,11 @@ public final WebDriver driver;
     private final By customers = By.id("customer-menu");
     private final By suppliers = By.xpath("//*[@id=\"customersupplier\"]/li[2]/a");
     private final By customerGroup = By.xpath("/html/body/nav/ul/li[2]/ul/li[3]/a");
+    private final By productsAndWarehouseMenu = By.xpath("//*[@id=\"side-main-menu\"]/li[3]/a");
+    private final By products = By.xpath("//a[@href='https://gdawel.app/dashboard/products']");
+    private final By product_category = By.xpath("//a[@href='https://gdawel.app/dashboard/category']");
+
+
 
 
     //    public  WebDriver driver;
@@ -33,15 +38,27 @@ public final WebDriver driver;
         return new CustomersScreen(driver);
     }
     @Step("click On Side Menu Then open Suppliers")
-    public SuppliersScreen openSupplierList(){
+    public SuppliersScreen navigateToSupplierList(){
         driver.findElement(suppliers).click();
         return new SuppliersScreen(driver);
     }
     @Step("click On Side Menu Then open Customer Group")
-    public CustomerGroupScreen openCustomer_group(){
+    public CustomerGroupScreen navigateToCustomerGroup(){
         driver.findElement(customerGroup).click();
         return new CustomerGroupScreen(driver);
     }
+    @Step("click On Side Menu Then open product Group")
+    public ProductsScreen navigateToProducts(){
+        driver.findElement(productsAndWarehouseMenu).click();
+        driver.findElement(products).click();
+        return new ProductsScreen(driver);
+    }
+    @Step("click On Side Menu Then open product Group")
+    public ProductCategoryScreen navigateToProductsCategory(){
+        driver.findElement(product_category).click();
+        return new ProductCategoryScreen(driver);
+    }
+
 
 
 }

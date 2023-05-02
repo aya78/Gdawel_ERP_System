@@ -74,7 +74,6 @@ public class SuppliersScreen  extends HomeScreen{
 //        driver.findElement(vatNumber).sendKeys(fakeData.number().toString());
 //        driver.findElement(CRN).sendKeys(fakeData.random().hex(20));
         driver.findElement(ClickSaveSupplier).click();
-//        driver.wait(2000);
         driver.findElement(ViewSupplier).click();
         return new HomeScreen(driver);
     }

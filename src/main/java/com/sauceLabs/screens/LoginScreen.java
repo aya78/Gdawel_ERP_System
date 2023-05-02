@@ -15,7 +15,6 @@ public class LoginScreen  extends HomeScreen{
         super(driver);
     }
 
-
     @Step("login Using Valid Email And Password ==> user Name: [{username}], password: [{password}]")
     public HomeScreen loginUsingValidEmailAndPassword(){
         //driver.findElement(UserNameField).clear();

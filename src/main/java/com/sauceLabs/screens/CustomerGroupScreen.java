@@ -9,14 +9,8 @@ public class CustomerGroupScreen extends HomeScreen {
     private String name;
     private final By AddCustomerGroup = By.cssSelector("#createBtn");
     private final By GroupName = By.xpath("//label[text()='اسم تصنيف العميل']/following::input");
-    // //input[@max='100']
     private final By GroupPercent = By.xpath("//input[@max='100']");
-    // //input[@type='submit']
     private final By ClickSaveGroup = By.xpath("//input[@type='submit']");
-    //    private static WebElement element=null;
-    // public int randomInt;
-//    static WebDriver driver = null;
-
     public String getName() {
         return name;
     }

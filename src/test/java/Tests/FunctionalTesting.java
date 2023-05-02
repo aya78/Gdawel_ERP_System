@@ -27,10 +27,29 @@ public class FunctionalTesting {
          driver.get("https://gdawel.app/");
          driver.manage().window().maximize();
         //driver=new ChromeDriver();
-        driver.manage().timeouts().implicitlyWait(400, TimeUnit.SECONDS);
+        driver.manage().timeouts().implicitlyWait(500, TimeUnit.SECONDS);
 
     }
 
+    @Description
+            (
+                    "Given user open Gdawel website "+
+                            "When click on Menu"+
+                            "And click on Login"+
+                            "And login Using Valid Email & Password"+
+                            "And open customers page"+
+                            "And click on counter Plus Button"+
+                            "And click on save button"+
+                            "And click on customer name "+
+                            "And click on suppliers page"+
+                            "And click on add supplier Button"+
+                            "And click on save button"+
+                            "And click on customer name"+
+                            "And open customer group page"+
+                            "And click on counter Plus Button"+
+                            "And click on save button"+
+                            "Then user should return to Home screen"
+            )
     @Severity(SeverityLevel.CRITICAL)
     @Story("Check Functionality of gdawel")
     @Test(description = "End To End Scenario")
@@ -40,11 +59,17 @@ public class FunctionalTesting {
                     .clickOnLogin()
                     .loginUsingValidEmailAndPassword()
                     .clickOnSideMenu()
-                    .openCustomerPage()
-                    .openSupplierList()
-                    .openCustomer_group()
-                    .openCustomerGroup();
+                    .addAndViewCustomersPage()
+                    .navigateToSupplierList()
+                    .openSupplierPage()
+                    .navigateToCustomerGroup()
+                    .openCustomerGroup()
+                    .navigateToProducts()
+                    .addAndViewProductPage()
+                    .navigateToProductsCategory()
+                    .addProductCategory();
     }
+
 
 //    @AfterMethod
 //    public void quitAndroidDriver() {
