@@ -6,10 +6,14 @@ import io.qameta.allure.*;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
+import org.testng.annotations.AfterSuite;
 import org.testng.annotations.BeforeSuite;
 import org.testng.annotations.Test;
 import com.sauceLabs.screens.HomeScreen;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
+import java.time.Duration;
 import java.util.concurrent.TimeUnit;
 
 @Epic("Sauce labs Android App")
@@ -27,7 +31,7 @@ public class FunctionalTesting {
          driver.get("https://gdawel.app/");
          driver.manage().window().maximize();
         //driver=new ChromeDriver();
-        driver.manage().timeouts().implicitlyWait(500, TimeUnit.SECONDS);
+        driver.manage().timeouts().implicitlyWait(1000, TimeUnit.SECONDS);
 
     }
 
@@ -54,26 +58,47 @@ public class FunctionalTesting {
     @Story("Check Functionality of gdawel")
     @Test(description = "End To End Scenario")
     public void TestScenario() throws InterruptedException {
-
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(2000));
+        wait.until(ExpectedConditions.invisibilityOfAllElements());
             new HomeScreen(driver)
                     .clickOnLogin()
                     .loginUsingValidEmailAndPassword()
-                    .clickOnSideMenu()
-                    .addAndViewCustomersPage()
-                    .navigateToSupplierList()
-                    .openSupplierPage()
-                    .navigateToCustomerGroup()
-                    .openCustomerGroup()
-                    .navigateToProducts()
-                    .addAndViewProductPage()
-                    .navigateToProductsCategory()
-                    .addProductCategory()
-                    .navigateToQtyAdjustment()
+//                    .clickOnSideMenu()
+//                    .addAndViewCustomersPage()
+//                    .navigateToSupplierList()
+//                    .openSupplierPage()
+//                    .navigateToCustomerGroup()
+//                    .openCustomerGroup()
+//                    .navigateToProducts()
+//                    .addAndViewProductPage()
+//                    .navigateToProductsCategory()
+//                    .addProductCategory()
+//                  .navigateToQtyAdjustment()
+//                   .addQty_adjustment()
+//                    .navigateToStockCount()
+//                    .addStockCount()
+////                    .navigateToTransfer()
+////                    .addAndViewTransfers()
+//                    .navigateToWareHouses()
+//                    .addAndViewWareHouses()
+//                    .navigateToBrands()
+//                    .addBrand()
+//                    .navigateToUnits()
+//                    .addUnit()
+//                    .navigateToPurchases()
+//                    .addPurchaseInvoice()
+                    .navigateToQuotations()
+                    .addSaleQuotationInvoice()
+                    .navigateToQuotations()
+                    .addPurchaseQuotationInvoice()
+                    .navigateToGiftCards()
+                    .addGiftCard()
+
                     ;
     }
 
 
-//    @AfterMethod
+//      @AfterSuite
 //    public void quitAndroidDriver() {
 //        driver.quit();
 //    }

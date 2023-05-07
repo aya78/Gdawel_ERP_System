@@ -13,7 +13,7 @@ public class ProductCategoryScreen extends HomeScreen{
     // //input[@placeholder='Type category name...']
     private final By CategoryName = By.xpath("//input[@placeholder='Type category name...']");
     // //span[text()[normalize-space()='رفع ملف']]
-    private final By CategoryImg = By.xpath("//span[text()[normalize-space()='رفع ملف']]");
+    private final By CategoryImg = By.cssSelector("div#createModal>div>div>form>div:nth-of-type(2)>div>div:nth-of-type(2)>div>label>span");
     // //input[@type='submit']
     private final By SaveCategory = By.xpath("//input[@type='submit']");
 
@@ -31,13 +31,24 @@ public class ProductCategoryScreen extends HomeScreen{
 //        return image;
 //    }
 
+//    public void uploadImage(String filePath){
+//        driver.findElement(CategoryImg).sendKeys(filePath);
+//
+//    }
+//    public void CheckUploadedImage(String filePath){
+//       return driver.findElement();
+//
+//    }
+
     @Step("open product_category page than add new category ")
     public HomeScreen addProductCategory() throws InterruptedException {
         Faker fakeData=new Faker();
         driver.findElement(AddProductCategory).click();
         driver.findElement(CategoryName).sendKeys(fakeData.name().title());
-        driver.findElement(CategoryImg).click();
+
+//        driver.findElement(CategoryImg).click();
 //        driver.findElement(CategoryImg).sendKeys(Faker.instance().file().fileName());
+//        uploadImage("/home/hash-pc-8/Downloads/chanel.png");
         driver.findElement(SaveCategory).click();
 
         return new HomeScreen(driver);

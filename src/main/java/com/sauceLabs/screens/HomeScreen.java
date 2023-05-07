@@ -17,8 +17,19 @@ public final WebDriver driver;
     private final By productsAndWarehouseMenu = By.xpath("//*[@id=\"side-main-menu\"]/li[3]/a");
     private final By products = By.xpath("//a[@href='https://gdawel.app/dashboard/products']");
     private final By product_category = By.xpath("//a[@href='https://gdawel.app/dashboard/category']");
-    private final By AddQtyAdjustment = By.xpath("//a[@href='http://10.10.0.50/dashboard/qty_adjustment']");
+    private final By AddQtyAdjustment = By.cssSelector("li#adjustment-list-menu>a");
+    private final By OpenStockCount = By.cssSelector("li#stock-count-menu>a");
 
+// li#transfer-list-menu>a
+    private final By OpenTransfer = By.cssSelector("li#transfer-list-menu>a");
+    // //td[@class='sorting_1']//a[1]
+    private final By OpenWareHouse = By.cssSelector("li#warehouse-menu>a");
+
+    private final By OpenBrands = By.cssSelector("li#brand-menu>a");
+    private final By OpenUnits = By.cssSelector("li#unit-menu>a");
+    private final By OpenPurchasesAndSales = By.cssSelector("ul#side-main-menu>li:nth-of-type(4)>a");
+    private final By OpenQuotation = By.cssSelector("li#quotation-list-menu>a");
+    private final By OpenGiftCards = By.cssSelector("li#gift-card-menu>a");
 
 
 
@@ -59,11 +70,56 @@ public final WebDriver driver;
         driver.findElement(product_category).click();
         return new ProductCategoryScreen(driver);
     }
-    @Step("click On Side Menu Then open product Group")
-    public ProductCategoryScreen navigateToQtyAdjustment(){
+    @Step("click On Side Menu Then open QtyAdjustment")
+    public QtyAdjustmentScreen navigateToQtyAdjustment(){
         driver.findElement(AddQtyAdjustment).click();
-        return new ProductCategoryScreen(driver);
+        return new QtyAdjustmentScreen(driver);
     }
+    @Step("click On Side Menu Then open StockCount")
+    public StockCountScreen navigateToStockCount(){
+        driver.findElement(productsAndWarehouseMenu).click();
+
+        driver.findElement(OpenStockCount).click();
+        return new StockCountScreen(driver);
+    }
+    @Step("click On Side Menu Then open Transfer")
+    public TransfersScreen navigateToTransfer(){
+
+        driver.findElement(OpenTransfer).click();
+        return new TransfersScreen(driver);
+    }
+    @Step("click On Side Menu Then open WareHouses")
+    public WarehousesScreen navigateToWareHouses(){
+        driver.findElement(OpenWareHouse).click();
+        return new WarehousesScreen(driver);
+    }
+    @Step("click On Side Menu Then open Brands")
+    public BrandScreen navigateToBrands(){
+        driver.findElement(OpenBrands).click();
+        return new BrandScreen(driver);
+    }
+    @Step("click On Side Menu Then open Units")
+    public UnitScreen navigateToUnits(){
+        driver.findElement(OpenUnits).click();
+        return new UnitScreen(driver);
+    }
+    @Step("click On Side Menu Then open Purchases")
+    public PurchasesScreen navigateToPurchases(){
+       driver.findElement(OpenPurchasesAndSales).click();
+        return new PurchasesScreen(driver);
+    }
+    // QuotationScreen
+    @Step("click On Side Menu Then open Quotation")
+    public QuotationScreen navigateToQuotations(){
+        driver.findElement(OpenQuotation).click();
+        return new QuotationScreen(driver);
+    }
+    @Step("click On Side Menu Then open GiftCards")
+    public GiftCardScreen navigateToGiftCards(){
+        driver.findElement(OpenGiftCards).click();
+        return new GiftCardScreen(driver);
+    }
+
 
 
 
