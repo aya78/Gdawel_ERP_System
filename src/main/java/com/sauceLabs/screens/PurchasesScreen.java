@@ -57,7 +57,7 @@ public class PurchasesScreen extends HomeScreen {
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(2000));
 //        wait.until(ExpectedConditions.invisibilityOfAllElements());
         driver.findElement(VIewInvoiceButton).click();
-
+// vvvvvvvvv
 
         return new HomeScreen(driver);
     }
