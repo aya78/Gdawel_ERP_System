@@ -30,7 +30,7 @@ public class QuotationScreen extends HomeScreen {
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(2000));
         driver.findElement(AddQuotation).click();
         driver.findElement(ScanProductButton).sendKeys("4155632");
-        wait.until(ExpectedConditions.invisibilityOfAllElements());
+        wait.until(ExpectedConditions.elementToBeClickable(ScanProductButton));
 
         Actions a = new Actions(driver);
         //scroll down a page
@@ -46,7 +46,7 @@ public class QuotationScreen extends HomeScreen {
         driver.findElement(AddQuotation).click();
         driver.findElement(OpenPurchaseQuotation).click();
         driver.findElement(ScanProductButton).sendKeys("4155632");
-        wait.until(ExpectedConditions.invisibilityOfAllElements());
+        wait.until(ExpectedConditions.elementToBeClickable(ScanProductButton));
         Actions a = new Actions(driver);
         //scroll down a page
         a.sendKeys(Keys.PAGE_DOWN).build().perform();

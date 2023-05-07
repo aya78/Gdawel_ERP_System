@@ -23,6 +23,18 @@ public class PurchasesScreen extends HomeScreen {
     private final By EditQty = By.xpath("//input[@class='form-control qty']");
 
     private final By SaveInvoiceButton = By.xpath("(//div[contains(@class,'d-flex align-items-center')]//button)[3]");
+    private final By VIewInvoiceButton = By.xpath("//tr[@role='row']//td");
+// //div[@role='group']//button[1]
+   private final By ClickAction = By.xpath("//div[@role='group']//button[1]");
+
+    // //span[text()='إنشاء فاتورة إسترجاع']
+    private final By AddReturnPurchase = By.xpath("//span[text()='إنشاء فاتورة إسترجاع']");
+
+    // //table[@id='myTable']
+    private final By SelectProduct = By.xpath("//table[@id='myTable']");
+
+    // input#submit-button
+    private final By SaveButton = By.xpath("input#submit-button");
 
 
     @Step(" add Purchase Invoice")
@@ -38,6 +50,15 @@ public class PurchasesScreen extends HomeScreen {
         driver.findElement(EditQty).sendKeys("2");
 
         driver.findElement(SaveInvoiceButton).click();
+        return new HomeScreen(driver);
+    }
+    @Step(" add  return Purchase Invoice")
+    public HomeScreen addReturnPurchaseInvoice() throws InterruptedException {
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(2000));
+//        wait.until(ExpectedConditions.invisibilityOfAllElements());
+        driver.findElement(VIewInvoiceButton).click();
+
+
         return new HomeScreen(driver);
     }
 }

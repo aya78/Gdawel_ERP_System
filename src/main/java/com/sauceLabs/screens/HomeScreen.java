@@ -30,6 +30,7 @@ public final WebDriver driver;
     private final By OpenPurchasesAndSales = By.cssSelector("ul#side-main-menu>li:nth-of-type(4)>a");
     private final By OpenQuotation = By.cssSelector("li#quotation-list-menu>a");
     private final By OpenGiftCards = By.cssSelector("li#gift-card-menu>a");
+    private final By OpenCoupons = By.cssSelector("li#coupon-menu>a");
 
 
 
@@ -118,6 +119,11 @@ public final WebDriver driver;
     public GiftCardScreen navigateToGiftCards(){
         driver.findElement(OpenGiftCards).click();
         return new GiftCardScreen(driver);
+    }
+    @Step("click On Side Menu Then open Coupons")
+    public CouponScreen navigateToCoupons(){
+        driver.findElement(OpenCoupons).click();
+        return new CouponScreen(driver);
     }
 
 

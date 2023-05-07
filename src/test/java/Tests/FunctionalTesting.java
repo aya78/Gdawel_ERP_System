@@ -85,14 +85,18 @@ public class FunctionalTesting {
 //                    .addBrand()
 //                    .navigateToUnits()
 //                    .addUnit()
-//                    .navigateToPurchases()
-//                    .addPurchaseInvoice()
+                    .navigateToPurchases()
+                    .addPurchaseInvoice()
+                    .navigateToPurchases()
+                    .addReturnPurchaseInvoice()
                     .navigateToQuotations()
                     .addSaleQuotationInvoice()
                     .navigateToQuotations()
                     .addPurchaseQuotationInvoice()
                     .navigateToGiftCards()
                     .addGiftCard()
+                    .navigateToCoupons()
+                    .addCoupon()
 
                     ;
     }
