@@ -12,7 +12,7 @@ public final WebDriver driver;
     public static By loginButton = By.cssSelector("#navbarSupportedContent > div > a.btn.btn-solid-main.login.form-btn.py-2.px-3.rounded.w-100.text-nowrap");
     private final By openCustomerAndSupplierMenu = By.xpath("//*[@id=\"side-main-menu\"]/li[2]/a");
     private final By customers = By.id("customer-menu");
-    private final By suppliers = By.xpath("//*[@id=\"customersupplier\"]/li[2]/a");
+    private final By suppliers = By.xpath("(//ul[@id='customersupplier']//a)[2]");
     private final By customerGroup = By.xpath("/html/body/nav/ul/li[2]/ul/li[3]/a");
     private final By productsAndWarehouseMenu = By.xpath("//*[@id=\"side-main-menu\"]/li[3]/a");
     private final By products = By.xpath("//a[@href='https://gdawel.app/dashboard/products']");
@@ -34,6 +34,9 @@ public final WebDriver driver;
 
     private final By OpenPurchases = By.cssSelector("li#purchase-list-menu>a");
     private final By OpenSales = By.cssSelector("li#sale-list-menu>a");
+    private final By OpenExchange = By.cssSelector("li#exchange-bonds-menu>a");
+    private final By OpenReceipt = By.cssSelector("li#receipt-bonds-menu>a");
+
 
 
     //    public  WebDriver driver;
@@ -75,6 +78,8 @@ public final WebDriver driver;
     }
     @Step("click On Side Menu Then open QtyAdjustment")
     public QtyAdjustmentScreen navigateToQtyAdjustment(){
+//        driver.findElement(productsAndWarehouseMenu).click();
+
         driver.findElement(AddQtyAdjustment).click();
         return new QtyAdjustmentScreen(driver);
     }
@@ -115,6 +120,8 @@ public final WebDriver driver;
     // QuotationScreen
     @Step("click On Side Menu Then open Quotation")
     public QuotationScreen navigateToQuotations(){
+        driver.findElement(OpenPurchasesAndSales).click();
+
         driver.findElement(OpenQuotation).click();
         return new QuotationScreen(driver);
     }
@@ -125,7 +132,7 @@ public final WebDriver driver;
     }
     @Step("click On Side Menu Then open Coupons")
     public CouponScreen navigateToCoupons(){
-        driver.findElement(OpenPurchasesAndSales).click();
+//        driver.findElement(OpenPurchasesAndSales).click();
 
         driver.findElement(OpenCoupons).click();
         return new CouponScreen(driver);
@@ -135,6 +142,18 @@ public final WebDriver driver;
         driver.findElement(OpenPurchasesAndSales).click();
         driver.findElement(OpenSales).click();
         return new SalesScreen(driver);
+    }
+    @Step("click On Side Menu Then open Exchanges")
+    public ExchangeScreen navigateToExchange(){
+//        driver.findElement(OpenPurchasesAndSales).click();
+        driver.findElement(OpenExchange).click();
+        return new ExchangeScreen(driver);
+    }
+    @Step("click On Side Menu Then open Receipt")
+    public ReceiptScreen navigateToReceipts(){
+//        driver.findElement(OpenPurchasesAndSales).click();
+        driver.findElement(OpenReceipt).click();
+        return new ReceiptScreen(driver);
     }
 
 

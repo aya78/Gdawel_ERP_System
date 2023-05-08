@@ -1,6 +1,5 @@
 package com.sauceLabs.screens;
 
-import com.github.javafaker.Faker;
 import io.qameta.allure.Step;
 import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
@@ -21,6 +20,8 @@ public class QuotationScreen extends HomeScreen {
     // //div[@class='search-box input-group']//input[1]
     private final By ScanProductButton = By.xpath("//label[text()='امسح المنتج بالباركود أو ادخل كود المنتج']/following::input");
     private final By SaveInvoiceButton = By.cssSelector("input#submit-button");
+    // input#submit-button
+
     // table#quotation-table>tbody>tr>td:nth-of-type(2)>a
 
 
@@ -37,6 +38,7 @@ public class QuotationScreen extends HomeScreen {
         a.sendKeys(Keys.PAGE_DOWN).build().perform();
         //scroll up a page
 //        a.sendKeys(Keys.PAGE_UP).build().perform();
+        Thread.sleep(600);
         driver.findElement(SaveInvoiceButton).click();
         return new HomeScreen(driver);
     }
@@ -48,8 +50,9 @@ public class QuotationScreen extends HomeScreen {
         driver.findElement(ScanProductButton).sendKeys("4155632");
         wait.until(ExpectedConditions.elementToBeClickable(ScanProductButton));
         Actions a = new Actions(driver);
-        //scroll down a page
         a.sendKeys(Keys.PAGE_DOWN).build().perform();
+        Thread.sleep(600);
+
         driver.findElement(SaveInvoiceButton).click();
         return new HomeScreen(driver);
     }

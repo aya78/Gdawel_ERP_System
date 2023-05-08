@@ -17,12 +17,12 @@ public class CustomersScreen extends HomeScreen{
     public String CRN_NUMBER ;
      private final By AddClient = By.xpath("(//a[@href='https://gdawel.app/dashboard/customer/create'])[2]");
         private final By clientName = By.cssSelector("#name");
-        private final By clientPhone = By.xpath("/html/body/div[2]/div[6]/div/section/form/div/div[2]/div/div[1]/div[5]/div/input");
+        private final By clientPhone = By.xpath("//label[text()='رقم الهاتف ']/following::input");
         private final By clientEmail = By.xpath("/html/body/div[2]/div[6]/div/section/form/div/div[2]/div/div[1]/div[6]/div/input");
          private final By vatNumber = By.xpath("/html/body/div[2]/div[6]/div/section/form/div/div[2]/div/div[1]/div[5]/div/input");
         private final By CRN = By.xpath("/html/body/div[2]/div[6]/div/section/form/div/div[2]/div/div[1]/div[5]/div/input");
-        private final By ClickSaveClient = By.xpath("/html/body/div[2]/div[6]/div/section/form/div/div[1]/div/div/div/input");
-        private final By ViewClient = By.xpath("/html/body/div[2]/div[6]/div/section/div/div[2]/div/table/tbody/tr[1]/td[2]/a");
+        private final By ClickSaveClient = By.xpath("//input[@type='submit']");
+        private final By ViewClient = By.xpath("//table[@id='customer-table']/tbody[1]/tr[1]/td[2]/a[1]");
     public String getName() {
         return name;
     }
@@ -63,7 +63,7 @@ public class CustomersScreen extends HomeScreen{
         driver.findElement(AddClient).click();
         driver.findElement(clientName).sendKeys(fakeData.name().fullName());
         driver.findElement(clientPhone).sendKeys(fakeData.number().digits(11));
-        driver.findElement(clientEmail).sendKeys(""+random+"@gmail.com");
+//        driver.findElement(clientEmail).sendKeys(""+random+"@gmail.com");
 //        driver.findElement(vatNumber).sendKeys(fakeData.number().toString());
 //        driver.findElement(CRN).sendKeys(fakeData.random().hex(20));
         driver.findElement(ClickSaveClient).click();

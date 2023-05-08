@@ -37,8 +37,12 @@ public class TransfersScreen  extends HomeScreen{
         driver.findElement(SelectWareHouse1).click();
         driver.findElement(ClickToWareHouse).click();
         driver.findElement(SelectWareHouse2).click();
-        driver.findElement(SelectProduct).sendKeys(""+2);
-        wait.until(ExpectedConditions.elementToBeClickable(SelectProduct));
+        Thread.sleep(1000);
+
+        driver.findElement(SelectProduct).sendKeys("4155632");
+        Thread.sleep(1000);
+
+//        wait.until(ExpectedConditions.elementToBeClickable(SelectProduct));
         driver.findElement(clickSpace).click();
         driver.findElement(SaveTransfer).click();
         driver.findElement(ViewTransfer).click();

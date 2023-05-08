@@ -16,7 +16,7 @@ public class SuppliersScreen  extends HomeScreen{
     public String CRN_NUMBER ;
 
     //       private final By customers = By.xpath("//*[@id=\"customer-menu\"]");
-    private final By AddSupplier = By.xpath("/html/body/div[2]/div[6]/div/section/div/div[1]/div/a[1]");
+    private final By AddSupplier = By.xpath("//a[@href='https://gdawel.app/dashboard/supplier/create']");
     private final By supplierName = By.cssSelector("#content > div > section > form > div > div.card > div > div:nth-child(1) > div:nth-child(2) > div > input");
     private final By supplierPhone = By.xpath("//input[@type='number']");
     private final By supplierEmail = By.xpath("//input[@placeholder='example@gdawel.app']");
