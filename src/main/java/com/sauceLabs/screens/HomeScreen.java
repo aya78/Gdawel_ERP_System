@@ -30,8 +30,10 @@ public final WebDriver driver;
     private final By OpenPurchasesAndSales = By.cssSelector("ul#side-main-menu>li:nth-of-type(4)>a");
     private final By OpenQuotation = By.cssSelector("li#quotation-list-menu>a");
     private final By OpenGiftCards = By.cssSelector("li#gift-card-menu>a");
-    private final By OpenCoupons = By.cssSelector("li#coupon-menu>a");
+    private final By OpenCoupons = By.xpath("//li[@id='coupon-menu']//a[1]");
 
+    private final By OpenPurchases = By.cssSelector("li#purchase-list-menu>a");
+    private final By OpenSales = By.cssSelector("li#sale-list-menu>a");
 
 
     //    public  WebDriver driver;
@@ -107,6 +109,7 @@ public final WebDriver driver;
     @Step("click On Side Menu Then open Purchases")
     public PurchasesScreen navigateToPurchases(){
        driver.findElement(OpenPurchasesAndSales).click();
+       driver.findElement(OpenPurchases).click();
         return new PurchasesScreen(driver);
     }
     // QuotationScreen
@@ -122,8 +125,16 @@ public final WebDriver driver;
     }
     @Step("click On Side Menu Then open Coupons")
     public CouponScreen navigateToCoupons(){
+        driver.findElement(OpenPurchasesAndSales).click();
+
         driver.findElement(OpenCoupons).click();
         return new CouponScreen(driver);
+    }
+    @Step("click On Side Menu Then open Sales")
+    public SalesScreen navigateToSales(){
+        driver.findElement(OpenPurchasesAndSales).click();
+        driver.findElement(OpenSales).click();
+        return new SalesScreen(driver);
     }
 
 

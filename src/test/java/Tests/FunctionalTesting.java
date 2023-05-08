@@ -16,8 +16,8 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import java.time.Duration;
 import java.util.concurrent.TimeUnit;
 
-@Epic("Sauce labs Android App")
-@Feature("End to End")
+@Epic("Gdawel App")
+@Feature("Functional")
 public class FunctionalTesting {
     private WebDriver driver;
 //    public final JsonFileManager loginTestData = new JsonFileManager("src/main/resources/TestData/loginTestData.json");
@@ -85,18 +85,22 @@ public class FunctionalTesting {
 //                    .addBrand()
 //                    .navigateToUnits()
 //                    .addUnit()
-                    .navigateToPurchases()
-                    .addPurchaseInvoice()
-                    .navigateToPurchases()
-                    .addReturnPurchaseInvoice()
-                    .navigateToQuotations()
-                    .addSaleQuotationInvoice()
-                    .navigateToQuotations()
-                    .addPurchaseQuotationInvoice()
-                    .navigateToGiftCards()
-                    .addGiftCard()
+//                    .navigateToPurchases()
+//                    .addPurchaseInvoice()
+//                    .navigateToPurchases()
+//                    .addReturnPurchaseInvoice()
+//                    .navigateToQuotations()
+//                    .addSaleQuotationInvoice()
+//                    .navigateToQuotations()
+//                    .addPurchaseQuotationInvoice()
+//                    .navigateToGiftCards()
+//                    .addGiftCard()
                     .navigateToCoupons()
                     .addCoupon()
+                    .navigateToSales()
+                    .addSaleInvoice()
+                    .navigateToSales()
+                    .addReturnSaleInvoice()
 
                     ;
     }

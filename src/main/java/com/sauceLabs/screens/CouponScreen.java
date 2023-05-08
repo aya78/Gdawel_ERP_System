@@ -17,7 +17,7 @@ public class CouponScreen extends HomeScreen {
     public  String random = RandomStringUtils.random(3, false, true);
     public  String num = RandomStringUtils.random(1, false, true);
     private final By AddCoupon = By.xpath("//button[text()[normalize-space()='أضف قسيمة جديدة']]");
-    private final By GenerateCouponCode = By.xpath("//input[@name='amount']");
+    private final By GenerateCouponCode = By.xpath("//button[text()='إنشاء']");
     private final By CouponQty = By.xpath("(//input[@min='0'])[3]");
     private final By CouponValue = By.xpath("(//input[@min='0'])[2]");
     private final By SaveCoupon = By.cssSelector("div#create-modal>div>div>div:nth-of-type(2)>form>div:nth-of-type(2)>button");

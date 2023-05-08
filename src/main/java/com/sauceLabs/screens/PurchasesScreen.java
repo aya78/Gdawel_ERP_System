@@ -13,7 +13,6 @@ public class PurchasesScreen extends HomeScreen {
     public PurchasesScreen(WebDriver driver) {
         super(driver);
     }
-    private final By OpenPurchases = By.cssSelector("li#purchase-list-menu>a");
 
     private final By AddInvoiceButton = By.cssSelector("div#data-length-operations>a>img");
     // //div[@class='search-box input-group']//input[1]
@@ -21,34 +20,24 @@ public class PurchasesScreen extends HomeScreen {
 // (//div[contains(@class,'d-flex align-items-center')]//button)[3]
     // //input[@class='form-control qty']
     private final By EditQty = By.xpath("//input[@class='form-control qty']");
-
     private final By SaveInvoiceButton = By.xpath("(//div[contains(@class,'d-flex align-items-center')]//button)[3]");
     private final By VIewInvoiceButton = By.xpath("//tr[@role='row']//td");
-// //div[@role='group']//button[1]
    private final By ClickAction = By.xpath("//div[@role='group']//button[1]");
-
-    // //span[text()='إنشاء فاتورة إسترجاع']
     private final By AddReturnPurchase = By.xpath("//span[text()='إنشاء فاتورة إسترجاع']");
-
-    // //table[@id='myTable']
-    private final By SelectProduct = By.xpath("//table[@id='myTable']");
-
-    // input#submit-button
-    private final By SaveButton = By.xpath("input#submit-button");
+    private final By SelectProduct = By.xpath("//input[@type='checkbox']");
+    private final By SaveButton = By.cssSelector("input#submit-button");
 
 
     @Step(" add Purchase Invoice")
     public HomeScreen addPurchaseInvoice() throws InterruptedException {
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(2000));
 //        wait.until(ExpectedConditions.invisibilityOfAllElements());
-
         Faker fakeData=new Faker();
-        driver.findElement(OpenPurchases).click();
+//        driver.findElement(OpenPurchases).click();
         driver.findElement(AddInvoiceButton).click();
         driver.findElement(ScanProductButton).sendKeys("4155632");
 //        wait.until(ExpectedConditions.elementToBeSelected(ScanProductButton));
         driver.findElement(EditQty).sendKeys("2");
-
         driver.findElement(SaveInvoiceButton).click();
         return new HomeScreen(driver);
     }
@@ -57,7 +46,10 @@ public class PurchasesScreen extends HomeScreen {
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(2000));
 //        wait.until(ExpectedConditions.invisibilityOfAllElements());
         driver.findElement(VIewInvoiceButton).click();
-// vvvvvvvvv
+        driver.findElement( ClickAction).click();
+        driver.findElement(AddReturnPurchase).click();
+        driver.findElement(SelectProduct).click();
+        driver.findElement(SaveButton).click();
 
         return new HomeScreen(driver);
     }
