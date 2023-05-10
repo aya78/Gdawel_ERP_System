@@ -112,7 +112,7 @@ public class FunctionalTesting {
 
 
 //      @AfterSuite
-//    public void quitAndroidDriver() {
+//    public void TearDown() {
 //        driver.quit();
 //    }
 }
