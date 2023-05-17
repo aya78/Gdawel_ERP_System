@@ -1,4 +1,4 @@
-package com.sauceLabs.untils;
+package untils;
 
 import io.restassured.path.json.JsonPath;
 

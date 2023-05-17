@@ -66,6 +66,7 @@ public class CustomersScreen extends HomeScreen{
 //        driver.findElement(clientEmail).sendKeys(""+random+"@gmail.com");
 //        driver.findElement(vatNumber).sendKeys(fakeData.number().toString());
 //        driver.findElement(CRN).sendKeys(fakeData.random().hex(20));
+        /****************************************************************************************************/
         driver.findElement(ClickSaveClient).click();
         driver.findElement(ViewClient).click();
         return new HomeScreen(driver);

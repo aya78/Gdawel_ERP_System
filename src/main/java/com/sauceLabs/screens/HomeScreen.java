@@ -9,6 +9,8 @@ public class HomeScreen {
 //     public static By products = By.xpath("//*[@text='Products']");
 public final WebDriver driver;
 
+    public String password ="74108520";
+
     public static By loginButton = By.cssSelector("#navbarSupportedContent > div > a.btn.btn-solid-main.login.form-btn.py-2.px-3.rounded.w-100.text-nowrap");
     private final By openCustomerAndSupplierMenu = By.xpath("//*[@id=\"side-main-menu\"]/li[2]/a");
     private final By customers = By.id("customer-menu");
@@ -36,8 +38,8 @@ public final WebDriver driver;
     private final By OpenSales = By.cssSelector("li#sale-list-menu>a");
     private final By OpenExchange = By.cssSelector("li#exchange-bonds-menu>a");
     private final By OpenReceipt = By.cssSelector("li#receipt-bonds-menu>a");
-
-
+    private final By ClickOnProfileImg = By.xpath("//img[@class='shadow-sm']/following-sibling::span[1]");
+    private final By clickOnProfile = By.xpath("//span[text()[normalize-space()='الملف الشخصي']]");
 
     //    public  WebDriver driver;
     public HomeScreen(WebDriver driver) {
@@ -85,7 +87,7 @@ public final WebDriver driver;
     }
     @Step("click On Side Menu Then open StockCount")
     public StockCountScreen navigateToStockCount(){
-        driver.findElement(productsAndWarehouseMenu).click();
+//        driver.findElement(productsAndWarehouseMenu).click();
 
         driver.findElement(OpenStockCount).click();
         return new StockCountScreen(driver);
@@ -155,8 +157,12 @@ public final WebDriver driver;
         driver.findElement(OpenReceipt).click();
         return new ReceiptScreen(driver);
     }
-
-
+    @Step("click On Side Menu Then open ProfileScreen")
+    public ProfileScreen navigateToProfile(){
+        driver.findElement(ClickOnProfileImg).click();
+        driver.findElement(clickOnProfile).click();
+        return new ProfileScreen(driver);
+    }
 
 
 }

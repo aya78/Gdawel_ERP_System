@@ -27,6 +27,7 @@ public class CouponScreen extends HomeScreen {
         wait.until(ExpectedConditions.invisibilityOfAllElements());
         driver.findElement(AddCoupon).click();
         driver.findElement(GenerateCouponCode).click();
+        Thread.sleep(500);
         driver.findElement(CouponValue).sendKeys(""+random);
         driver.findElement(CouponQty).sendKeys(""+num);
         driver.findElement(SaveCoupon).click();

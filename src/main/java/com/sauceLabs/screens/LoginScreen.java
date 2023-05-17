@@ -10,7 +10,6 @@ public class LoginScreen  extends HomeScreen{
     private final By PasswordField = By.xpath("//*[@id=\"password\"]");
     private final By LoginButton = By.xpath("//*[@id=\"kt_body\"]/div[1]/div/div/div/div/div[2]/div/form/button");
     public String username = "ayak77431@gmail.com";
-    public String password = "74108520";
     public LoginScreen(WebDriver driver) {
         super(driver);
     }
