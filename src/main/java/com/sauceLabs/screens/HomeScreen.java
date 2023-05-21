@@ -17,15 +17,19 @@ public final WebDriver driver;
     private final By suppliers = By.xpath("(//ul[@id='customersupplier']//a)[2]");
     private final By customerGroup = By.xpath("/html/body/nav/ul/li[2]/ul/li[3]/a");
     private final By productsAndWarehouseMenu = By.xpath("//*[@id=\"side-main-menu\"]/li[3]/a");
-    private final By products = By.xpath("//a[@href='https://gdawel.app/dashboard/products']");
-    private final By product_category = By.xpath("//a[@href='https://gdawel.app/dashboard/category']");
-    private final By AddQtyAdjustment = By.cssSelector("li#adjustment-list-menu>a");
-    private final By OpenStockCount = By.cssSelector("li#stock-count-menu>a");
+//    private final By products = By.xpath("//a[@href='https://gdawel.app/dashboard/products']");
+     private final By products = By.id("product-list-menu");
+
+    private final By product_category = By.id("category-menu");
+//    private final By AddQtyAdjustment = By.cssSelector("li#adjustment-list-menu>a");
+        private final By AddQtyAdjustment = By.id("adjustment-list-menu");
+
+    private final By OpenStockCount = By.id("stock-count-menu");
 
 // li#transfer-list-menu>a
-    private final By OpenTransfer = By.cssSelector("li#transfer-list-menu>a");
+    private final By OpenTransfer = By.id("transfer-list-menu");
     // //td[@class='sorting_1']//a[1]
-    private final By OpenWareHouse = By.cssSelector("li#warehouse-menu>a");
+    private final By OpenWareHouse = By.id("warehouse-menu");
 
     private final By OpenBrands = By.cssSelector("li#brand-menu>a");
     private final By OpenUnits = By.cssSelector("li#unit-menu>a");

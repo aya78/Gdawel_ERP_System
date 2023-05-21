@@ -68,7 +68,8 @@ public class CustomersScreen extends HomeScreen{
 //        driver.findElement(CRN).sendKeys(fakeData.random().hex(20));
         /****************************************************************************************************/
         driver.findElement(ClickSaveClient).click();
-        driver.findElement(ViewClient).click();
+        driver.get("https://gdawel.app/dashboard/customer/1");
+//        driver.findElement(ViewClient).click();
         return new HomeScreen(driver);
     }
 }
