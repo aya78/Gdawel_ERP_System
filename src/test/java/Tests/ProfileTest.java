@@ -20,7 +20,7 @@ import java.util.concurrent.TimeUnit;
 public class ProfileTest {
     private WebDriver driver;
     @BeforeSuite
-    public void SetUp() {
+    public void SetUpp() {
 
         System.setProperty("webdriver.chrome.driver", "/home/hash-pc-8/IdeaProjects/Gadawl/src/test/resources/chromedriver");
         ChromeOptions options = new ChromeOptions();
@@ -45,7 +45,7 @@ public class ProfileTest {
     @Severity(SeverityLevel.CRITICAL)
     @Story("Check Functionality of gdawel")
     @Test(description = "Check Functionality Scenario for Profile")
-    public void TestScenario() throws InterruptedException {
+    public void TestProfile() throws InterruptedException {
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(2000));
         wait.until(ExpectedConditions.invisibilityOfAllElements());
         new HomeScreen(driver)

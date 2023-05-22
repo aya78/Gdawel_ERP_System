@@ -21,12 +21,12 @@ public class ProductsScreen extends HomeScreen{
     private final By ProductName = By.id("name");
     private final By Barcode = By.xpath("//input[@class='form-control rounded-right']");
 //private final By Barcode = By.id("genbutton");
-    private final By openBrandList  = By.cssSelector("form#product-form>div>div>div>div>div>div>div:nth-of-type(2)>div>div:nth-of-type(2)>div>button>div>div>div");
-    private final By selectBrand = By.xpath("(//ul[@role='presentation']//a)[2]");
+//    private final By openBrandList  = By.cssSelector("form#product-form>div>div>div>div>div>div>div:nth-of-type(2)>div>div:nth-of-type(2)>div>button>div>div>div");
+//    private final By selectBrand = By.xpath("(//ul[@role='presentation']//a)[2]");
     private final By productCost = By.xpath("//input[@min='0.001']");
     private final By productPrice = By.xpath("(//input[@min='0.001'])[2]");
-    private final By openUnitList  = By.xpath("//div[text()='اختر وحدة المنتج...']");
-    private final By selectUnit = By.cssSelector("a#bs-select-8-1>span:nth-of-type(2)");
+//    private final By openUnitList  = By.xpath("//div[text()='اختر وحدة المنتج...']");
+//    private final By selectUnit = By.cssSelector("a#bs-select-8-1>span:nth-of-type(2)");
     // //input[@class='btn btn-primary']
     private final By clickSave = By.xpath("//input[@value='حفظ']");
     private final By ViewProduct = By.xpath("//a[@class='text-dark']");

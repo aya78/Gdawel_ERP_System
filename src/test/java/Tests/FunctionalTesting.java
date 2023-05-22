@@ -4,17 +4,26 @@ package Tests;
 
 import com.aventstack.extentreports.ExtentTest;
 import io.qameta.allure.*;
+import org.apache.commons.io.FileUtils;
+import org.openqa.selenium.OutputType;
+import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 //import org.testng.ITestListener;
 //import org.testng.annotations.AfterSuite;
+import org.testng.ITestResult;
+import org.testng.Reporter;
+import org.testng.annotations.AfterMethod;
+import org.testng.annotations.AfterSuite;
 import org.testng.annotations.BeforeSuite;
 import org.testng.annotations.Test;
 import com.sauceLabs.screens.HomeScreen;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
+import java.io.File;
+import java.io.IOException;
 import java.time.Duration;
 import java.util.concurrent.TimeUnit;
 
@@ -23,9 +32,9 @@ import java.util.concurrent.TimeUnit;
 public  class FunctionalTesting {
     private WebDriver driver;
 //    public final JsonFileManager loginTestData = new JsonFileManager("src/main/resources/TestData/loginTestData.json");
-ExtentTest test1;
+//ExtentTest test1;
     @BeforeSuite
-    public void SetUp() {
+    public void SetUp() throws IOException {
 //        //create the htmlReporter object
 //        ExtentSparkReporter htmlReporter = new ExtentSparkReporter("extentReport.html");
 //        //create ExtentReports and attach reporter(s)
@@ -41,7 +50,9 @@ ExtentTest test1;
          driver.manage().window().maximize();
         //driver=new ChromeDriver();
         driver.manage().timeouts().implicitlyWait(1000, TimeUnit.SECONDS);
-
+        File screenshotFile = ((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
+        String screenshotFilePath = "path/to/screenshot.png";
+        FileUtils.copyFile(screenshotFile, new File(screenshotFilePath));
     }
 
 
@@ -82,8 +93,8 @@ ExtentTest test1;
 //                    .openSupplierPage()
 //                    .navigateToCustomerGroup()
 //                    .openCustomerGroup()
-                    .navigateToProducts()
-                    .addAndViewProductPage()
+//                    .navigateToProducts()
+//                    .addAndViewProductPage()
                     .navigateToProductsCategory()
                     .addProductCategory()
 //                  .navigateToQtyAdjustment()
@@ -123,14 +134,21 @@ ExtentTest test1;
                     ;
      }
 
+     @AfterMethod
+     public void trackFailure(ITestResult result){
+         if (result.getStatus() == ITestResult.FAILURE) {
+             String screenshotFilePath = "/home/hash-pc-8/Downloads/shein.png";
+             Reporter.log("<br><img src='" + screenshotFilePath + "' height='400' width='400'/><br>");
+         }
+     }
 
 
 
-//      @AfterSuite
-//    public void TearDown() {
-//        driver.quit();
-////          test1.pass("closed the browser");
-////          test1.info("test completed");
-////          extent.flush();
-//    }
+      @AfterSuite
+    public void TearDown() {
+        driver.quit();
+//          test1.pass("closed the browser");
+//          test1.info("test completed");
+//          extent.flush();
+    }
 }
