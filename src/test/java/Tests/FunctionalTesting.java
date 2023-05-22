@@ -34,7 +34,7 @@ public  class FunctionalTesting {
 //    public final JsonFileManager loginTestData = new JsonFileManager("src/main/resources/TestData/loginTestData.json");
 //ExtentTest test1;
     @BeforeSuite
-    public void SetUp() throws IOException {
+    public void SetUp() {
 //        //create the htmlReporter object
 //        ExtentSparkReporter htmlReporter = new ExtentSparkReporter("extentReport.html");
 //        //create ExtentReports and attach reporter(s)
@@ -50,12 +50,7 @@ public  class FunctionalTesting {
          driver.manage().window().maximize();
         //driver=new ChromeDriver();
         driver.manage().timeouts().implicitlyWait(1000, TimeUnit.SECONDS);
-        File screenshotFile = ((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
-        String screenshotFilePath = "path/to/screenshot.png";
-        FileUtils.copyFile(screenshotFile, new File(screenshotFilePath));
     }
-
-
     @Description
             (
                     "Given user open Gdawel website "+
@@ -78,10 +73,12 @@ public  class FunctionalTesting {
     @Severity(SeverityLevel.CRITICAL)
     @Story("Check Functionality of gdawel")
     @Test(description = "Check Functionality Scenario")
-    public void TestScenario() throws InterruptedException {
-        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(2000));
-        wait.until(ExpectedConditions.invisibilityOfAllElements());
-        //creates a toggle for the given test, add all log events under it
+    public void TestScenario() throws InterruptedException, IOException {
+        try {
+
+            WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(2000));
+            wait.until(ExpectedConditions.invisibilityOfAllElements());
+            //creates a toggle for the given test, add all log events under it
 //       test1 = extent.createTest("ebay Search Test", "test to validate search box ");
 //        test1.log(Status.INFO, "Starting test case");
             new HomeScreen(driver)
@@ -131,24 +128,33 @@ public  class FunctionalTesting {
 //                    .ViewExchange()
 //                    .navigateToReceipts()
 //                    .ViewReceipt()
-                    ;
+            ;
+        }
+        catch (Exception e){
+            File screenshotFile = ((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
+            String screenshotFilePath = "path/to/screenshot.png";
+            FileUtils.copyFile(screenshotFile, new File(screenshotFilePath));
+            e.printStackTrace();
+
+        }
+
      }
 
-     @AfterMethod
-     public void trackFailure(ITestResult result){
-         if (result.getStatus() == ITestResult.FAILURE) {
-             String screenshotFilePath = "/home/hash-pc-8/Downloads/shein.png";
-             Reporter.log("<br><img src='" + screenshotFilePath + "' height='400' width='400'/><br>");
-         }
-     }
+//     @AfterMethod
+//     public void trackFailure(ITestResult result){
+//         if (result.getStatus() == ITestResult.FAILURE) {
+//             String screenshotFilePath = "path/to/screenshot.png";
+//             Reporter.log("<br><img src='" + screenshotFilePath + "' height='400' width='400'/><br>");
+//         }
+//     }
 
 
 
-      @AfterSuite
-    public void TearDown() {
-        driver.quit();
-//          test1.pass("closed the browser");
-//          test1.info("test completed");
-//          extent.flush();
-    }
+//      @AfterSuite
+//    public void TearDown() {
+//        driver.quit();
+////          test1.pass("closed the browser");
+////          test1.info("test completed");
+////          extent.flush();
+//    }
 }
