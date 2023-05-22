@@ -79,7 +79,7 @@ public final WebDriver driver;
     }
     @Step("click On Side Menu Then open product Group")
     public ProductCategoryScreen navigateToProductsCategory(){
-        driver.findElement(productsAndWarehouseMenu).click();
+//        driver.findElement(productsAndWarehouseMenu).click();
 
         driver.findElement(product_category).click();
         return new ProductCategoryScreen(driver);
@@ -100,6 +100,7 @@ public final WebDriver driver;
     }
     @Step("click On Side Menu Then open Transfer")
     public TransfersScreen navigateToTransfer(){
+        driver.findElement(productsAndWarehouseMenu).click();
 
         driver.findElement(OpenTransfer).click();
         return new TransfersScreen(driver);

@@ -31,7 +31,13 @@ public class ProductsScreen extends HomeScreen{
     private final By clickSave = By.xpath("//input[@value='حفظ']");
     private final By ViewProduct = By.xpath("//a[@class='text-dark']");
     private static WebElement element=null;
-
+    // name -> file
+    private final By OpenImportProducts = By.cssSelector("#data-length-operations > a.btn.btn-warning.mb-2");
+    //    private final By openUnitList  = By.xpath("//div[text()='اختر وحدة المنتج...']");
+//    private final By selectUnit = By.cssSelector("a#bs-select-8-1>span:nth-of-type(2)");
+    // //input[@class='btn btn-primary']
+    private final By upload_file = By.name("file");
+    private final By saveImport = By.cssSelector("#importProduct > div > div > form > div.modal-body.mx-4 > div.d-flex.justify-content-between.gap-2 > div > input");
 
     public static WebElement selectBrand(WebDriver driver) throws InterruptedException {
         element =driver.findElement(By.name("brand_id"));
@@ -79,6 +85,10 @@ public class ProductsScreen extends HomeScreen{
 //        driver.findElement(openUnitList).click();
 //        driver.findElement(selectUnit).click();
         driver.findElement(clickSave).click();
+        driver.findElement(OpenImportProducts).click();
+        driver.findElement(upload_file).sendKeys("/home/hash-pc-8/Downloads/sample_products (6).xlsx");
+        driver.findElement(saveImport).click();
+        Thread.sleep(1000);
         driver.findElement(ViewProduct).click();
         return new HomeScreen(driver);
     }

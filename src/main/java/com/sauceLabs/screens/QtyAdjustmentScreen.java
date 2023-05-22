@@ -24,7 +24,7 @@ public class QtyAdjustmentScreen extends HomeScreen {
     // (//a[@class='dropdown-item'])[2]
     private final By SelectWareHouse = By.xpath("//span[text()='الفرع الرئيسي']");
     // //input[@placeholder='قم بالمسح أو اكتب كود المنتج ...']
-    private final By SelectProduct = By.xpath("//input[@placeholder='قم بالمسح أو اكتب كود المنتج ...']");
+    private final By SelectProduct = By.id("productcodeSearch");
 // //input[@class='form-control qty']
     private final By ChangQuantity = By.xpath("//input[@class='form-control qty']");
     // //select[@class='form-control act-val']
@@ -45,6 +45,18 @@ public class QtyAdjustmentScreen extends HomeScreen {
     public QtyAdjustmentScreen(WebDriver driver ) {
         super(driver);
     }
+    public static WebElement selectWareHouse(WebDriver driver) throws InterruptedException {
+        element =driver.findElement(By.name("warehouse_id"));
+        Select skills = new Select(element);
+        int dropdown_value= driver.findElements(By.cssSelector("#warehouse_id > option")).size();
+        System.out.println(dropdown_value);
+        Random random3=new Random();
+        int index= random3.nextInt(dropdown_value);
+        skills.selectByIndex(index);
+        System.out.println(index);
+        Thread.sleep(5000);
+        return element;
+    }
     public static WebElement selectOperation(WebDriver driver) throws InterruptedException {
         element =driver.findElement(By.name("action[]"));
         Select skills = new Select(element);
@@ -57,6 +69,7 @@ public class QtyAdjustmentScreen extends HomeScreen {
         Thread.sleep(5000);
         return element;
     }
+    // warehouse_id
     @Step("open QtyAdjustment ")
     public HomeScreen addQty_adjustment() throws InterruptedException {
 
@@ -64,8 +77,9 @@ public class QtyAdjustmentScreen extends HomeScreen {
         wait.until(ExpectedConditions.invisibilityOfAllElements());
         Faker fakeData=new Faker();
         driver.findElement(AddQtyAdjustment).click();
-        driver.findElement(OpenWareHouseList).click();
-        driver.findElement(SelectWareHouse).click();
+//        driver.findElement(OpenWareHouseList).click();
+//        driver.findElement(SelectWareHouse).click();
+        selectWareHouse(driver);
 //        driver.findElement(SelectProduct).click();
 //        wait.until(ExpectedConditions.visibilityOfElementLocated(SelectProduct));
         int num =4155632;

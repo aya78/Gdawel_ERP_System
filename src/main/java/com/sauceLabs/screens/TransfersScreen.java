@@ -14,19 +14,21 @@ public class TransfersScreen  extends HomeScreen{
     public TransfersScreen(WebDriver driver) {
         super(driver);
     }
-    private final By AddTransfer = By.xpath("//div[@id='data-length-operations']//a[1]");
+    // https://gdawel.app/dashboard/transfers/create
+    private final By AddTransfer = By.xpath("//a[@href='https://gdawel.app/dashboard/transfers/create']");
     // (//button[@title='اختر المخزن...'])[2]
-    private final By ClickFromWareHouse = By.xpath("(//button[@title='اختر المخزن...'])[2]");
+    private final By ClickFromWareHouse = By.id("from_warehouse_id");
+    // bs-select-6-0
     private final By SelectWareHouse1 = By.cssSelector("a#bs-select-6-0");
-    private final By ClickToWareHouse = By.xpath("//label[text()='الى مخزن *']/following-sibling::div");
+    private final By ClickToWareHouse = By.id("to_warehouse_id");
     private final By SelectWareHouse2 = By.cssSelector("a#bs-select-8-1");
-    private final By SelectProduct = By.xpath("//input[contains(@class,'form-control rounded-right')]");
+    private final By SelectProduct = By.id("productcodeSearch");
     // //div[@class='card-body py-0']//div
-    private final By clickSpace = By.xpath("//div[@class='card-body py-0']//div");
+  //  private final By clickSpace = By.xpath("//div[@class='card-body py-0']//div");
 
-    private final By SaveTransfer = By.xpath("//input[@value='حفظ']");
+    private final By SaveTransfer = By.id("submit-button");
     // //td[@class='sorting_1']//a[1]
-    private final By ViewTransfer = By.xpath("//td[text()='2023-05-07 11:55:37']/following-sibling::td");
+    private final By ViewTransfer = By.xpath("//a[@href='https://gdawel.app/dashboard/transfers/691f0a7c-a0af-4d24-8f86-f7beaf8f1ac5']");
 
     @Step("open add Transfers ")
     public HomeScreen addAndViewTransfers() throws InterruptedException {
@@ -43,7 +45,7 @@ public class TransfersScreen  extends HomeScreen{
         Thread.sleep(1000);
 
 //        wait.until(ExpectedConditions.elementToBeClickable(SelectProduct));
-        driver.findElement(clickSpace).click();
+//        driver.findElement(clickSpace).click();
         driver.findElement(SaveTransfer).click();
         driver.findElement(ViewTransfer).click();
         return new HomeScreen(driver);
