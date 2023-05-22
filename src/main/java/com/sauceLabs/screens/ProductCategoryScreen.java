@@ -14,7 +14,7 @@ import java.time.Duration;
 public class ProductCategoryScreen extends HomeScreen{
 //    private final Faker faker;
     /***************************************  //button[@data-toggle='modal']       */
-    private final By AddProductCategory = By.xpath("/2button[@data-toggle='modal']");
+    private final By AddProductCategory = By.xpath("//button[@data-toggle='modal']");
     // //input[@placeholder='Type category name...']
     private final By CategoryName = By.xpath("//input[@placeholder='Type category name...']");
     // //span[text()[normalize-space()='رفع ملف']]
