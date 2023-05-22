@@ -10,11 +10,14 @@ public class HomeScreen {
 public final WebDriver driver;
 
     public String password ="74108520";
+    /********************************************************************************************************************************/
 
     public static By loginButton = By.cssSelector("#navbarSupportedContent > div > a.btn.btn-solid-main.login.form-btn.py-2.px-3.rounded.w-100.text-nowrap");
     private final By openCustomerAndSupplierMenu = By.xpath("//*[@id=\"side-main-menu\"]/li[2]/a");
     private final By customers = By.id("customer-menu");
     private final By suppliers = By.xpath("(//ul[@id='customersupplier']//a)[2]");
+    /********************************************************************************************************************************/
+
     private final By customerGroup = By.xpath("/html/body/nav/ul/li[2]/ul/li[3]/a");
     private final By productsAndWarehouseMenu = By.xpath("//*[@id=\"side-main-menu\"]/li[3]/a");
 //    private final By products = By.xpath("//a[@href='https://gdawel.app/dashboard/products']");
@@ -43,6 +46,7 @@ public final WebDriver driver;
     private final By OpenExchange = By.cssSelector("li#exchange-bonds-menu>a");
     private final By OpenReceipt = By.cssSelector("li#receipt-bonds-menu>a");
     private final By ClickOnProfileImg = By.xpath("//img[@class='shadow-sm']/following-sibling::span[1]");
+    /********************************************************************************************************************************/
     private final By clickOnProfile = By.xpath("//span[text()[normalize-space()='الملف الشخصي']]");
 
     //    public  WebDriver driver;

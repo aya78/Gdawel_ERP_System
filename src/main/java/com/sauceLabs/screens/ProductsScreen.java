@@ -86,7 +86,10 @@ public class ProductsScreen extends HomeScreen{
 //        driver.findElement(selectUnit).click();
         driver.findElement(clickSave).click();
         driver.findElement(OpenImportProducts).click();
-        driver.findElement(upload_file).sendKeys("/home/hash-pc-8/Downloads/sample_products (6).xlsx");
+
+//        driver.findElement(upload_file).sendKeys("/home/hash-pc-8/Downloads/sample_products (6).xlsx");
+        WebElement chooseFile = driver.findElement(By.name("file"));
+        chooseFile.sendKeys("/home/hash-pc-8/Downloads/sample_products (6).xlsx");
         driver.findElement(saveImport).click();
         Thread.sleep(1000);
         driver.findElement(ViewProduct).click();

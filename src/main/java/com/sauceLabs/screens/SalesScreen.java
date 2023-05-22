@@ -41,7 +41,8 @@ public class SalesScreen extends HomeScreen{
 //        wait.until(ExpectedConditions.invisibilityOfAllElements());
         Faker fakeData=new Faker();
 //        driver.findElement(OpenSales).click();
-        driver.findElement(AddInvoiceButton).click();
+//        driver.findElement(AddInvoiceButton).click();
+        driver.navigate().to("https://gdawel.app/dashboard/sales/create");
         Thread.sleep(1000);
 
         driver.findElement(ScanProductButton).sendKeys(Keys.BACK_SPACE);
