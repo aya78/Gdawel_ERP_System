@@ -13,7 +13,7 @@ public class ProductCategoryScreen extends HomeScreen{
     // //input[@placeholder='Type category name...']
     private final By CategoryName = By.xpath("//input[@placeholder='Type category name...']");
     // //span[text()[normalize-space()='رفع ملف']]
-    private final By CategoryImg = By.cssSelector("div#createModal>div>div>form>div:nth-of-type(2)>div>div:nth-of-type(2)>div>label>span");
+    private final By CategoryImg = By.id("input-646b141c5631b");
     // //input[@type='submit']
     private final By SaveCategory = By.xpath("//input[@type='submit']");
 
@@ -49,6 +49,7 @@ public class ProductCategoryScreen extends HomeScreen{
 //        driver.findElement(CategoryImg).click();
 //        driver.findElement(CategoryImg).sendKeys(Faker.instance().file().fileName());
 //        uploadImage("/home/hash-pc-8/Downloads/chanel.png");
+        driver.findElement(CategoryImg).sendKeys("/home/hash-pc-8/Downloads/chanel.png");
         driver.findElement(SaveCategory).click();
 
         return new HomeScreen(driver);

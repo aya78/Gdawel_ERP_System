@@ -19,8 +19,8 @@ public class ProductsScreen extends HomeScreen{
     private final By AddProduct = By.xpath("(//a[@href='https://gdawel.app/dashboard/products/create'])[2]");
     // /html/body/div[2]/div[6]/div/section/form/div/div/div[1]/div/div/div/div[1]/div/input
     private final By ProductName = By.id("name");
-//    private final By Barcode = By.xpath("//input[@class='form-control rounded-right']");
-private final By Barcode = By.id("genbutton");
+    private final By Barcode = By.xpath("//input[@class='form-control rounded-right']");
+//private final By Barcode = By.id("genbutton");
     private final By openBrandList  = By.cssSelector("form#product-form>div>div>div>div>div>div>div:nth-of-type(2)>div>div:nth-of-type(2)>div>button>div>div>div");
     private final By selectBrand = By.xpath("(//ul[@role='presentation']//a)[2]");
     private final By productCost = By.xpath("//input[@min='0.001']");
@@ -34,7 +34,7 @@ private final By Barcode = By.id("genbutton");
 
 
     public static WebElement selectBrand(WebDriver driver) throws InterruptedException {
-        element =driver.findElement(By.id("brand_id"));
+        element =driver.findElement(By.name("brand_id"));
         Select skills = new Select(element);
         int dropdown_value= driver.findElements(By.cssSelector("#product-form > div > div > div.col-xl-9.col-lg-12 > div > div > div > div.col-sm-6.mb-3.brand > div > div:nth-child(2) > div > select > option")).size();
         System.out.println(dropdown_value);
@@ -46,7 +46,7 @@ private final By Barcode = By.id("genbutton");
         return element;
     }
     public static WebElement selectUnit(WebDriver driver) throws InterruptedException {
-        element =driver.findElement(By.id("unit_id"));
+        element =driver.findElement(By.name("unit_id"));
         Select skills = new Select(element);
         int dropdown_value= driver.findElements(By.cssSelector("#unit > div > div:nth-child(1) > div > div:nth-child(2) > div > select > option" )).size();
         System.out.println(dropdown_value);
