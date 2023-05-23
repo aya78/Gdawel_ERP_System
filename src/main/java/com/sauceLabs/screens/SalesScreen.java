@@ -5,25 +5,37 @@ import io.qameta.allure.Step;
 import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.time.Duration;
+import java.util.Random;
 
 public class SalesScreen extends HomeScreen{
 
     public SalesScreen(WebDriver driver) {
         super(driver);
     }
-    private final By AddInvoiceButton = By.cssSelector("div#data-length-operations>a");
-    private final By ScanProductButton = By.xpath("//input[@placeholder='قم بالمسح أو اكتب كود المنتج ...']");
+    private final By AddInvoiceButton = By.xpath("//a[@href='https://gdawel.app/dashboard/sales/create']");
+//    private final By ScanProductButton = By.xpath("//input[@placeholder='قم بالمسح أو اكتب كود المنتج ...']");
+    // productcodeSearch
+private final By ScanProductButton = By.id("productcodeSearch");
     private final By EditQty = By.xpath("//input[@class='form-control qty']");
     private final By SaveInvoiceButton = By.xpath("//input[@type='submit']");
     private final By VIewInvoiceButton = By.xpath("//tr[@role='row']//td");
     private final By ClickActionInViewInvoice = By.cssSelector("div#dropGroup2>button");
+    /****************************************************************************************************************/
     private final By AddReturnSale = By.xpath("//a[contains(@class,'dropdown-item d-flex')]/following-sibling::a[1]");
+    /****************************************************************************************************************/
+
     private final By SelectProduct = By.xpath("//input[@class='is-return']/following-sibling::span[1]");
+    /****************************************************************************************************************/
+
     private final By SaveButton = By.xpath("//input[@value='حفظ']");
+    /****************************************************************************************************************/
+
     // //button[@data-toggle='dropdown']//i
     private final By ClickOnAction = By.xpath("//button[@data-toggle='dropdown']//i");
     private final By AddDelivery = By.xpath("//button[text()=' إضافة التسليم']");
@@ -32,8 +44,20 @@ public class SalesScreen extends HomeScreen{
     private final By SaveDelivery = By.cssSelector("button#submitBtnConfirm");
     // //tr[@class='delivery-link odd']//a
     private final By ViewDelivery = By.xpath("//tr[@class='delivery-link odd']//a");
+    private static WebElement element=null;
 
-
+//    public static WebElement selectClient(WebDriver driver) throws InterruptedException {
+//        element =driver.findElement(By.name("customer_id"));
+//        Select skills = new Select(element);
+//        int dropdown_value= driver.findElements(By.cssSelector("#customer_id > option" )).size();
+//        System.out.println(dropdown_value);
+//        Random random3=new Random();
+//        int index= random3.nextInt(dropdown_value);
+//        skills.selectByIndex(index);
+//        System.out.println(index);
+//        Thread.sleep(5000);
+//        return element;
+//    }
 
     @Step(" add Sale Invoice")
     public HomeScreen addSaleInvoice() throws InterruptedException {

@@ -10,15 +10,20 @@ public class HomeScreen {
 public final WebDriver driver;
 
     public String password ="74108520";
-    /********************************************************************************************************************************/
+    /*********************************************************  Done ***********************************************************************/
+// https://gdawel.app/login
+//    public static By loginButton = By.cssSelector("#navbarSupportedContent > div > a.btn.btn-solid-main.login.form-btn.py-2.px-3.rounded.w-100.text-nowrap");
+    public static By loginButton = By.xpath("//a[@href='https://gdawel.app/login']");
 
-    public static By loginButton = By.cssSelector("#navbarSupportedContent > div > a.btn.btn-solid-main.login.form-btn.py-2.px-3.rounded.w-100.text-nowrap");
     private final By openCustomerAndSupplierMenu = By.xpath("//*[@id=\"side-main-menu\"]/li[2]/a");
     private final By customers = By.id("customer-menu");
     private final By suppliers = By.xpath("(//ul[@id='customersupplier']//a)[2]");
+    /*****************************************************  Done ***************************************************************************/
+// https://gdawel.app/dashboard/customer_group
+//    private final By customerGroup = By.xpath("/html/body/nav/ul/li[2]/ul/li[3]/a");
+    private final By customerGroup = By.xpath("//a[@href='https://gdawel.app/dashboard/customer_group']");
     /********************************************************************************************************************************/
 
-    private final By customerGroup = By.xpath("/html/body/nav/ul/li[2]/ul/li[3]/a");
     private final By productsAndWarehouseMenu = By.xpath("//*[@id=\"side-main-menu\"]/li[3]/a");
 //    private final By products = By.xpath("//a[@href='https://gdawel.app/dashboard/products']");
      private final By products = By.id("product-list-menu");
