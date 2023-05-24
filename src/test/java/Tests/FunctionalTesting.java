@@ -2,8 +2,11 @@ package Tests;
 
 //import JsonFileManager;
 
-import com.aventstack.extentreports.ExtentTest;
+//import com.aventstack.extentreports.ExtentTest;
+import com.slack.api.Slack;
+import com.slack.api.methods.SlackApiException;
 import io.qameta.allure.*;
+//import lombok.val;
 import org.apache.commons.io.FileUtils;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
@@ -12,20 +15,24 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 //import org.testng.ITestListener;
 //import org.testng.annotations.AfterSuite;
-import org.testng.ITestResult;
-import org.testng.Reporter;
-import org.testng.annotations.AfterMethod;
-import org.testng.annotations.AfterSuite;
+//import org.testng.ITestResult;
+//import org.testng.Reporter;
+//import org.testng.annotations.AfterMethod;
+//import org.testng.annotations.AfterSuite;
+import org.slf4j.LoggerFactory;
 import org.testng.annotations.BeforeSuite;
 import org.testng.annotations.Test;
 import com.sauceLabs.screens.HomeScreen;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
+//import com.slack.api.Slack;
+
 
 import java.io.File;
 import java.io.IOException;
 import java.time.Duration;
 import java.util.concurrent.TimeUnit;
+
 
 @Epic("Gdawel App")
 @Feature("Functional")
@@ -70,6 +77,26 @@ public  class FunctionalTesting {
                             "And click on save button"+
                             "Then user should return to Home screen"
             )
+    /*******************************************************************************************************************************************/
+//    static void publishMessage(String id, String text) {
+//        // you can get this instance via ctx.client() in a Bolt app
+//        var client = Slack.getInstance().methods();
+//        var logger = LoggerFactory.getLogger("Gdawel");
+//        try {
+//            // Call the chat.postMessage method using the built-in WebClient
+//            var result = client.chatPostMessage(r -> r
+//                            // The token you used to initialize your app
+//                            .token("xoxb-5047666852083-5308135282803-uV2u3xENP1zzEMslqYBnqnyA")
+//                            .channel(id)
+//                            .text(text)
+//                    // You could also use a blocks[] array to send richer content
+//            );
+//            // Print result, which includes information about the message (like TS)
+//            logger.info("result {}", result);
+//        } catch (IOException | SlackApiException e) {
+//            logger.error("error: {}", e.getMessage(), e);
+//        }
+//    }
     @Severity(SeverityLevel.CRITICAL)
     @Story("Check Functionality of gdawel")
     @Test(description = "Check Functionality Scenario")
@@ -135,6 +162,10 @@ public  class FunctionalTesting {
             String screenshotFilePath = "path/to/screenshot.png";
             FileUtils.copyFile(screenshotFile, new File(screenshotFilePath));
             e.printStackTrace();
+            // xoxb-5047666852083-5308135282803-uV2u3xENP1zzEMslqYBnqnyA
+
+
+            }
 
         }
 
@@ -157,4 +188,4 @@ public  class FunctionalTesting {
 ////          test1.info("test completed");
 ////          extent.flush();
 //    }
-}
+

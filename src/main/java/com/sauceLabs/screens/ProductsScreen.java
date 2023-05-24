@@ -2,6 +2,7 @@ package com.sauceLabs.screens;
 
 import com.github.javafaker.Faker;
 import io.qameta.allure.Step;
+//import lombok.var;
 import org.apache.commons.lang3.RandomStringUtils;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
