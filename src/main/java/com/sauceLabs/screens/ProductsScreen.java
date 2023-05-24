@@ -28,6 +28,8 @@ public class ProductsScreen extends HomeScreen{
 //    private final By openUnitList  = By.xpath("//div[text()='اختر وحدة المنتج...']");
 //    private final By selectUnit = By.cssSelector("a#bs-select-8-1>span:nth-of-type(2)");
     // //input[@class='btn btn-primary']
+  private final By ProductImage = By.xpath("//a[@class='dz-hidden-input']");
+
     private final By clickSave = By.xpath("//input[@value='حفظ']");
     private final By ViewProduct = By.xpath("//a[@class='text-dark']");
     private static WebElement element=null;
@@ -74,7 +76,9 @@ public class ProductsScreen extends HomeScreen{
         int cost = Integer.parseInt(fakeData.number().digits(3));
 
         driver.findElement(AddProduct).click();
-        driver.findElement(ProductName).sendKeys(fakeData.name().fullName());
+        String v =fakeData.name().name();
+        driver.findElement(ProductName).sendKeys(v);
+        System.out.println(v);
         driver.findElement(Barcode).sendKeys(fakeData.number().digits(8));
         selectBrand(driver);
 //        driver.findElement(openBrandList).click();
@@ -82,16 +86,19 @@ public class ProductsScreen extends HomeScreen{
         driver.findElement(productCost).sendKeys(""+cost);
         driver.findElement(productPrice).sendKeys(""+cost+20);
         selectUnit(driver);
+        WebElement choose_img = driver.findElement(By.className("dz-hidden-input"));
+        choose_img.sendKeys("/home/hash-pc-8/Downloads/tablet.jpeg");
+        Thread.sleep(4000);
 //        driver.findElement(openUnitList).click();
 //        driver.findElement(selectUnit).click();
         driver.findElement(clickSave).click();
-        driver.findElement(OpenImportProducts).click();
+/***************************************************************** import products Done ****************************************************************************/
+//        driver.findElement(OpenImportProducts).click();
 
-//        driver.findElement(upload_file).sendKeys("/home/hash-pc-8/Downloads/sample_products (6).xlsx");
-        WebElement chooseFile = driver.findElement(By.name("file"));
-        chooseFile.sendKeys("/home/hash-pc-8/Downloads/sample_products (6).xlsx");
-        driver.findElement(saveImport).click();
-        Thread.sleep(1000);
+//        WebElement chooseFile = driver.findElement(By.name("file"));
+//        chooseFile.sendKeys("/home/hash-pc-8/Downloads/sample_products (6).xlsx");
+//        driver.findElement(saveImport).click();
+//        Thread.sleep(1000);
         driver.findElement(ViewProduct).click();
         return new HomeScreen(driver);
     }

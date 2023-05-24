@@ -11,11 +11,12 @@ public class UnitScreen extends HomeScreen{
         super(driver);
     }
     public  String randomNum = RandomStringUtils.random(8, false, true);
+    /********************************************************* select by id  ***************************************************************************************/
 
     private final By AddUnit = By.xpath("(//a[contains(@class,'btn btn-primary')])[2]");
     private final By AddUnitName = By.xpath("//input[@name='unit_name']");
     private final By AddUnitCode = By.xpath("//input[@name='unit_code']");
-
+/********************************************************* select by id  ***************************************************************************************/
     private final By SaveUnit = By.xpath("//div[@class='form-group operation_value']/following-sibling::input[1]");
 
     @Step(" add Unit")

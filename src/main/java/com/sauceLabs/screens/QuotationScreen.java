@@ -14,13 +14,18 @@ public class QuotationScreen extends HomeScreen {
     public QuotationScreen(WebDriver driver) {
         super(driver);
     }
-    private final By AddQuotation = By.xpath("//div[@id='data-length-operations']//a[1]");
+    //div[@id='data-length-operations']//a[1]
 
+    // https://gdawel.app/dashboard/quotations/create
+    private final By AddQuotation = By.xpath("//a=[@href='https://gdawel.app/dashboard/quotations/create']");
     private final By OpenPurchaseQuotation = By.xpath("//div[@data-type='purchases']");
     // //div[@class='search-box input-group']//input[1]
-    private final By ScanProductButton = By.xpath("//label[text()='امسح المنتج بالباركود أو ادخل كود المنتج']/following::input");
+//    private final By ScanProductButton = By.xpath("//label[text()='امسح المنتج بالباركود أو ادخل كود المنتج']/following::input");
+    private final By ScanProductButton = By.id("productcodeSearch");
+
     private final By SaveInvoiceButton = By.cssSelector("input#submit-button");
     // input#submit-button
+    //submit-button
 
     // table#quotation-table>tbody>tr>td:nth-of-type(2)>a
 

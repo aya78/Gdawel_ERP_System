@@ -25,7 +25,11 @@ private final By ScanProductButton = By.id("productcodeSearch");
     private final By EditQty = By.xpath("//input[@class='form-control qty']");
     private final By SaveInvoiceButton = By.xpath("//input[@type='submit']");
     private final By VIewInvoiceButton = By.xpath("//tr[@role='row']//td");
-    private final By ClickActionInViewInvoice = By.cssSelector("div#dropGroup2>button");
+
+/*****   private final By ClickActionInViewInvoice = By.cssSelector("div#dropGroup2>button"); */
+    // actions-btn-custom dropdown-toggle dropdown-toggle-actions
+        private final By ClickActionInViewInvoice = By.className("actions-btn-custom dropdown-toggle dropdown-toggle-actions");
+
     /****************************************************************************************************************/
     private final By AddReturnSale = By.xpath("//a[contains(@class,'dropdown-item d-flex')]/following-sibling::a[1]");
     /****************************************************************************************************************/
@@ -43,7 +47,11 @@ private final By ScanProductButton = By.id("productcodeSearch");
     private final By SelectInProgress = By.xpath("//a[@id='bs-select-12-0']");
     private final By SaveDelivery = By.cssSelector("button#submitBtnConfirm");
     // //tr[@class='delivery-link odd']//a
-    private final By ViewDelivery = By.xpath("//tr[@class='delivery-link odd']//a");
+//    private final By ViewDelivery = By.xpath("//tr[@class='delivery-link odd']//a");
+    /**************************************************************************************************************/
+    // #delivery-table > tbody > tr:nth-child(1) > td:nth-child(1)
+    private final By ViewDelivery = By.cssSelector("#delivery-table > tbody > tr:nth-child(1) > td:nth-child(1)");
+
     private static WebElement element=null;
 
 //    public static WebElement selectClient(WebDriver driver) throws InterruptedException {
