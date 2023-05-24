@@ -4,9 +4,8 @@ import com.github.javafaker.Faker;
 import io.qameta.allure.Step;
 //import lombok.var;
 import org.apache.commons.lang3.RandomStringUtils;
-import org.openqa.selenium.By;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
+import org.openqa.selenium.*;
+import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.WebElement;
 
@@ -87,6 +86,11 @@ public class ProductsScreen extends HomeScreen{
         driver.findElement(productCost).sendKeys(""+cost);
         driver.findElement(productPrice).sendKeys(""+cost+20);
         selectUnit(driver);
+        Actions a = new Actions(driver);
+        //scroll down a page
+//        a.sendKeys(Keys.PAGE_DOWN).build().perform();
+        //scroll up a page
+        a.sendKeys(Keys.PAGE_DOWN).build().perform();
         WebElement choose_img = driver.findElement(By.className("dz-hidden-input"));
         choose_img.sendKeys("/home/hash-pc-8/Downloads/tablet.jpeg");
         Thread.sleep(4000);
