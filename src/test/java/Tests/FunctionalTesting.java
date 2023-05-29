@@ -3,8 +3,9 @@ package Tests;
 //import JsonFileManager;
 
 //import com.aventstack.extentreports.ExtentTest;
-import com.slack.api.Slack;
-import com.slack.api.methods.SlackApiException;
+//import com.slack.api.Slack;
+//import com.slack.api.methods.SlackApiException;
+//import cucumber.api.java.After;
 import io.qameta.allure.*;
 //import lombok.val;
 import org.apache.commons.io.FileUtils;
@@ -19,7 +20,9 @@ import org.openqa.selenium.chrome.ChromeOptions;
 //import org.testng.Reporter;
 //import org.testng.annotations.AfterMethod;
 //import org.testng.annotations.AfterSuite;
-import org.slf4j.LoggerFactory;
+//import org.slf4j.LoggerFactory;
+import org.testng.annotations.AfterMethod;
+//import org.testng.annotations.AfterSuite;
 import org.testng.annotations.BeforeSuite;
 import org.testng.annotations.Test;
 import com.sauceLabs.screens.HomeScreen;
@@ -33,12 +36,15 @@ import java.io.IOException;
 import java.time.Duration;
 import java.util.concurrent.TimeUnit;
 
+import static org.testng.AssertJUnit.assertNull;
+
 
 @Epic("Gdawel App")
 @Feature("Functional")
 public  class FunctionalTesting {
     private WebDriver driver;
-//    public final JsonFileManager loginTestData = new JsonFileManager("src/main/resources/TestData/loginTestData.json");
+
+    //    public final JsonFileManager loginTestData = new JsonFileManager("src/main/resources/TestData/loginTestData.json");
 //ExtentTest test1;
     @BeforeSuite
     public void SetUp() {
@@ -52,29 +58,32 @@ public  class FunctionalTesting {
         options.setExperimentalOption("w3c", true);
         options.addArguments("--remote-allow-origins=*");
 
-         driver = new ChromeDriver(options);
-         driver.get("https://gdawel.app/");
-         driver.manage().window().maximize();
+        driver = new ChromeDriver(options);
+        driver.get("https://gdawel.app/");
+        driver.manage().window().maximize();
         //driver=new ChromeDriver();
         driver.manage().timeouts().implicitlyWait(1000, TimeUnit.SECONDS);
+        String verifyAssertNull = null;
+        assertNull(verifyAssertNull);
     }
+
     @Description
             (
-                    "Given user open Gdawel website "+
-                            "When click on Menu"+
-                            "And click on Login"+
-                            "And login Using Valid Email & Password"+
-                            "And open customers page"+
-                            "And click on counter Plus Button"+
-                            "And click on save button"+
-                            "And click on customer name "+
-                            "And click on suppliers page"+
-                            "And click on add supplier Button"+
-                            "And click on save button"+
-                            "And click on customer name"+
-                            "And open customer group page"+
-                            "And click on counter Plus Button"+
-                            "And click on save button"+
+                    "Given user open Gdawel website " +
+                            "When click on Menu" +
+                            "And click on Login" +
+                            "And login Using Valid Email & Password" +
+                            "And open customers page" +
+                            "And click on counter Plus Button" +
+                            "And click on save button" +
+                            "And click on customer name " +
+                            "And click on suppliers page" +
+                            "And click on add supplier Button" +
+                            "And click on save button" +
+                            "And click on customer name" +
+                            "And open customer group page" +
+                            "And click on counter Plus Button" +
+                            "And click on save button" +
                             "Then user should return to Home screen"
             )
     /*******************************************************************************************************************************************/
@@ -111,14 +120,14 @@ public  class FunctionalTesting {
             new HomeScreen(driver)
                     .clickOnLogin()
                     .loginUsingValidEmailAndPassword()
-//                    .clickOnSideMenu()
-//                    .addAndViewCustomersPage()
+                    .clickOnSideMenu()
+                    .addAndViewCustomersPage()
 //                    .navigateToSupplierList()
 //                    .openSupplierPage()
 //                    .navigateToCustomerGroup()
 //                    .openCustomerGroup()
-                    .navigateToProducts()
-                    .addAndViewProductPage()
+//                    .navigateToProducts()
+//                    .addAndViewProductPage()
 //                    .navigateToProductsCategory()
 //                    .addProductCategory()
 //                  .navigateToQtyAdjustment()
@@ -156,20 +165,19 @@ public  class FunctionalTesting {
 //                    .navigateToReceipts()
 //                    .ViewReceipt()
             ;
-        }
-        catch (Exception e){
-            File screenshotFile = ((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
+        } catch (Exception e) {
+            File screenshotFile = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);
             String screenshotFilePath = "path/to/screenshot.png";
             FileUtils.copyFile(screenshotFile, new File(screenshotFilePath));
             e.printStackTrace();
             // xoxb-5047666852083-5308135282803-uV2u3xENP1zzEMslqYBnqnyA
 
 
-            }
-
         }
+        new SlackNotificationListener();
 
-     }
+    }
+
 
 //     @AfterMethod
 //     public void trackFailure(ITestResult result){
@@ -180,12 +188,12 @@ public  class FunctionalTesting {
 //     }
 
 
-
-//      @AfterSuite
-//    public void TearDown() {
-//        driver.quit();
-////          test1.pass("closed the browser");
-////          test1.info("test completed");
-////          extent.flush();
-//    }
+    @AfterMethod
+    public void TearDown() {
+            driver.quit();
+//          test1.pass("closed the browser");
+//          test1.info("test completed");
+//          extent.flush();
+    }
+}
 

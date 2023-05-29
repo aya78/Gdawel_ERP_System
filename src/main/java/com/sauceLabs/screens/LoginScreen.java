@@ -22,6 +22,7 @@ public class LoginScreen  extends HomeScreen{
     @Step("login Using Valid Email And Password ==> user Name: [{username}], password: [{password}]")
     public HomeScreen loginUsingValidEmailAndPassword(){
         //driver.findElement(UserNameField).clear();
+
         driver.findElement(UserNameField).sendKeys(username);
         //driver.findElement(PasswordField).clear();
         driver.findElement(PasswordField).sendKeys(password);

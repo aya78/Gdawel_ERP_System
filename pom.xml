@@ -249,6 +249,19 @@
             <artifactId>checkstyle</artifactId>
             <version>0.2.20</version>
         </dependency>
+        <!-- https://mvnrepository.com/artifact/com.intellij/extensions -->
+        <dependency>
+            <groupId>com.intellij</groupId>
+            <artifactId>extensions</artifactId>
+            <version>7.0.3</version>
+        </dependency>
+        <!-- https://mvnrepository.com/artifact/fr.jcgay.send-notification/send-notification -->
+        <dependency>
+            <groupId>fr.jcgay.send-notification</groupId>
+            <artifactId>send-notification</artifactId>
+            <version>0.16.0</version>
+        </dependency>
+
 
 
     </dependencies>

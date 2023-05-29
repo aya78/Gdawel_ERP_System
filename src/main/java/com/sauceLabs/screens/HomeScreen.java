@@ -66,6 +66,12 @@ public final WebDriver driver;
     @Step("click On Side Menu Then open Customers")
     public CustomersScreen clickOnSideMenu(){
         driver.findElement(openCustomerAndSupplierMenu).click();
+         boolean n =driver.findElement(customers).isSelected();
+        if(n){
+            System.out.println("Element is Present");
+        }else{
+            System.out.println("Element is Absent");
+        }
         driver.findElement(customers).click();
 
         return new CustomersScreen(driver);
