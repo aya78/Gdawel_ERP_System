@@ -114,7 +114,7 @@ public  class FunctionalTesting {
     public void TestScenario() throws InterruptedException, IOException {
         try {
 
-            WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(2000));
+            WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(20));
             wait.until(ExpectedConditions.invisibilityOfAllElements());
             //creates a toggle for the given test, add all log events under it
 //       test1 = extent.createTest("ebay Search Test", "test to validate search box ");
@@ -168,25 +168,28 @@ public  class FunctionalTesting {
 //                    .ViewReceipt()
             ;
         } catch (Exception e) {
+//            File screenshotFile = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);
             File screenshotFile = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);
             String screenshotFilePath = "path/to/screenshot.png";
             FileUtils.copyFile(screenshotFile, new File(screenshotFilePath));
+//            screenshotFile.canWrite();
+            Reporter.log("<br><img src='" + screenshotFilePath + "' height='400' width='400'/><br>");
+            Reporter.getCurrentTestResult();
+
             e.printStackTrace();
             // xoxb-5047666852083-5308135282803-uV2u3xENP1zzEMslqYBnqnyA
-
-
 
         }
 
     }
 
-     @AfterMethod
-     public void trackFailure(ITestResult result){
-         if (result.getStatus() == ITestResult.FAILURE) {
-             String screenshotFilePath = "path/to/screenshot.png";
-             Reporter.log("<br><img src='" + screenshotFilePath + "' height='400' width='400'/><br>");
-         }
-     }
+//     @AfterMethod
+//     public void trackFailure(){
+//         if (result.getStatus() == ITestResult.FAILURE) {
+//             String screenshotFilePath = "path/to/screenshot.png";
+//             Reporter.log("<br><img src='" + screenshotFilePath + "' height='400' width='400'/><br>");
+//         }
+//     }
 
 
 //    @AfterMethod
