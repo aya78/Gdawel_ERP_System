@@ -7,7 +7,7 @@ import java.io.OutputStream;
 import java.net.HttpURLConnection;
 import java.net.URL;
 public class SlackNotificationListener extends TestListenerAdapter{
-        private final String webhookUrl = "https://app.slack.com/client/T051DKLR22F/D051SCDKJJV";
+        private final String webhookUrl = "https://hooks.slack.com/services/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";
 
         @Override
         public void onTestFailure(ITestResult tr) {

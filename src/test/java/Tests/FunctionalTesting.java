@@ -21,6 +21,8 @@ import org.openqa.selenium.chrome.ChromeOptions;
 //import org.testng.annotations.AfterMethod;
 //import org.testng.annotations.AfterSuite;
 //import org.slf4j.LoggerFactory;
+import org.testng.ITestResult;
+import org.testng.Reporter;
 import org.testng.annotations.AfterMethod;
 //import org.testng.annotations.AfterSuite;
 import org.testng.annotations.BeforeSuite;
@@ -173,27 +175,26 @@ public  class FunctionalTesting {
             // xoxb-5047666852083-5308135282803-uV2u3xENP1zzEMslqYBnqnyA
 
 
+
         }
-        new SlackNotificationListener();
 
     }
 
+     @AfterMethod
+     public void trackFailure(ITestResult result){
+         if (result.getStatus() == ITestResult.FAILURE) {
+             String screenshotFilePath = "path/to/screenshot.png";
+             Reporter.log("<br><img src='" + screenshotFilePath + "' height='400' width='400'/><br>");
+         }
+     }
 
-//     @AfterMethod
-//     public void trackFailure(ITestResult result){
-//         if (result.getStatus() == ITestResult.FAILURE) {
-//             String screenshotFilePath = "path/to/screenshot.png";
-//             Reporter.log("<br><img src='" + screenshotFilePath + "' height='400' width='400'/><br>");
-//         }
-//     }
 
-
-    @AfterMethod
-    public void TearDown() {
-            driver.quit();
-//          test1.pass("closed the browser");
-//          test1.info("test completed");
-//          extent.flush();
-    }
+//    @AfterMethod
+//    public void TearDown() {
+//            driver.quit();
+////          test1.pass("closed the browser");
+////          test1.info("test completed");
+////          extent.flush();
+//    }
 }
 
