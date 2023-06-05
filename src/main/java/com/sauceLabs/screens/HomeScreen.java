@@ -1,5 +1,7 @@
 package com.sauceLabs.screens;
 
+import com.relevantcodes.extentreports.ExtentReports;
+import com.relevantcodes.extentreports.ExtentTest;
 import io.qameta.allure.Step;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
@@ -8,7 +10,8 @@ import org.openqa.selenium.WebDriver;
 public class HomeScreen {
 //     public static By products = By.xpath("//*[@text='Products']");
 public final WebDriver driver;
-
+    public ExtentTest test;
+    public ExtentReports extentReports;
     public String password ="74108520";
     /*********************************************************  Done ***********************************************************************/
 // https://gdawel.app/login

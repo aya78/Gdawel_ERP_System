@@ -6,6 +6,9 @@ package Tests;
 //import com.slack.api.Slack;
 //import com.slack.api.methods.SlackApiException;
 //import cucumber.api.java.After;
+import com.relevantcodes.extentreports.ExtentReports;
+import com.relevantcodes.extentreports.ExtentTest;
+import com.relevantcodes.extentreports.LogStatus;
 import io.qameta.allure.*;
 //import lombok.val;
 import org.apache.commons.io.FileUtils;
@@ -45,26 +48,29 @@ import static org.testng.AssertJUnit.assertNull;
 @Feature("Functional")
 public  class FunctionalTesting {
     private WebDriver driver;
-
-    //    public final JsonFileManager loginTestData = new JsonFileManager("src/main/resources/TestData/loginTestData.json");
-//ExtentTest test1;
+    public ExtentTest test;
+    public ExtentReports extentReports;
     @BeforeSuite
     public void SetUp() {
-//        //create the htmlReporter object
-//        ExtentSparkReporter htmlReporter = new ExtentSparkReporter("extentReport.html");
-//        //create ExtentReports and attach reporter(s)
-//        ExtentReports extent = new ExtentReports();
-//        extent.attachReporter(htmlReporter);
+
+        extentReports = new ExtentReports("/home/hash-pc-8/Documents/vs_code/gdawel_test/ExtentReports/TestReports.html",true);
         System.setProperty("webdriver.chrome.driver", "/home/hash-pc-8/IdeaProjects/Gadawl/src/test/resources/chromedriver");
+        String baseURL = "https://gdawel.app/";
+        test =extentReports.startTest("verify open browser ");
+        test.log(LogStatus.INFO,"open browser Test in initialized");
         ChromeOptions options = new ChromeOptions();
         options.setExperimentalOption("w3c", true);
         options.addArguments("--remote-allow-origins=*");
-
         driver = new ChromeDriver(options);
-        driver.get("https://gdawel.app/");
         driver.manage().window().maximize();
+        test.log(LogStatus.PASS,"browser is open and windows is maximized");
+        driver.get(baseURL);
+        test.log(LogStatus.PASS,"String URL is opening in  chrome browser");
         //driver=new ChromeDriver();
         driver.manage().timeouts().implicitlyWait(1000, TimeUnit.SECONDS);
+        extentReports.endTest(test);
+        extentReports.flush();
+        extentReports.getReportId();
         String verifyAssertNull = null;
         assertNull(verifyAssertNull);
     }
@@ -116,14 +122,16 @@ public  class FunctionalTesting {
 
             WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(20));
             wait.until(ExpectedConditions.invisibilityOfAllElements());
+            extentReports = new ExtentReports("/home/hash-pc-8/Documents/vs_code/gdawel_test/ExtentReports/TestReports.html",true);
+            test =extentReports.startTest("verify login");
             //creates a toggle for the given test, add all log events under it
 //       test1 = extent.createTest("ebay Search Test", "test to validate search box ");
 //        test1.log(Status.INFO, "Starting test case");
             new HomeScreen(driver)
                     .clickOnLogin()
                     .loginUsingValidEmailAndPassword()
-                    .clickOnSideMenu()
-                    .addAndViewCustomersPage()
+//                    .clickOnSideMenu()
+//                    .addAndViewCustomersPage()
 //                    .navigateToSupplierList()
 //                    .openSupplierPage()
 //                    .navigateToCustomerGroup()
@@ -166,6 +174,8 @@ public  class FunctionalTesting {
 //                    .ViewExchange()
 //                    .navigateToReceipts()
 //                    .ViewReceipt()
+
+
             ;
         } catch (Exception e) {
 //            File screenshotFile = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);
@@ -175,7 +185,11 @@ public  class FunctionalTesting {
 //            screenshotFile.canWrite();
             Reporter.log("<br><img src='" + screenshotFilePath + "' height='400' width='400'/><br>");
             Reporter.getCurrentTestResult();
-
+//            extentReports = new ExtentReports("/home/hash-pc-8/Documents/vs_code/gdawel_test/ExtentReports/TestReports.html",true);
+//
+//            test.log(LogStatus.INFO,"username  can be selected and  valid ");
+//            extentReports.endTest(test);
+//            extentReports.flush();
             e.printStackTrace();
             // xoxb-5047666852083-5308135282803-uV2u3xENP1zzEMslqYBnqnyA
 

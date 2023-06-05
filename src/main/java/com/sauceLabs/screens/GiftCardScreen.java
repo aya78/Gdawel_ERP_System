@@ -1,6 +1,6 @@
 package com.sauceLabs.screens;
 
-import cucumber.api.java.eo.Se;
+//import cucumber.api.java.eo.Se;
 import io.qameta.allure.Step;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;

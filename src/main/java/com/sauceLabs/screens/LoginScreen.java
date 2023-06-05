@@ -1,5 +1,7 @@
 package com.sauceLabs.screens;
 
+import com.relevantcodes.extentreports.ExtentReports;
+import com.relevantcodes.extentreports.LogStatus;
 import io.qameta.allure.Step;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
@@ -21,12 +23,28 @@ public class LoginScreen  extends HomeScreen{
 
     @Step("login Using Valid Email And Password ==> user Name: [{username}], password: [{password}]")
     public HomeScreen loginUsingValidEmailAndPassword(){
+
         //driver.findElement(UserNameField).clear();
+
 
         driver.findElement(UserNameField).sendKeys(username);
         //driver.findElement(PasswordField).clear();
         driver.findElement(PasswordField).sendKeys(password);
         driver.findElement(LoginButton).click();
+
         return new HomeScreen(driver);
     }
 }
+
+//        extentReports = new ExtentReports("/home/hash-pc-8/Documents/vs_code/gdawel_test/ExtentReports/TestReports.html",true);
+//                test =extentReports.startTest("verify login");
+//                test.log(LogStatus.INFO,"username  can be selected and  valid ");
+//
+//                driver.findElement(UserNameField).sendKeys(username);
+//                //driver.findElement(PasswordField).clear();
+//                test.log(LogStatus.INFO,"password can be selected and  valid ");
+//                driver.findElement(PasswordField).sendKeys(password);
+//                test.log(LogStatus.INFO,"Login button can be clicked");
+//                driver.findElement(LoginButton).click();
+//                extentReports.endTest(test);
+//                extentReports.flush();
