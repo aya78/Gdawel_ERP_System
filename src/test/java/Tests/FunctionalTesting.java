@@ -122,8 +122,7 @@ public  class FunctionalTesting {
 
             WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(20));
             wait.until(ExpectedConditions.invisibilityOfAllElements());
-            extentReports = new ExtentReports("/home/hash-pc-8/Documents/vs_code/gdawel_test/ExtentReports/TestReports.html",true);
-            test =extentReports.startTest("verify login");
+
             //creates a toggle for the given test, add all log events under it
 //       test1 = extent.createTest("ebay Search Test", "test to validate search box ");
 //        test1.log(Status.INFO, "Starting test case");

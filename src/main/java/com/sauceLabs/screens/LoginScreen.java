@@ -48,11 +48,7 @@ public class LoginScreen  extends HomeScreen{
 
         //driver.findElement(UserNameField).clear();
         driver.findElement(UserNameField).sendKeys(username);
-
-
-
-
-        if(driver.findElement(PasswordField).isDisplayed()  )
+        if(driver.findElement(PasswordField).isDisplayed())
         {
             test.log(LogStatus.PASS,"Password is entered");
         }else

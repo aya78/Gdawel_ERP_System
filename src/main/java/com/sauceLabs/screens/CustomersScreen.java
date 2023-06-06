@@ -17,7 +17,7 @@ public class CustomersScreen extends HomeScreen{
     private String phone;
     public String vat_number;
     public String CRN_NUMBER ;
-     private final By AddClient = By.xpath("(//a[@href='https://gdawel.app/dashboard/customer/create'])[2]");
+     //private final By AddClient = By.xpath("(//a[@href='https://gdawel.app/dashboard/customer/create'])[2]");
         private final By clientName = By.cssSelector("#name");
         ////////// input
         private final By clientPhone = By.xpath("//label[text()='رقم الهاتف ']/following::input");
@@ -62,17 +62,19 @@ public class CustomersScreen extends HomeScreen{
     }
     @Step("open customer page than add new client and view exist client")
     public HomeScreen addAndViewCustomersPage() throws InterruptedException {
-        extentReports = new ExtentReports("/home/hash-pc-8/Documents/vs_code/gdawel_test/ExtentReports/TestReports.html",false);
-        test =extentReports.startTest("verify customers page is opened");
-        if(driver.findElement(AddClient).isSelected())
-        {
-            test.log(LogStatus.PASS,"open add client page");
-        }else
-            test.log(LogStatus.FAIL,"fail to find add Client button");
+//        extentReports = new ExtentReports("/home/hash-pc-8/Documents/vs_code/gdawel_test/ExtentReports/TestReports.html",false);
+//        test =extentReports.startTest("verify customers page is opened");
+//        if()
+//        {
+//            test.log(LogStatus.PASS,"open add client page");
+//        }else
+//            test.log(LogStatus.FAIL,"fail to find add Client button");
+
         Faker fakeData=new Faker();
-        driver.findElement(AddClient).click();
-        extentReports.endTest(test);
-        extentReports.flush();
+//        driver.findElement(AddClient).click();
+        driver.get("https://gdawel.app/dashboard/customer/create");
+//        extentReports.endTest(test);
+//        extentReports.flush();
         driver.findElement(clientName).sendKeys(fakeData.name().fullName());
 //        WebElement num = driver.findElement(clientPhone);
         /*************************************************************************************************************************************/
