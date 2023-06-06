@@ -2,7 +2,9 @@ package com.sauceLabs.screens;
 
 import com.relevantcodes.extentreports.ExtentReports;
 import com.relevantcodes.extentreports.ExtentTest;
+import com.relevantcodes.extentreports.LogStatus;
 import io.qameta.allure.Step;
+import org.junit.jupiter.api.Test;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
@@ -16,7 +18,7 @@ public final WebDriver driver;
     /*********************************************************  Done ***********************************************************************/
 // https://gdawel.app/login
 //    public static By loginButton = By.cssSelector("#navbarSupportedContent > div > a.btn.btn-solid-main.login.form-btn.py-2.px-3.rounded.w-100.text-nowrap");
-    public static By loginButton = By.xpath("//a[@href='https://gdawel.app/login']");
+    public static By loginLink = By.xpath("//a[@href='https://gdawel.app/login']");
 
     private final By openCustomerAndSupplierMenu = By.xpath("//*[@id=\"side-main-menu\"]/li[2]/a");
     private final By customers = By.id("customer-menu");
@@ -63,7 +65,19 @@ public final WebDriver driver;
     }
     @Step("click On Login")
     public LoginScreen clickOnLogin() {
-        driver.findElement(loginButton).click();
+        extentReports = new ExtentReports("/home/hash-pc-8/Documents/vs_code/gdawel_test/ExtentReports/TestReports.html",true);
+        test =extentReports.startTest("verify login page is opened");
+
+
+        if(driver.findElement(loginLink).isDisplayed())
+        {
+            test.log(LogStatus.PASS,"login page is open  ");
+        }else
+            test.log(LogStatus.FAIL,"fail to find login page");
+
+        driver.findElement(loginLink).click();
+        extentReports.endTest(test);
+        extentReports.flush();
         return new LoginScreen(driver);
     }
     @Step("click On Side Menu Then open Customers")

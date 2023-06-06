@@ -53,7 +53,7 @@ public  class FunctionalTesting {
     @BeforeSuite
     public void SetUp() {
 
-        extentReports = new ExtentReports("/home/hash-pc-8/Documents/vs_code/gdawel_test/ExtentReports/TestReports.html",true);
+        extentReports = new ExtentReports("/home/hash-pc-8/Documents/vs_code/gdawel_test/ExtentReports/TestReports.html",false);
         System.setProperty("webdriver.chrome.driver", "/home/hash-pc-8/IdeaProjects/Gadawl/src/test/resources/chromedriver");
         String baseURL = "https://gdawel.app/";
         test =extentReports.startTest("verify open browser ");
@@ -130,8 +130,8 @@ public  class FunctionalTesting {
             new HomeScreen(driver)
                     .clickOnLogin()
                     .loginUsingValidEmailAndPassword()
-//                    .clickOnSideMenu()
-//                    .addAndViewCustomersPage()
+                    .clickOnSideMenu()
+                    .addAndViewCustomersPage()
 //                    .navigateToSupplierList()
 //                    .openSupplierPage()
 //                    .navigateToCustomerGroup()

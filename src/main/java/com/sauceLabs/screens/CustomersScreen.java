@@ -2,6 +2,8 @@ package com.sauceLabs.screens;
 
 import com.beust.ah.A;
 import com.github.javafaker.Faker;
+import com.relevantcodes.extentreports.ExtentReports;
+import com.relevantcodes.extentreports.LogStatus;
 import io.qameta.allure.Step;
 import org.apache.commons.lang3.RandomStringUtils;
 import org.openqa.selenium.By;
@@ -60,8 +62,17 @@ public class CustomersScreen extends HomeScreen{
     }
     @Step("open customer page than add new client and view exist client")
     public HomeScreen addAndViewCustomersPage() throws InterruptedException {
+        extentReports = new ExtentReports("/home/hash-pc-8/Documents/vs_code/gdawel_test/ExtentReports/TestReports.html",false);
+        test =extentReports.startTest("verify customers page is opened");
+        if(driver.findElement(AddClient).isSelected())
+        {
+            test.log(LogStatus.PASS,"open add client page");
+        }else
+            test.log(LogStatus.FAIL,"fail to find add Client button");
         Faker fakeData=new Faker();
         driver.findElement(AddClient).click();
+        extentReports.endTest(test);
+        extentReports.flush();
         driver.findElement(clientName).sendKeys(fakeData.name().fullName());
 //        WebElement num = driver.findElement(clientPhone);
         /*************************************************************************************************************************************/
