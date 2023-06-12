@@ -9,6 +9,7 @@ import org.apache.commons.lang3.RandomStringUtils;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import com.sauceLabs.screens.HomeScreen;
 
 public class CustomersScreen extends HomeScreen{
       public  String random = RandomStringUtils.random(6, true, true);
@@ -62,29 +63,42 @@ public class CustomersScreen extends HomeScreen{
     }
     @Step("open customer page than add new client and view exist client")
     public HomeScreen addAndViewCustomersPage() throws InterruptedException {
-//        extentReports = new ExtentReports("/home/hash-pc-8/Documents/vs_code/gdawel_test/ExtentReports/TestReports.html",false);
-//        test =extentReports.startTest("verify customers page is opened");
-//        if()
-//        {
-//            test.log(LogStatus.PASS,"open add client page");
-//        }else
-//            test.log(LogStatus.FAIL,"fail to find add Client button");
-
+//       extentReports = new ExtentReports("/home/hash-pc-8/Documents/vs_code/gdawel_test/ExtentReports/TestReports.html",false);
+//        test =extentReports.startTest("verify Add client ");
         Faker fakeData=new Faker();
 //        driver.findElement(AddClient).click();
         driver.get("https://gdawel.app/dashboard/customer/create");
-//        extentReports.endTest(test);
-//        extentReports.flush();
         driver.findElement(clientName).sendKeys(fakeData.name().fullName());
-//        WebElement num = driver.findElement(clientPhone);
+//        if(driver.findElement(clientName).isDisplayed())
+//        {
+//            test.log(LogStatus.PASS,"clientName is entered");
+//        }else
+//            test.log(LogStatus.FAIL,"fail to find clientName element");
+
+//      WebElement num = driver.findElement(clientPhone);
         /*************************************************************************************************************************************/
         driver.findElement(clientPhone).sendKeys(fakeData.number().digits(11));
+//
+//        if(driver.findElement(clientPhone).isDisplayed())
+//        {
+//            test.log(LogStatus.PASS,"clientPhone is entered");
+//        }else
+//            test.log(LogStatus.FAIL,"fail to find clientPhone element");
 //        driver.findElement(clientEmail).sendKeys(""+random+"@gmail.com");
 //        driver.findElement(vatNumber).sendKeys(fakeData.number().toString());
 //        driver.findElement(CRN).sendKeys(fakeData.random().hex(20));
         /****************************************************************************************************/
         driver.findElement(ClickSaveClient).click();
-        driver.get("https://gdawel.app/dashboard/customer/1");
+//        if(driver.findElement(ClickSaveClient).isDisplayed())
+//        {
+//            test.log(LogStatus.PASS,"ClickSaveClient is displayed");
+//        }else
+//            test.log(LogStatus.FAIL,"fail to find ClickSaveClient button");
+        driver.findElement(ClickSaveClient).click();
+        extentReports.endTest(test);
+        extentReports.flush();
+
+            //driver.get("https://gdawel.app/dashboard/customer/1");
 //        driver.findElement(ViewClient).click();
         return new HomeScreen(driver);
     }

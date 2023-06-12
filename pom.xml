@@ -7,6 +7,7 @@
     <groupId>org.example</groupId>
     <artifactId>gdawelTest</artifactId>
     <version>1.0-SNAPSHOT</version>
+    <packaging>jar</packaging>
 
     <properties>
         <maven.compiler.source>19</maven.compiler.source>
@@ -20,6 +21,13 @@
         <artifactId>Selenium4-Junit5</artifactId>
         <version>0.0.7</version>
     </dependency>
+        <dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+            <version>3.8.1</version>
+            <scope>test</scope>
+        </dependency>
+
 
     <dependency>
         <groupId>org.testng</groupId>
@@ -46,12 +54,16 @@
 <!--        <version>4.1.1</version>-->
 <!--    </dependency>-->
 
-    <dependency>
-        <groupId>org.seleniumhq.selenium</groupId>
-        <artifactId>selenium-devtools</artifactId>
-        <version>4.0.0-rc-1</version>
-    </dependency>
-
+<!--    <dependency>-->
+<!--        <groupId>org.seleniumhq.selenium</groupId>-->
+<!--        <artifactId>selenium-devtools</artifactId>-->
+<!--        <version>4.0.0-rc-1</version>-->
+<!--    </dependency>-->
+        <dependency>
+            <groupId>org.seleniumhq.selenium</groupId>
+            <artifactId>selenium-java</artifactId>
+            <version>3.141.59</version>
+        </dependency>
 <!--    <dependency>-->
 <!--        <groupId>com.google.guava</groupId>-->
 <!--        <artifactId>guava</artifactId>-->
@@ -269,6 +281,41 @@
             <version>7.12.1</version>
             <scope>test</scope>
         </dependency>
+        <dependency>
+            <groupId>cc.qbits</groupId>
+            <artifactId>hayt</artifactId>
+            <version>4.1.0</version>
+        </dependency>
+        <dependency>
+            <groupId>com.github.ufofind</groupId>
+            <artifactId>com</artifactId>
+            <version>1.0.2</version>
+        </dependency>
+        <dependency>
+            <groupId>ru.sbtqa</groupId>
+            <artifactId>phantomjsdriver-bin</artifactId>
+            <version>2.1.1</version>
+        </dependency>
+        <dependency>
+            <groupId>com.codeborne</groupId>
+            <artifactId>phantomjsdriver</artifactId>
+            <version>1.5.0</version>
+        </dependency>
+        <dependency>
+            <groupId>com.github.detro.ghostdriver</groupId>
+            <artifactId>phantomjsdriver</artifactId>
+            <version>1.1.0</version>
+        </dependency>
+        <dependency>
+            <groupId>com.github.jesg</groupId>
+            <artifactId>phantomjsdriver</artifactId>
+            <version>2.0.0</version>
+        </dependency>
+        <dependency>
+            <groupId>com.github.detro</groupId>
+            <artifactId>phantomjsdriver</artifactId>
+            <version>1.2.0</version>
+        </dependency>
 
     </dependencies>
     <dependencyManagement>
@@ -280,5 +327,12 @@
             </dependency>
         </dependencies>
     </dependencyManagement>
+    <repositories>
+        <repository>
+            <id>clojars</id>
+            <name>Clojars</name>
+            <url>https://repo.clojars.org/</url>
+        </repository>
+    </repositories>
 
 </project>

@@ -13,8 +13,6 @@ public class WarehousesScreen  extends HomeScreen{
     // //a[@data-target='#createModal']
     public  String random = RandomStringUtils.random(4, true, false);
     public  String randomNum = RandomStringUtils.random(10, false, true);
-
-
     private final By AddWareHouse = By.xpath("//a[@data-target='#createModal']");
     private final By AddWareHouseName = By.xpath("//input[@placeholder='Type WareHouse Name...']");
 

@@ -26,24 +26,6 @@ public class ProductCategoryScreen extends HomeScreen{
         super(driver);
     }
 
-    //    private BufferedImage image;
-//
-//    public ProductCategoryScreen(WebDriver driver) {
-//        super(driver);
-//        this.image = ImageIO.read(new File(".png"));
-//    }
-//    public BufferedImage getImage () {
-//        return image;
-//    }
-
-//    public void uploadImage(String filePath){
-//        driver.findElement(CategoryImg).sendKeys(filePath);
-//
-//    }
-//    public void CheckUploadedImage(String filePath){
-//       return driver.findElement();
-//
-//    }
 
     @Step("open product_category page than add new category ")
     public HomeScreen addProductCategory() throws InterruptedException {

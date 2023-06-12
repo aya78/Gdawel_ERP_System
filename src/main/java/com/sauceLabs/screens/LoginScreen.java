@@ -11,6 +11,8 @@ import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
+//import com.sauceLabs.ActionDriver.Action;
+//import com.Bayt.Base.Base;
 
 import java.io.File;
 import java.io.IOException;
@@ -33,7 +35,7 @@ public class LoginScreen  extends HomeScreen{
     @Step("login Using Valid Email And Password ==> user Name: [{username}], password: [{password}]")
     public HomeScreen loginUsingValidEmailAndPassword() throws IOException {
         extentReports = new ExtentReports("/home/hash-pc-8/Documents/vs_code/gdawel_test/ExtentReports/TestReports.html",false);
-        test =extentReports.startTest("verify test  Login ");
+        test =extentReports.startTest("verify Login  ");
         test.log(LogStatus.PASS,"browser is open and windows is maximized");
         if(driver.findElement(UserNameField).isDisplayed())
         {
@@ -72,15 +74,3 @@ public class LoginScreen  extends HomeScreen{
     }
 }
 
-//        extentReports = new ExtentReports("/home/hash-pc-8/Documents/vs_code/gdawel_test/ExtentReports/TestReports.html",true);
-//                test =extentReports.startTest("verify login");
-//                test.log(LogStatus.INFO,"username  can be selected and  valid ");
-//
-//                driver.findElement(UserNameField).sendKeys(username);
-//                //driver.findElement(PasswordField).clear();
-//                test.log(LogStatus.INFO,"password can be selected and  valid ");
-//                driver.findElement(PasswordField).sendKeys(password);
-//                test.log(LogStatus.INFO,"Login button can be clicked");
-//                driver.findElement(LoginButton).click();
-//                extentReports.endTest(test);
-//                extentReports.flush();

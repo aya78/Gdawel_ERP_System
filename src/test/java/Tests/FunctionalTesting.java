@@ -24,6 +24,7 @@ import org.openqa.selenium.chrome.ChromeOptions;
 //import org.testng.annotations.AfterMethod;
 //import org.testng.annotations.AfterSuite;
 //import org.slf4j.LoggerFactory;
+import org.openqa.selenium.remote.DesiredCapabilities;
 import org.testng.ITestResult;
 import org.testng.Reporter;
 import org.testng.annotations.AfterMethod;
@@ -58,9 +59,19 @@ public  class FunctionalTesting {
         String baseURL = "https://gdawel.app/";
         test =extentReports.startTest("verify open browser ");
         test.log(LogStatus.INFO,"open browser Test in initialized");
+        DesiredCapabilities caps = new DesiredCapabilities();
+
+        caps.setCapability("os", "Ubuntu");
+        caps.setCapability("os_version", "22.04.2 LTS");
+        caps.setCapability("browser", "Chrome");
+        caps.setCapability("browser_version", "113.0.5672.126");
+
+        caps.setCapability("name", "Gdawel's First Test");
+
         ChromeOptions options = new ChromeOptions();
         options.setExperimentalOption("w3c", true);
         options.addArguments("--remote-allow-origins=*");
+
         driver = new ChromeDriver(options);
         driver.manage().window().maximize();
         test.log(LogStatus.PASS,"browser is open and windows is maximized");
@@ -74,7 +85,6 @@ public  class FunctionalTesting {
         String verifyAssertNull = null;
         assertNull(verifyAssertNull);
     }
-
     @Description
             (
                     "Given user open Gdawel website " +
@@ -94,29 +104,10 @@ public  class FunctionalTesting {
                             "And click on save button" +
                             "Then user should return to Home screen"
             )
-    /*******************************************************************************************************************************************/
-//    static void publishMessage(String id, String text) {
-//        // you can get this instance via ctx.client() in a Bolt app
-//        var client = Slack.getInstance().methods();
-//        var logger = LoggerFactory.getLogger("Gdawel");
-//        try {
-//            // Call the chat.postMessage method using the built-in WebClient
-//            var result = client.chatPostMessage(r -> r
-//                            // The token you used to initialize your app
-//                            .token("xoxb-5047666852083-5308135282803-uV2u3xENP1zzEMslqYBnqnyA")
-//                            .channel(id)
-//                            .text(text)
-//                    // You could also use a blocks[] array to send richer content
-//            );
-//            // Print result, which includes information about the message (like TS)
-//            logger.info("result {}", result);
-//        } catch (IOException | SlackApiException e) {
-//            logger.error("error: {}", e.getMessage(), e);
-//        }
-//    }
+
     @Severity(SeverityLevel.CRITICAL)
     @Story("Check Functionality of gdawel")
-    @Test(description = "Check Functionality Scenario")
+    @Test(description = "Check Functionality Scenario" )
     public void TestScenario() throws InterruptedException, IOException {
         try {
 
@@ -129,8 +120,8 @@ public  class FunctionalTesting {
             new HomeScreen(driver)
                     .clickOnLogin()
                     .loginUsingValidEmailAndPassword()
-                    .clickOnSideMenu()
-                    .addAndViewCustomersPage()
+//                    .clickOnSideMenu()
+//                    .addAndViewCustomersPage()
 //                    .navigateToSupplierList()
 //                    .openSupplierPage()
 //                    .navigateToCustomerGroup()
@@ -184,11 +175,7 @@ public  class FunctionalTesting {
 //            screenshotFile.canWrite();
             Reporter.log("<br><img src='" + screenshotFilePath + "' height='400' width='400'/><br>");
             Reporter.getCurrentTestResult();
-//            extentReports = new ExtentReports("/home/hash-pc-8/Documents/vs_code/gdawel_test/ExtentReports/TestReports.html",true);
-//
-//            test.log(LogStatus.INFO,"username  can be selected and  valid ");
-//            extentReports.endTest(test);
-//            extentReports.flush();
+
             e.printStackTrace();
             // xoxb-5047666852083-5308135282803-uV2u3xENP1zzEMslqYBnqnyA
 

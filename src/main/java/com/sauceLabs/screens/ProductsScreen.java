@@ -31,6 +31,8 @@ public class ProductsScreen extends HomeScreen{
   private final By ProductImage = By.xpath("//a[@class='dz-hidden-input']");
 
     private final By clickSave = By.xpath("//input[@value='حفظ']");
+    private final By addComboProduct = By.cssSelector("#first > div > div > div:nth-child(3) > div");
+    private final By attachProductINAddCombo = By.name("product_code_name");
     private final By ViewProduct = By.xpath("//a[@class='text-dark']");
     private static WebElement element=null;
     // name -> file
@@ -104,6 +106,14 @@ public class ProductsScreen extends HomeScreen{
 //        chooseFile.sendKeys("/home/hash-pc-8/Downloads/sample_products (6).xlsx");
 //        driver.findElement(saveImport).click();
 //        Thread.sleep(1000);
+        driver.findElement(AddProduct).click();
+        driver.findElement(addComboProduct).click();
+        driver.findElement(ProductName).sendKeys(v);
+        System.out.println(v);
+        driver.findElement(Barcode).sendKeys(fakeData.number().digits(8));
+        driver.findElement(productPrice).sendKeys(""+cost+20);
+        driver.findElement(attachProductINAddCombo).sendKeys("1000024");
+        driver.findElement(clickSave).click();
         driver.findElement(ViewProduct).click();
         return new HomeScreen(driver);
     }
