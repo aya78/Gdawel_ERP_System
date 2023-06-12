@@ -21,7 +21,7 @@ public class StockCountScreen extends HomeScreen {
     private static WebElement element=null;
 
     public static WebElement selectWareHouse(WebDriver driver) throws InterruptedException {
-        element =driver.findElement(By.name("warehouse_id"));
+        element =driver.findElement(By.id("warehouse_id"));
         Select skills = new Select(element);
         int dropdown_value= driver.findElements(By.cssSelector("#warehouse_id > option")).size();
         System.out.println(dropdown_value);

@@ -118,7 +118,7 @@ public final WebDriver driver;
     }
     @Step("click On Side Menu Then open QtyAdjustment")
     public QtyAdjustmentScreen navigateToQtyAdjustment(){
-//        driver.findElement(productsAndWarehouseMenu).click();
+//            driver.findElement(productsAndWarehouseMenu).click();
 
         driver.findElement(AddQtyAdjustment).click();
         return new QtyAdjustmentScreen(driver);
@@ -168,6 +168,8 @@ public final WebDriver driver;
     }
     @Step("click On Side Menu Then open GiftCards")
     public GiftCardScreen navigateToGiftCards(){
+        driver.findElement(OpenPurchasesAndSales).click();
+
         driver.findElement(OpenGiftCards).click();
         return new GiftCardScreen(driver);
     }

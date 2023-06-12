@@ -29,6 +29,7 @@ import org.testng.ITestResult;
 import org.testng.Reporter;
 import org.testng.annotations.AfterMethod;
 //import org.testng.annotations.AfterSuite;
+import org.testng.annotations.AfterSuite;
 import org.testng.annotations.BeforeSuite;
 import org.testng.annotations.Test;
 import com.sauceLabs.screens.HomeScreen;
@@ -104,6 +105,11 @@ public  class FunctionalTesting {
                             "And click on save button" +
                             "Then user should return to Home screen"
             )
+//    @AfterSuite
+//    public void TearDown() {
+//            driver.quit();
+//
+//    }
 
     @Severity(SeverityLevel.CRITICAL)
     @Story("Check Functionality of gdawel")
@@ -150,20 +156,20 @@ public  class FunctionalTesting {
 //                    .addSaleQuotationInvoice()
 //                    .navigateToQuotations()
 //                    .addPurchaseQuotationInvoice()
-//                    .navigateToGiftCards()
-//                    .addGiftCard()
-//                    .navigateToCoupons()
-//                    .addCoupon()
-//                    .navigateToSales()
-//                    .addSaleInvoice()
-//                    .navigateToSales()
-//                    .addReturnSaleInvoice()
-//                    .navigateToSales()
-//                    .AddNewDelivery()
-//                    .navigateToExchange()
-//                    .ViewExchange()
-//                    .navigateToReceipts()
-//                    .ViewReceipt()
+                    .navigateToGiftCards()
+                    .addGiftCard()
+                    .navigateToCoupons()
+                    .addCoupon()
+                    .navigateToSales()
+                    .addSaleInvoice()
+                    .navigateToSales()
+                    .addReturnSaleInvoice()
+                    .navigateToSales()
+                    .AddNewDelivery()
+                    .navigateToExchange()
+                    .ViewExchange()
+                    .navigateToReceipts()
+                    .ViewReceipt()
 
 
             ;
@@ -192,12 +198,6 @@ public  class FunctionalTesting {
 //     }
 
 
-//    @AfterMethod
-//    public void TearDown() {
-//            driver.quit();
-////          test1.pass("closed the browser");
-////          test1.info("test completed");
-////          extent.flush();
-//    }
+
 }
 

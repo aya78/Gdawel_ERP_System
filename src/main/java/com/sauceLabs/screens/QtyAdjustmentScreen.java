@@ -46,14 +46,15 @@ public class QtyAdjustmentScreen extends HomeScreen {
         super(driver);
     }
     public static WebElement selectWareHouse(WebDriver driver) throws InterruptedException {
-        element =driver.findElement(By.name("warehouse_id"));
+        element =driver.findElement(By.id("warehouse_id"));
         Select skills = new Select(element);
-        int dropdown_value= driver.findElements(By.cssSelector("#warehouse_id > option")).size();
-        System.out.println(dropdown_value);
-        Random random3=new Random();
-        int index= random3.nextInt(dropdown_value);
-        skills.selectByIndex(index);
-        System.out.println(index);
+//        int dropdown_value= driver.findElements(By.cssSelector("#warehouse_id > option")).size();
+//        // #warehouse_id > option:nth-child(2)
+//        System.out.println(dropdown_value);
+//        Random random3=new Random();
+//        int index= random3.nextInt(dropdown_value);
+        skills.selectByValue("1");
+
         Thread.sleep(5000);
         return element;
     }
@@ -77,7 +78,7 @@ public class QtyAdjustmentScreen extends HomeScreen {
         wait.until(ExpectedConditions.invisibilityOfAllElements());
         Faker fakeData=new Faker();
         driver.findElement(AddQtyAdjustment).click();
-//        driver.findElement(OpenWareHouseList).click();
+        driver.findElement(OpenWareHouseList).click();
 //        driver.findElement(SelectWareHouse).click();
         selectWareHouse(driver);
 //        driver.findElement(SelectProduct).click();

@@ -43,7 +43,8 @@ public class PurchasesScreen extends HomeScreen {
 //        wait.until(ExpectedConditions.invisibilityOfAllElements());
         Faker fakeData=new Faker();
 //        driver.findElement(OpenPurchases).click();
-        driver.findElement(AddInvoiceButton).click();
+        driver.get("https://gdawel.app/dashboard/purchases/create");
+//        driver.findElement(AddInvoiceButton).click();
         driver.findElement(ScanProductButton).sendKeys("4155632");
 //        wait.until(ExpectedConditions.elementToBeSelected(ScanProductButton));
         driver.findElement(EditQty).sendKeys("2");

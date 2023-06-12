@@ -17,7 +17,7 @@ public class QuotationScreen extends HomeScreen {
     //div[@id='data-length-operations']//a[1]
 
     // https://gdawel.app/dashboard/quotations/create
-    private final By AddQuotation = By.xpath("//a=[@href='https://gdawel.app/dashboard/quotations/create']");
+//    private final By AddQuotation = By.xpath("//a=[@href='https://gdawel.app/dashboard/quotations/create']");
     private final By OpenPurchaseQuotation = By.xpath("//div[@data-type='purchases']");
     // //div[@class='search-box input-group']//input[1]
 //    private final By ScanProductButton = By.xpath("//label[text()='امسح المنتج بالباركود أو ادخل كود المنتج']/following::input");
@@ -34,7 +34,8 @@ public class QuotationScreen extends HomeScreen {
     @Step(" add Sale Quotation Invoice")
     public HomeScreen addSaleQuotationInvoice() throws InterruptedException {
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(2000));
-        driver.findElement(AddQuotation).click();
+        driver.get("https://gdawel.app/dashboard/quotations/create");
+//        driver.findElement(AddQuotation).click();
         driver.findElement(ScanProductButton).sendKeys("4155632");
         wait.until(ExpectedConditions.elementToBeClickable(ScanProductButton));
 
@@ -50,7 +51,7 @@ public class QuotationScreen extends HomeScreen {
     @Step(" add Purchase Quotation Invoice")
     public HomeScreen addPurchaseQuotationInvoice() throws InterruptedException {
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(2000));
-        driver.findElement(AddQuotation).click();
+        driver.get("https://gdawel.app/dashboard/quotations/create");
         driver.findElement(OpenPurchaseQuotation).click();
         driver.findElement(ScanProductButton).sendKeys("4155632");
         wait.until(ExpectedConditions.elementToBeClickable(ScanProductButton));

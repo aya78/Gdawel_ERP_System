@@ -94,11 +94,11 @@ public class CustomersScreen extends HomeScreen{
 //            test.log(LogStatus.PASS,"ClickSaveClient is displayed");
 //        }else
 //            test.log(LogStatus.FAIL,"fail to find ClickSaveClient button");
-        driver.findElement(ClickSaveClient).click();
-        extentReports.endTest(test);
-        extentReports.flush();
+//        driver.findElement(ClickSaveClient).click();
+//        extentReports.endTest(test);
+//        extentReports.flush();
 
-            //driver.get("https://gdawel.app/dashboard/customer/1");
+            driver.get("https://gdawel.app/dashboard/customer/1");
 //        driver.findElement(ViewClient).click();
         return new HomeScreen(driver);
     }

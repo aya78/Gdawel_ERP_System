@@ -52,6 +52,7 @@ private static WebElement element=null;
         driver.findElement(AddGiftCard).click();
         driver.findElement(GenerateCardId).click();
         driver.findElement(AddGiftValue).sendKeys("5000");
+        Thread.sleep(2000);
         selectCustomer(driver);
         driver.findElement(SaveGiftCard).click();
 
