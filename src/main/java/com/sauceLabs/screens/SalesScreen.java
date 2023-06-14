@@ -28,7 +28,7 @@ private final By ScanProductButton = By.id("productcodeSearch");
 
 /*****   private final By ClickActionInViewInvoice = By.cssSelector("div#dropGroup2>button"); */
     // actions-btn-custom dropdown-toggle dropdown-toggle-actions
-        private final By ClickActionInViewInvoice = By.className("actions-btn-custom dropdown-toggle dropdown-toggle-actions");
+        private final By ClickActionInViewInvoice = By.id("dropGroup2");
 
     /****************************************************************************************************************/
     private final By AddReturnSale = By.xpath("//a[contains(@class,'dropdown-item d-flex')]/following-sibling::a[1]");
@@ -74,7 +74,7 @@ private final By ScanProductButton = By.id("productcodeSearch");
         Faker fakeData=new Faker();
 //        driver.findElement(OpenSales).click();
 //        driver.findElement(AddInvoiceButton).click();
-        driver.navigate().to("https://gdawel.app/dashboard/sales/create");
+        driver.get("https://gdawel.app/dashboard/sales/create");
         Thread.sleep(1000);
 
         driver.findElement(ScanProductButton).sendKeys(Keys.BACK_SPACE);

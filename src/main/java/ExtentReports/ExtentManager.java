@@ -1,13 +1,16 @@
 package ExtentReports;
 
+import com.aventstack.extentreports.reporter.ExtentSparkReporter;
+import com.relevantcodes.extentreports.ExtentReports;
+import com.relevantcodes.extentreports.ExtentTest;
+
 public class ExtentManager {
-//    public static final ExtentReports extentReports = new ExtentReports();
-//    public synchronized static ExtentReports createExtentReports() {
-//        ExtentSparkReporter reporter = new ExtentSparkReporter("./extent-reports/extent-report.html");
-//        reporter.config().setReportName("Sample Extent Report");
-//        extentReports.attachReporter(reporter);
-//        extentReports.setSystemInfo("Blog Name", "SW Test Academy");
-//        extentReports.setSystemInfo("Author", "Onur Baskirt");
-//        return extentReports;
-//    }
+
+    public synchronized static ExtentReports createExtentReports() {
+        ExtentTest test;
+        ExtentReports extentReports;
+        extentReports = new ExtentReports("/home/hash-pc-8/Documents/vs_code/gdawel_test/ExtentReports/TestReports.html",true);
+        test =extentReports.startTest("verify login page is opened");
+        return extentReports;
+    }
 }

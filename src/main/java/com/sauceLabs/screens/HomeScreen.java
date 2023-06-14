@@ -132,7 +132,7 @@ public final WebDriver driver;
     }
     @Step("click On Side Menu Then open Transfer")
     public TransfersScreen navigateToTransfer(){
-        driver.findElement(productsAndWarehouseMenu).click();
+//        driver.findElement(productsAndWarehouseMenu).click();
 
         driver.findElement(OpenTransfer).click();
         return new TransfersScreen(driver);
@@ -188,7 +188,7 @@ public final WebDriver driver;
     }
     @Step("click On Side Menu Then open Exchanges")
     public ExchangeScreen navigateToExchange(){
-//        driver.findElement(OpenPurchasesAndSales).click();
+        driver.findElement(OpenPurchasesAndSales).click();
         driver.findElement(OpenExchange).click();
         return new ExchangeScreen(driver);
     }

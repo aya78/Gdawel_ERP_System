@@ -38,9 +38,10 @@ private static WebElement element=null;
         Select skills = new Select(element);
         int dropdown_value= driver.findElements(By.cssSelector("#gift_card-modal > div > div > div.modal-body > form > div.form-group.customer_list > div > select > option")).size();
         System.out.println(dropdown_value);
+        // #gift_card-modal > div > div > div.modal-body > form > div.form-group.customer_list > div > select > option:nth-child(2)
         Random random3=new Random();
         int index= random3.nextInt(dropdown_value);
-        skills.selectByIndex(index);
+        skills.selectByVisibleText("marcelin");
         System.out.println(index);
         Thread.sleep(5000);
         return element;

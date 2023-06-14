@@ -59,7 +59,6 @@ public class LoginScreen  extends HomeScreen{
         driver.findElement(PasswordField).sendKeys(password);
 
 
-
         if(driver.findElement(LoginButton).isDisplayed())
         {
             test.log(LogStatus.PASS,"gadawel app is open ");

@@ -12,7 +12,7 @@ public class ReceiptScreen extends HomeScreen{
     public ReceiptScreen(WebDriver driver) {
         super(driver);
     }
-    private final By ViewReceipt = By.xpath("//td[text()='PY000002']");
+    private final By ViewReceipt = By.className("sorting_1 dtr-control");
 
     @Step(" View Receipt")
     public HomeScreen ViewReceipt() throws InterruptedException {

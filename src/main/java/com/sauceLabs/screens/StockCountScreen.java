@@ -41,6 +41,7 @@ public class StockCountScreen extends HomeScreen {
          driver.findElement(Add_stock_count).sendKeys(Keys.RETURN);
 //         driver.findElement(OpenWareHouseList).click();
 //         driver.findElement(SelectWareHouse).click();
+        Thread.sleep(2000);
         selectWareHouse(driver);
          driver.findElement(ClickSave).click();
         return new HomeScreen(driver);

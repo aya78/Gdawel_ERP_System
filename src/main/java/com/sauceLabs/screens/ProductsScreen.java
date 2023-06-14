@@ -59,11 +59,8 @@ public class ProductsScreen extends HomeScreen{
         element =driver.findElement(By.name("unit_id"));
         Select skills = new Select(element);
         int dropdown_value= driver.findElements(By.cssSelector("#unit > div > div:nth-child(1) > div > div:nth-child(2) > div > select > option" )).size();
-        System.out.println(dropdown_value);
-        Random random3=new Random();
-        int index= random3.nextInt(dropdown_value);
-        skills.selectByIndex(index);
-        System.out.println(index);
+
+        skills.selectByValue("1");
         Thread.sleep(5000);
         return element;
     }

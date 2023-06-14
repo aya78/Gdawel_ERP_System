@@ -64,7 +64,10 @@ public class TransfersScreen  extends HomeScreen{
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(2000));
 
         driver.findElement(AddTransfer).click();
+        Thread.sleep(1000);
         selectWareHouse1(driver);
+        Thread.sleep(1000);
+
         selectWareHouse2(driver);
         Thread.sleep(1000);
 

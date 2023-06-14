@@ -3,7 +3,10 @@
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
+<build>
+    <defaultGoal>install</defaultGoal>
 
+</build>
     <groupId>org.example</groupId>
     <artifactId>gdawelTest</artifactId>
     <version>1.0-SNAPSHOT</version>
@@ -36,17 +39,17 @@
         <scope>test</scope>
     </dependency>
 
-    <dependency>
-        <groupId>org.junit.platform</groupId>
-        <artifactId>junit-platform-launcher</artifactId>
-        <version>1.9.2</version>
-        <scope>test</scope>
-    </dependency>
-    <dependency>
-        <groupId>org.junit.platform</groupId>
-        <artifactId>junit-platform-engine</artifactId>
-        <version>1.9.2</version>
-    </dependency>
+<!--    <dependency>-->
+<!--        <groupId>org.junit.platform</groupId>-->
+<!--        <artifactId>junit-platform-launcher</artifactId>-->
+<!--        <version>1.9.2</version>-->
+<!--        <scope>test</scope>-->
+<!--    </dependency>-->
+<!--    <dependency>-->
+<!--        <groupId>org.junit.platform</groupId>-->
+<!--        <artifactId>junit-platform-engine</artifactId>-->
+<!--        <version>1.9.2</version>-->
+<!--    </dependency>-->
 
 <!--    <dependency>-->
 <!--        <groupId>org.seleniumhq.selenium</groupId>-->
@@ -99,41 +102,6 @@
             <scope>test</scope>
         </dependency>
 
-
-        <!-- https://mvnrepository.com/artifact/io.qameta.allure/allure-testng -->
-<!--    <dependency>-->
-<!--        <groupId>io.qameta.allure</groupId>-->
-<!--        <artifactId>allure-testng</artifactId>-->
-<!--        <version>2.20.1</version>-->
-<!--    </dependency>-->
-<!--        <dependency>-->
-<!--            <groupId>io.qameta.allure</groupId>-->
-<!--            <artifactId>allure-junit4</artifactId>-->
-<!--            <version>${allure.version}</version>-->
-<!--        </dependency>-->
-<!--        <dependency>-->
-<!--            <groupId>io.qameta.allure</groupId>-->
-<!--            <artifactId>allure-testng</artifactId>-->
-<!--            <version>2.14.0</version>-->
-<!--            <scope>test</scope>-->
-<!--        </dependency>-->
-
-<!--        <plugin>-->
-<!--            <groupId>org.apache.maven.plugins</groupId>-->
-<!--            <artifactId>maven-surefire-plugin</artifactId>-->
-<!--            <version>2.21.0</version>-->
-<!--            <configuration>-->
-<!--                <argLine>-javaagent:${settings.localRepository}/org/aspectj/aspectjweaver/1.8.10/aspectjweaver-1.8.10.jar-->
-<!--                </argLine>-->
-<!--            </configuration>-->
-<!--            <dependencies>-->
-<!--                <dependency>-->
-<!--                    <groupId>org.aspectj</groupId>-->
-<!--                    <artifactId>aspectjweaver</artifactId>-->
-<!--                    <version>1.8.10</version>-->
-<!--                </dependency>-->
-<!--            </dependencies>-->
-<!--        </plugin>-->
     <dependency>
         <groupId>org.webjars.npm</groupId>
         <artifactId>index-array-by</artifactId>
@@ -316,6 +284,28 @@
             <artifactId>phantomjsdriver</artifactId>
             <version>1.2.0</version>
         </dependency>
+        <!-- https://mvnrepository.com/artifact/io.cucumber/cucumber-java -->
+<!--        <dependency>-->
+<!--            <groupId>io.cucumber</groupId>-->
+<!--            <artifactId>cucumber-java</artifactId>-->
+<!--            <version>7.12.1</version>-->
+<!--        </dependency>-->
+        <!-- https://mvnrepository.com/artifact/info.cukes/cucumber-junit -->
+        <dependency>
+            <groupId>info.cukes</groupId>
+            <artifactId>cucumber-junit</artifactId>
+            <version>1.2.6</version>
+            <type>pom</type>
+            <scope>test</scope>
+        </dependency>
+        <!-- https://mvnrepository.com/artifact/junit/junit -->
+<!--        <dependency>-->
+<!--            <groupId>junit</groupId>-->
+<!--            <artifactId>junit</artifactId>-->
+<!--            <version>3.8.1</version>-->
+<!--            <scope>test</scope>-->
+<!--        </dependency>-->
+
 
     </dependencies>
     <dependencyManagement>

@@ -12,7 +12,7 @@ public class ExchangeScreen extends HomeScreen{
     public ExchangeScreen(WebDriver driver) {
         super(driver);
     }
-    private final By ViewExchange = By.xpath("//td[text()='PY000001']");
+    private final By ViewExchange = By.className("sorting_1 dtr-control");
 
     @Step(" View Exchange")
     public HomeScreen ViewExchange() throws InterruptedException {
