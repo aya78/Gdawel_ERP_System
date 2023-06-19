@@ -1,21 +1,29 @@
 package com.sauceLabs.screens;
 
+import com.aventstack.extentreports.TestListener;
 import com.relevantcodes.extentreports.ExtentReports;
 import com.relevantcodes.extentreports.LogStatus;
+import groovy.beans.ListenerList;
+import io.qameta.allure.Epic;
+import io.qameta.allure.Feature;
 import io.qameta.allure.Step;
-import org.apache.commons.io.FileUtils;
-import org.junit.jupiter.api.Test;
+//import org.apache.commons.io.FileUtils;
+//import org.junit.jupiter.api.Test;
 import org.openqa.selenium.By;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.chrome.ChromeOptions;
+import org.unitils.thirdparty.org.apache.commons.io.FileUtils;
 //import com.sauceLabs.ActionDriver.Action;
 //import com.Bayt.Base.Base;
+//import untils.ListenerList.TestListener;
+
 
 import java.io.File;
 import java.io.IOException;
+//@ListenerList({TestListener.class})
+@Epic("Functional Tests")
+@Feature("Login Tests")
 
 public class LoginScreen  extends HomeScreen{
     private final By UserNameField = By.xpath("/html/body/div/div/div/div/div/div[2]/div/form/div[2]/div[1]/input");
@@ -33,6 +41,7 @@ public class LoginScreen  extends HomeScreen{
     }
 
     @Step("login Using Valid Email And Password ==> user Name: [{username}], password: [{password}]")
+
     public HomeScreen loginUsingValidEmailAndPassword() throws IOException {
         extentReports = new ExtentReports("/home/hash-pc-8/Documents/vs_code/gdawel_test/ExtentReports/TestReports.html",false);
         test =extentReports.startTest("verify Login  ");
@@ -50,6 +59,9 @@ public class LoginScreen  extends HomeScreen{
 
         //driver.findElement(UserNameField).clear();
         driver.findElement(UserNameField).sendKeys(username);
+        driver.navigate().refresh();
+        driver.findElement(UserNameField).sendKeys(username);
+
         if(driver.findElement(PasswordField).isDisplayed())
         {
             test.log(LogStatus.PASS,"Password is entered");

@@ -16,7 +16,7 @@ public class ReceiptScreen extends HomeScreen{
 
     @Step(" View Receipt")
     public HomeScreen ViewReceipt() throws InterruptedException {
-        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(2000));
+        WebDriverWait wait = new WebDriverWait(driver, 10);
         wait.until(ExpectedConditions.invisibilityOfAllElements());
         driver.findElement(ViewReceipt).click();
         return new HomeScreen(driver);

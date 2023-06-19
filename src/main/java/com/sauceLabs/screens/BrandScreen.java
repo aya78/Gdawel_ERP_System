@@ -6,6 +6,8 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 
+import static org.jsoup.nodes.Entities.EscapeMode.base;
+
 public class BrandScreen  extends HomeScreen{
     public BrandScreen(WebDriver driver) {
         super(driver);
@@ -20,6 +22,7 @@ public class BrandScreen  extends HomeScreen{
     @Step(" add Brand")
     public HomeScreen addBrand() throws InterruptedException {
         Faker fakeData=new Faker();
+        base.wait();
         driver.findElement(AddBrand).click();
         driver.findElement(AddBrandName).sendKeys(fakeData.name().title());
         WebElement chooseFile = driver.findElement(By.name("image"));

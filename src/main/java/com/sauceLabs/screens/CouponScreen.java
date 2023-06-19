@@ -23,7 +23,7 @@ public class CouponScreen extends HomeScreen {
     private final By SaveCoupon = By.cssSelector("div#create-modal>div>div>div:nth-of-type(2)>form>div:nth-of-type(2)>button");
     @Step(" add Coupon")
     public HomeScreen addCoupon() throws InterruptedException {
-        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(2000));
+        WebDriverWait wait = new WebDriverWait(driver, 10);
         wait.until(ExpectedConditions.invisibilityOfAllElements());
         driver.findElement(AddCoupon).click();
         driver.findElement(GenerateCouponCode).click();

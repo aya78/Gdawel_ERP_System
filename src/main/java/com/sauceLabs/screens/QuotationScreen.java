@@ -33,7 +33,7 @@ public class QuotationScreen extends HomeScreen {
 
     @Step(" add Sale Quotation Invoice")
     public HomeScreen addSaleQuotationInvoice() throws InterruptedException {
-        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(2000));
+        WebDriverWait wait = new WebDriverWait(driver, 10);
         driver.get("https://gdawel.app/dashboard/quotations/create");
 //        driver.findElement(AddQuotation).click();
         driver.findElement(ScanProductButton).sendKeys("4155632");
@@ -50,7 +50,7 @@ public class QuotationScreen extends HomeScreen {
     }
     @Step(" add Purchase Quotation Invoice")
     public HomeScreen addPurchaseQuotationInvoice() throws InterruptedException {
-        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(2000));
+        WebDriverWait wait = new WebDriverWait(driver, 10);
         driver.get("https://gdawel.app/dashboard/quotations/create");
         driver.findElement(OpenPurchaseQuotation).click();
         driver.findElement(ScanProductButton).sendKeys("4155632");

@@ -1,7 +1,7 @@
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
 <suite name="MyTestSuite" verbose="1">
     <listeners>
-        <listener class-name="Tests.ScreenshotListener" />
+        <listener class-name="untils.Listeners1.TestListener" />
     </listeners>
     <test name="MyTest">
         <classes>

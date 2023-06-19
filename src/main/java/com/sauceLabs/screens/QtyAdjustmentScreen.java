@@ -74,7 +74,7 @@ public class QtyAdjustmentScreen extends HomeScreen {
     @Step("open QtyAdjustment ")
     public HomeScreen addQty_adjustment() throws InterruptedException {
 
-        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(2000));
+        WebDriverWait wait = new WebDriverWait(driver, 10);
         wait.until(ExpectedConditions.invisibilityOfAllElements());
         Faker fakeData=new Faker();
         driver.findElement(AddQtyAdjustment).click();

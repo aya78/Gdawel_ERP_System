@@ -61,7 +61,7 @@ public class TransfersScreen  extends HomeScreen{
 
     @Step("open add Transfers ")
     public HomeScreen addAndViewTransfers() throws InterruptedException {
-        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(2000));
+        WebDriverWait wait = new WebDriverWait(driver, 10);
 
         driver.findElement(AddTransfer).click();
         Thread.sleep(1000);

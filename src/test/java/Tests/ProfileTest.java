@@ -32,7 +32,7 @@ public class ProfileTest {
         driver.get("https://gdawel.app/");
         driver.manage().window().maximize();
         //driver=new ChromeDriver();
-        driver.manage().timeouts().implicitlyWait(1000, TimeUnit.SECONDS);
+//        driver.manage().timeouts().implicitlyWait(1000, TimeUnit.SECONDS);
     }
 
     @Description
@@ -47,7 +47,7 @@ public class ProfileTest {
     @Story("Check Functionality of gdawel")
     @Test(description = "Check Functionality Scenario for Profile")
     public void TestProfile() throws InterruptedException, IOException {
-        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(2000));
+        WebDriverWait wait = new WebDriverWait(driver, 10);
         wait.until(ExpectedConditions.invisibilityOfAllElements());
         new HomeScreen(driver)
                 .clickOnLogin()

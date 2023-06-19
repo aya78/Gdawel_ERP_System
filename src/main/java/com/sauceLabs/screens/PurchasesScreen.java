@@ -39,7 +39,7 @@ public class PurchasesScreen extends HomeScreen {
 
     @Step(" add Purchase Invoice")
     public HomeScreen addPurchaseInvoice() throws InterruptedException {
-        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(2000));
+        WebDriverWait wait = new WebDriverWait(driver, 10);
 //        wait.until(ExpectedConditions.invisibilityOfAllElements());
         Faker fakeData=new Faker();
 //        driver.findElement(OpenPurchases).click();
@@ -53,7 +53,7 @@ public class PurchasesScreen extends HomeScreen {
     }
     @Step(" add  return Purchase Invoice")
     public HomeScreen addReturnPurchaseInvoice() throws InterruptedException {
-        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(2000));
+        WebDriverWait wait = new WebDriverWait(driver, 10);
 //        wait.until(ExpectedConditions.invisibilityOfAllElements());
         driver.findElement(VIewInvoiceButton).click();
         driver.findElement( ClickAction).click();

@@ -2,7 +2,7 @@ package com.sauceLabs.screens;
 
 import com.github.javafaker.Faker;
 import io.qameta.allure.Step;
-import org.junit.jupiter.api.Test;
+//import org.junit.jupiter.api.Test;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
