@@ -2,7 +2,7 @@ package com.sauceLabs.screens;
 
 import io.qameta.allure.Step;
 import org.apache.commons.lang3.RandomStringUtils;
-import org.checkerframework.checker.units.qual.C;
+//import org.checkerframework.checker.units.qual.C;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
@@ -23,8 +23,8 @@ public class CouponScreen extends HomeScreen {
     private final By SaveCoupon = By.cssSelector("div#create-modal>div>div>div:nth-of-type(2)>form>div:nth-of-type(2)>button");
     @Step(" add Coupon")
     public HomeScreen addCoupon() throws InterruptedException {
-        WebDriverWait wait = new WebDriverWait(driver, 10);
-        wait.until(ExpectedConditions.invisibilityOfAllElements());
+//        WebDriverWait wait = new WebDriverWait(driver, 10);
+//        wait.until(ExpectedConditions.invisibilityOfAllElements());
         driver.findElement(AddCoupon).click();
         driver.findElement(GenerateCouponCode).click();
         Thread.sleep(500);

@@ -47,8 +47,8 @@ public class ProfileTest {
     @Story("Check Functionality of gdawel")
     @Test(description = "Check Functionality Scenario for Profile")
     public void TestProfile() throws InterruptedException, IOException {
-        WebDriverWait wait = new WebDriverWait(driver, 10);
-        wait.until(ExpectedConditions.invisibilityOfAllElements());
+//        WebDriverWait wait = new WebDriverWait(driver, 10);
+//        wait.until(ExpectedConditions.invisibilityOfAllElements());
         new HomeScreen(driver)
                 .clickOnLogin()
                 .loginUsingValidEmailAndPassword()

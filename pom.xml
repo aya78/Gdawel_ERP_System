@@ -62,14 +62,14 @@
     <dependency>
         <groupId>org.testng</groupId>
         <artifactId>testng</artifactId>
-        <version>7.7.1</version>
+        <version>7.8.0</version>
         <scope>test</scope>
     </dependency>
 
     <dependency>
         <groupId>org.junit.platform</groupId>
         <artifactId>junit-platform-launcher</artifactId>
-        <version>1.9.2</version>
+        <version>1.10.0-M1</version>
         <scope>test</scope>
     </dependency>
 <!--    <dependency>-->
@@ -91,14 +91,6 @@
 <!--        </dependency>-->
 
 
-
-        <dependency>
-            <groupId>org.slf4j</groupId>
-            <artifactId>slf4j-simple</artifactId>
-            <version>2.0.7</version>
-            <scope>test</scope>
-        </dependency>
-
 <!--    <dependency>-->
 <!--        <groupId>org.webjars.npm</groupId>-->
 <!--        <artifactId>index-array-by</artifactId>-->
@@ -118,7 +110,7 @@
     <dependency>
         <groupId>org.seleniumhq.selenium</groupId>
         <artifactId>selenium-java</artifactId>
-        <version>3.141.59</version>
+        <version>4.8.1</version>
     </dependency>
 
 
@@ -152,11 +144,7 @@
             <version>4.9.0</version>
         </dependency>
         <!-- https://mvnrepository.com/artifact/org.seleniumhq.selenium/selenium-remote-driver -->
-        <dependency>
-            <groupId>org.seleniumhq.selenium</groupId>
-            <artifactId>selenium-remote-driver</artifactId>
-            <version>4.9.0</version>
-        </dependency>
+
         <dependency>
             <groupId>io.qameta.allure</groupId>
             <artifactId>allure-java-commons</artifactId>
@@ -206,16 +194,6 @@
             <version>1.0.2</version>
         </dependency>
 
-
-
-        <dependency>
-            <groupId>com.github.jesg</groupId>
-            <artifactId>phantomjsdriver</artifactId>
-            <version>2.0.0</version>
-        </dependency>
-
-
-
         <dependency>
             <groupId>org.aspectj</groupId>
             <artifactId>aspectjweaver</artifactId>
@@ -256,8 +234,62 @@
         <dependency>
             <groupId>commons-io</groupId>
             <artifactId>commons-io</artifactId>
-            <version>2.4</version>
+            <version>2.11.0</version>
         </dependency>
+<!--        <dependency>-->
+<!--            <groupId>com.google.guava</groupId>-->
+<!--            <artifactId>guava</artifactId>-->
+<!--            <version>19.0</version>-->
+
+
+<!--        </dependency>-->
+        <dependency>
+            <groupId>com.google.guava</groupId>
+            <artifactId>guava</artifactId>
+            <version>31.1-jre</version>
+        </dependency>
+<!--        <dependency>-->
+<!--            <groupId>com.google.collections</groupId>-->
+<!--            <artifactId>google-collections</artifactId>-->
+<!--            <version>1.0</version>-->
+<!--            <scope>provided</scope>-->
+<!--        </dependency>-->
+
+        <dependency>
+            <groupId>org.slf4j</groupId>
+            <artifactId>slf4j-simple</artifactId>
+            <version>2.0.5</version>
+        </dependency>
+        <!-- https://mvnrepository.com/artifact/org.seleniumhq.selenium/selenium-server -->
+        <dependency>
+            <groupId>org.seleniumhq.selenium</groupId>
+            <artifactId>selenium-server</artifactId>
+            <version>4.0.0-alpha-2</version>
+        </dependency>
+<!--        <dependency>-->
+<!--            <groupId>org.seleniumhq.selenium</groupId>-->
+<!--            <artifactId>selenium-java</artifactId>-->
+<!--            <version>3.141.59</version>-->
+<!--        </dependency>-->
+        <!-- Thanks for using https://jar-download.com -->
+        <dependency>
+            <groupId>org.seleniumhq.selenium</groupId>
+            <artifactId>selenium-remote-driver</artifactId>
+            <version>4.9.0</version>
+        </dependency>
+<!--        <dependency>-->
+<!--            <groupId>org.seleniumhq.selenium</groupId>-->
+<!--            <artifactId>selenium-server</artifactId>-->
+<!--            <version>3.141.59</version>-->
+<!--        </dependency>-->
+        <dependency>
+            <groupId>io.appium</groupId>
+            <artifactId>java-client</artifactId>
+            <version>7.0.0</version>
+        </dependency>
+
+        <!-- Thanks for using https://jar-download.com -->
+
     </dependencies>
 
 

@@ -69,7 +69,7 @@ private final By ScanProductButton = By.id("productcodeSearch");
 
     @Step(" add Sale Invoice")
     public HomeScreen addSaleInvoice() throws InterruptedException {
-        WebDriverWait wait = new WebDriverWait(driver, 10);
+//        WebDriverWait wait = new WebDriverWait(driver, 10);
 //        wait.until(ExpectedConditions.invisibilityOfAllElements());
         Faker fakeData=new Faker();
 //        driver.findElement(OpenSales).click();
@@ -89,7 +89,7 @@ private final By ScanProductButton = By.id("productcodeSearch");
     }
     @Step(" add  return Sale Invoice")
     public HomeScreen addReturnSaleInvoice() throws InterruptedException {
-        WebDriverWait wait = new WebDriverWait(driver, 10);
+//        WebDriverWait wait = new WebDriverWait(driver, 10);
 //        wait.until(ExpectedConditions.invisibilityOfAllElements());
         driver.findElement(VIewInvoiceButton).click();
         driver.findElement( ClickActionInViewInvoice).click();
@@ -101,7 +101,7 @@ private final By ScanProductButton = By.id("productcodeSearch");
     }
     @Step(" add New Delivery")
     public HomeScreen AddNewDelivery() throws InterruptedException {
-        WebDriverWait wait = new WebDriverWait(driver, 10);
+//        WebDriverWait wait = new WebDriverWait(driver, 10);
         driver.findElement(ClickOnAction).click();
         driver.findElement(AddDelivery).click();
         driver.findElement(ClickOnStatus).click();

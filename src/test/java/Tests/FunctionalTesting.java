@@ -52,7 +52,7 @@ import static org.testng.AssertJUnit.assertNull;
 @Epic("Gdawel App")
 @Feature("Functional")
 public  class FunctionalTesting {
-    public WebDriver driver;
+    public ChromeDriver driver;
     public ExtentTest test;
     public ExtentReports extentReports;
     public WebDriver getDriver() {
@@ -62,22 +62,24 @@ public  class FunctionalTesting {
     public void SetUp() {
 
         extentReports = new ExtentReports("/home/hash-pc-8/Documents/vs_code/gdawel_test/ExtentReports/TestReports.html",false);
-        System.setProperty("webdriver.chrome.driver", "/home/hash-pc-8/IdeaProjects/Gadawl/src/test/resources/chromedriver");
+        System.setProperty("webdriver.chrome.driver", "/home/hash-pc-8/Documents/vs_code/gdawel_test/src/test/resources/chromedriver");
         String baseURL = "https://gdawel.app/";
         test =extentReports.startTest("verify open browser ");
         test.log(LogStatus.INFO,"open browser Test in initialized");
-        DesiredCapabilities caps = new DesiredCapabilities();
-
-        caps.setCapability("os", "Ubuntu");
-        caps.setCapability("os_version", "22.04.2 LTS");
-        caps.setCapability("browser", "Chrome");
-        caps.setCapability("browser_version", "113.0.5672.126");
-
-        caps.setCapability("name", "Gdawel's First Test");
+//        DesiredCapabilities caps = new DesiredCapabilities();
+//
+//        caps.setCapability("os", "Ubuntu");
+//        caps.setCapability("os_version", "22.04.2 LTS");
+//        caps.setCapability("browser", "Chrome");
+//        caps.setCapability("browser_version", "113.0.5672.126");
+//
+//        caps.setCapability("name", "Gdawel's First Test");
 
         ChromeOptions options = new ChromeOptions();
-        options.setExperimentalOption("w3c", true);
-        options.addArguments("--remote-allow-origins=*");
+//        options.setExperimentalOption("w3c", true);
+//        options.addArguments("--remote-allow-origins=*");
+        // start-maximized
+        options.addArguments("start-maximized");
         driver = new ChromeDriver(options);
         driver.manage().window().maximize();
         test.log(LogStatus.PASS,"browser is open and windows is maximized");
@@ -122,8 +124,8 @@ public  class FunctionalTesting {
     public void TestScenario() throws  IOException {
         try {
 
-            WebDriverWait wait = new WebDriverWait(driver, 2000);
-            wait.until(ExpectedConditions.invisibilityOfAllElements());
+//            WebDriverWait wait = new WebDriverWait(driver, 10);
+            //wait.until(ExpectedConditions.invisibilityOfAllElements());
 
             new HomeScreen(driver)
                     .clickOnLogin()

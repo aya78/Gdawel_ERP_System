@@ -48,8 +48,8 @@ private static WebElement element=null;
     }
     @Step(" add GiftCard")
     public HomeScreen addGiftCard() throws InterruptedException {
-        WebDriverWait wait = new WebDriverWait(driver, 2000);
-        wait.until(ExpectedConditions.invisibilityOfAllElements());
+//        WebDriverWait wait = new WebDriverWait(driver, 2000);
+//        wait.until(ExpectedConditions.invisibilityOfAllElements());
         driver.findElement(AddGiftCard).click();
         driver.findElement(GenerateCardId).click();
         driver.findElement(AddGiftValue).sendKeys("5000");

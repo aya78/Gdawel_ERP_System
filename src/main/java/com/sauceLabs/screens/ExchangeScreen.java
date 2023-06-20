@@ -16,8 +16,8 @@ public class ExchangeScreen extends HomeScreen{
 
     @Step(" View Exchange")
     public HomeScreen ViewExchange() throws InterruptedException {
-        WebDriverWait wait = new WebDriverWait(driver, 10);
-        wait.until(ExpectedConditions.invisibilityOfAllElements());
+//        WebDriverWait wait = new WebDriverWait(driver, 10);
+//        wait.until(ExpectedConditions.invisibilityOfAllElements());
         driver.findElement(ViewExchange).click();
         return new HomeScreen(driver);
     }
