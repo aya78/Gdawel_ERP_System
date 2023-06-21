@@ -9,10 +9,12 @@ package Tests;
 import com.relevantcodes.extentreports.ExtentReports;
 import com.relevantcodes.extentreports.ExtentTest;
 import com.relevantcodes.extentreports.LogStatus;
+import io.github.bonigarcia.wdm.WebDriverManager;
 import io.qameta.allure.*;
 //import lombok.val;
 import jdk.jfr.Description;
 import org.apache.commons.io.FileUtils;
+import org.junit.jupiter.api.BeforeAll;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
@@ -24,6 +26,9 @@ import org.openqa.selenium.chrome.ChromeOptions;
 //import org.testng.Reporter;
 //import org.testng.annotations.AfterMethod;
 //import org.testng.annotations.AfterSuite;
+import org.openqa.selenium.edge.EdgeDriver;
+import org.openqa.selenium.edge.EdgeOptions;
+import org.openqa.selenium.remote.CapabilityType;
 import org.slf4j.LoggerFactory;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.testng.ITestResult;
@@ -43,7 +48,9 @@ import java.io.File;
 import java.io.IOException;
 import java.time.Duration;
 import java.util.concurrent.TimeUnit;
+import java.util.function.Predicate;
 
+import static java.net.Authenticator.RequestorType.PROXY;
 import static org.testng.AssertJUnit.assertNull;
 //import utils.logs.Log;
 
@@ -55,78 +62,59 @@ public  class FunctionalTesting {
     public ChromeDriver driver;
     public ExtentTest test;
     public ExtentReports extentReports;
+////    private static final Predicate<String> ACCEPTED_W3C_PATTERNS = new AcceptedW3CCapabilityKeys();
+//  private final static AcceptedW3CCapabilityKeys OK_KEYS = new AcceptedW3CCapabilityKeys();
+
     public WebDriver getDriver() {
         return driver;
     }
+//    @BeforeAll
+//    static void setupClass() {
+//    }
+
+//    @BeforeEach
+//    void setupTest() {
+//        driver = new ChromeDriver();
+//    }
     @BeforeSuite
     public void SetUp() {
+        System.setProperty("webdriver.chrome.driver", "/home/hash-pc-8/Downloads/gdawelTest/src/test/resources/chromedriver");
 
         extentReports = new ExtentReports("/home/hash-pc-8/Documents/vs_code/gdawel_test/ExtentReports/TestReports.html",false);
-        System.setProperty("webdriver.chrome.driver", "/home/hash-pc-8/Documents/vs_code/gdawel_test/src/test/resources/chromedriver");
         String baseURL = "https://gdawel.app/";
         test =extentReports.startTest("verify open browser ");
         test.log(LogStatus.INFO,"open browser Test in initialized");
-//        DesiredCapabilities caps = new DesiredCapabilities();
 //
-//        caps.setCapability("os", "Ubuntu");
-//        caps.setCapability("os_version", "22.04.2 LTS");
-//        caps.setCapability("browser", "Chrome");
-//        caps.setCapability("browser_version", "113.0.5672.126");
-//
-//        caps.setCapability("name", "Gdawel's First Test");
-
         ChromeOptions options = new ChromeOptions();
-//        options.setExperimentalOption("w3c", true);
+        options.setExperimentalOption("w3c", true);
 //        options.addArguments("--remote-allow-origins=*");
         // start-maximized
         options.addArguments("start-maximized");
         driver = new ChromeDriver(options);
         driver.manage().window().maximize();
+//        EdgeOptions options = new EdgeOptions();
+//        options.setCapability(CapabilityType.ACCEPT_INSECURE_CERTS, true);
+//        options.addArguments("--remote-allow-origins=*");
+//        options.setCapability("ignore-certificate-errors", true);
+//
+//        WebDriverManager.edgedriver().avoidResolutionCache().setup();
+//        driver.equals(new EdgeDriver(options));
+//        driver.manage().window().maximize();
+//        driver.manage().deleteAllCookies();
         test.log(LogStatus.PASS,"browser is open and windows is maximized");
         driver.get(baseURL);
         test.log(LogStatus.PASS,"String URL is opening in  chrome browser");
-        //driver=new ChromeDriver();
-//        driver.manage().timeouts().implicitlyWait(1000, TimeUnit.SECONDS);
         extentReports.endTest(test);
         extentReports.flush();
         extentReports.getReportId();
         String verifyAssertNull = null;
         assertNull(verifyAssertNull);
     }
-    @Description
-            (
-                    "Given user open Gdawel website " +
-                            "When click on Menu" +
-                            "And click on Login" +
-                            "And login Using Valid Email & Password" +
-                            "And open customers page" +
-                            "And click on counter Plus Button" +
-                            "And click on save button" +
-                            "And click on customer name " +
-                            "And click on suppliers page" +
-                            "And click on add supplier Button" +
-                            "And click on save button" +
-                            "And click on customer name" +
-                            "And open customer group page" +
-                            "And click on counter Plus Button" +
-                            "And click on save button" +
-                            "Then user should return to Home screen"
-            )
-//    @AfterSuite
-//    public void TearDown() {
-//            driver.quit();
-//
-//    }
-
     @Severity(SeverityLevel.CRITICAL)
     @Story("Check Functionality of gdawel")
     @Test(description = "Check Functionality Scenario" )
     public void TestScenario() throws  IOException {
         try {
-
-//            WebDriverWait wait = new WebDriverWait(driver, 10);
-            //wait.until(ExpectedConditions.invisibilityOfAllElements());
-
             new HomeScreen(driver)
                     .clickOnLogin()
                     .loginUsingValidEmailAndPassword()

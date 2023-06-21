@@ -3,7 +3,7 @@ package com.sauceLabs.screens;
 import com.aventstack.extentreports.TestListener;
 import com.relevantcodes.extentreports.ExtentReports;
 import com.relevantcodes.extentreports.LogStatus;
-import groovy.beans.ListenerList;
+//import groovy.beans.ListenerList;
 import io.qameta.allure.Epic;
 import io.qameta.allure.Feature;
 import io.qameta.allure.Step;
