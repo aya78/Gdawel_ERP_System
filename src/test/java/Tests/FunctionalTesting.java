@@ -62,20 +62,9 @@ public  class FunctionalTesting {
     public ChromeDriver driver;
     public ExtentTest test;
     public ExtentReports extentReports;
-////    private static final Predicate<String> ACCEPTED_W3C_PATTERNS = new AcceptedW3CCapabilityKeys();
-//  private final static AcceptedW3CCapabilityKeys OK_KEYS = new AcceptedW3CCapabilityKeys();
-
     public WebDriver getDriver() {
         return driver;
     }
-//    @BeforeAll
-//    static void setupClass() {
-//    }
-
-//    @BeforeEach
-//    void setupTest() {
-//        driver = new ChromeDriver();
-//    }
     @BeforeSuite
     public void SetUp() {
         System.setProperty("webdriver.chrome.driver", "/home/hash-pc-8/Downloads/gdawelTest/src/test/resources/chromedriver");
@@ -92,15 +81,7 @@ public  class FunctionalTesting {
         options.addArguments("start-maximized");
         driver = new ChromeDriver(options);
         driver.manage().window().maximize();
-//        EdgeOptions options = new EdgeOptions();
-//        options.setCapability(CapabilityType.ACCEPT_INSECURE_CERTS, true);
-//        options.addArguments("--remote-allow-origins=*");
-//        options.setCapability("ignore-certificate-errors", true);
-//
-//        WebDriverManager.edgedriver().avoidResolutionCache().setup();
-//        driver.equals(new EdgeDriver(options));
-//        driver.manage().window().maximize();
-//        driver.manage().deleteAllCookies();
+        driver.manage().deleteAllCookies();
         test.log(LogStatus.PASS,"browser is open and windows is maximized");
         driver.get(baseURL);
         test.log(LogStatus.PASS,"String URL is opening in  chrome browser");
