@@ -61,6 +61,7 @@ import static org.testng.AssertJUnit.assertNull;
 public  class FunctionalTesting {
     public ChromeDriver driver;
     public ExtentTest test;
+    //
     public ExtentReports extentReports;
     public WebDriver getDriver() {
         return driver;

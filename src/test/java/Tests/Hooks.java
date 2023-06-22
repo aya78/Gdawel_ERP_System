@@ -21,7 +21,7 @@ public class Hooks {
     }
 
     @After
-    public static void quit_browser(){
+    public void quit_browser(){
         driver.quit();
     }
 }
