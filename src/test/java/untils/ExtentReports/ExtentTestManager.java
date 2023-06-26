@@ -13,7 +13,7 @@ public class ExtentTestManager {
 //    public static synchronized com.relevantcodes.extentreports.ExtentTest getTest() {
 //        return extentTestMap.get((int) Thread.currentThread().getId());
 //    }
-
+//
 //    public static synchronized ExtentTest startTest(String testName, String desc) {
 //        com.relevantcodes.extentreports.ExtentTest test = extent.startTest(testName, desc);
 //        extentTestMap.put((int) Thread.currentThread().getId(), test);

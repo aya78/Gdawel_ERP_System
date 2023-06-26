@@ -1,6 +1,6 @@
 package com.sauceLabs.screens;
 
-import com.aventstack.extentreports.TestListener;
+//import com.aventstack.extentreports.TestListener;
 import com.relevantcodes.extentreports.ExtentReports;
 import com.relevantcodes.extentreports.LogStatus;
 //import groovy.beans.ListenerList;
@@ -19,6 +19,7 @@ import org.unitils.thirdparty.org.apache.commons.io.FileUtils;
 //import untils.ListenerList.TestListener;
 
 
+import java.awt.*;
 import java.io.File;
 import java.io.IOException;
 //@ListenerList({TestListener.class})
@@ -78,8 +79,11 @@ public class LoginScreen  extends HomeScreen{
             test.log(LogStatus.FAIL,"fail to find login button");
 
         driver.findElement(LoginButton).click();
+//        test.addScreenCaptureFromPath("screenshot.png");
+
         extentReports.endTest(test);
         extentReports.flush();
+//        Desktop.getDesktop().browse(new File("TestReports.html").toURI());
 
         return new HomeScreen(driver);
     }
