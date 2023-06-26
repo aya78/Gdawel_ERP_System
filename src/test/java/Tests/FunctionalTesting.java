@@ -94,7 +94,7 @@ public  class FunctionalTesting {
     }
     @Severity(SeverityLevel.CRITICAL)
     @Story("Check Functionality of gdawel")
-    @Test(description = "Check Functionality Scenario" )
+    @Test(description = "Check Functionality Scenario")
     public void TestScenario() throws  IOException {
         try {
             new HomeScreen(driver)
