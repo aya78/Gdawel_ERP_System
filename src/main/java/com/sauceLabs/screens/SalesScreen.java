@@ -79,11 +79,11 @@ private final By ScanProductButton = By.id("productcodeSearch");
 
         driver.findElement(ScanProductButton).sendKeys(Keys.BACK_SPACE);
 
-        driver.findElement(ScanProductButton).sendKeys("4155632");
+        driver.findElement(ScanProductButton).sendKeys("58554172");
         Thread.sleep(1000);
 
 //        wait.until(ExpectedConditions.elementToBeClickable(ScanProductButton));
-        driver.findElement(EditQty).sendKeys("2");
+//        driver.findElement(EditQty).sendKeys("2");
         driver.findElement(SaveInvoiceButton).click();
         return new HomeScreen(driver);
     }

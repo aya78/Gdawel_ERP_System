@@ -19,7 +19,7 @@ public class CustomersScreen extends HomeScreen{
     public String vat_number;
     public String CRN_NUMBER ;
      //private final By AddClient = By.xpath("(//a[@href='https://gdawel.app/dashboard/customer/create'])[2]");
-        private final By clientName = By.cssSelector("#name");
+        private final By clientName = By.id("name");
         ////////// input
         private final By clientPhone = By.xpath("//label[text()='رقم الهاتف ']/following::input");
         private final By clientEmail = By.xpath("/html/body/div[2]/div[6]/div/section/form/div/div[2]/div/div[1]/div[6]/div/input");
@@ -68,6 +68,7 @@ public class CustomersScreen extends HomeScreen{
         Faker fakeData=new Faker();
 //        driver.findElement(AddClient).click();
         driver.get("https://gdawel.app/dashboard/customer/create");
+        Thread.sleep(2000);
         driver.findElement(clientName).sendKeys(fakeData.name().fullName());
 //        if(driver.findElement(clientName).isDisplayed())
 //        {

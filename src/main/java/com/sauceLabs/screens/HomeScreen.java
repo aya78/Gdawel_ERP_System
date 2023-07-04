@@ -81,7 +81,7 @@ public final WebDriver driver;
         return new LoginScreen(driver);
     }
     @Step("click On Side Menu Then open Customers")
-    public CustomersScreen clickOnSideMenu(){
+    public CustomersScreen clickOnSideMenu() throws InterruptedException {
         driver.findElement(openCustomerAndSupplierMenu).click();
          boolean n =driver.findElement(customers).isSelected();
         if(n){
@@ -89,6 +89,7 @@ public final WebDriver driver;
         }else{
             System.out.println("Element is Absent");
         }
+Thread.sleep(2000);
         driver.findElement(customers).click();
 
         return new CustomersScreen(driver);
@@ -132,6 +133,7 @@ public final WebDriver driver;
     }
     @Step("click On Side Menu Then open Transfer")
     public TransfersScreen navigateToTransfer(){
+        //////////////////////////////////////////////////////////////////////////////
 //        driver.findElement(productsAndWarehouseMenu).click();
 
         driver.findElement(OpenTransfer).click();
@@ -144,6 +146,9 @@ public final WebDriver driver;
     }
     @Step("click On Side Menu Then open Brands")
     public BrandScreen navigateToBrands(){
+        /***************************************************************************/
+//                driver.findElement(productsAndWarehouseMenu).click();
+
         driver.findElement(OpenBrands).click();
         return new BrandScreen(driver);
     }

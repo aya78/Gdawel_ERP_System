@@ -73,13 +73,15 @@ public class QtyAdjustmentScreen extends HomeScreen {
     // warehouse_id
     @Step("open QtyAdjustment ")
     public HomeScreen addQty_adjustment() throws InterruptedException {
+        driver.manage().timeouts().implicitlyWait(Duration.ofMillis(2000));
 
 //        WebDriverWait wait = new WebDriverWait(driver, 10);
 //        wait.until(ExpectedConditions.invisibilityOfAllElements());
         Faker fakeData=new Faker();
         driver.findElement(AddQtyAdjustment).click();
-        driver.findElement(OpenWareHouseList).click();
+//        driver.findElement(OpenWareHouseList).click();
 //        driver.findElement(SelectWareHouse).click();
+        Thread.sleep(2000);
         selectWareHouse(driver);
 //        driver.findElement(SelectProduct).click();
 //        wait.until(ExpectedConditions.visibilityOfElementLocated(SelectProduct));
@@ -95,8 +97,10 @@ public class QtyAdjustmentScreen extends HomeScreen {
 //        driver.findElement(ChangQuantity).sendKeys(Keys.BACK_SPACE);
 //
 //        driver.findElement(ChangQuantity).sendKeys(""+50);
+        Thread.sleep(2000);
 
           selectOperation(driver);
+        Thread.sleep(1000);
 
         driver.findElement(ClickSave).click();
         return new HomeScreen(driver);

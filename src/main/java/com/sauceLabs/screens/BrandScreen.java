@@ -22,11 +22,10 @@ public class BrandScreen  extends HomeScreen{
     @Step(" add Brand")
     public HomeScreen addBrand() throws InterruptedException {
         Faker fakeData=new Faker();
-        base.wait();
         driver.findElement(AddBrand).click();
         driver.findElement(AddBrandName).sendKeys(fakeData.name().title());
         WebElement chooseFile = driver.findElement(By.name("image"));
-        chooseFile.sendKeys("/home/hash-pc-8/Downloads/H&M.jpg");
+        chooseFile.sendKeys("/home/hash-pc-8/Downloads/download/H&M.jpg");
         driver.findElement(SaveBrand).click();
 
         return new HomeScreen(driver);

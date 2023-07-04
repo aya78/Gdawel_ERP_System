@@ -73,7 +73,7 @@ public class ProductsScreen extends HomeScreen{
         Faker fakeData=new Faker();
         int price = Integer.parseInt(RandomStringUtils.random(3, false, true));
         int cost = Integer.parseInt(fakeData.number().digits(3));
-
+Thread.sleep(2000);
         driver.findElement(AddProduct).click();
         String v =fakeData.name().name();
         driver.findElement(ProductName).sendKeys(v);
@@ -90,8 +90,16 @@ public class ProductsScreen extends HomeScreen{
 //        a.sendKeys(Keys.PAGE_DOWN).build().perform();
         //scroll up a page
         a.sendKeys(Keys.PAGE_DOWN).build().perform();
+        /*****************************************Scrolling using JS******************************************************/
+        JavascriptExecutor js = (JavascriptExecutor) driver;
+        //Locating element by link text and store in variable "Element"
+//        WebElement Element = driver.findElement(By.linkText("Try Selenium Testing For Free"));
+
+        // Scrolling down the page till the element is found
         WebElement choose_img = driver.findElement(By.className("dz-hidden-input"));
-        choose_img.sendKeys("/home/hash-pc-8/Downloads/tablet.jpeg");
+        js.executeScript("arguments[0].scrollIntoView(200);", choose_img);
+
+        choose_img.sendKeys("/home/hash-pc-8/Downloads/download/tablet.jpeg");
         Thread.sleep(4000);
 //        driver.findElement(openUnitList).click();
 //        driver.findElement(selectUnit).click();

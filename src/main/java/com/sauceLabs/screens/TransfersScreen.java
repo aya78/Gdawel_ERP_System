@@ -15,6 +15,7 @@ import java.util.Random;
 //import static com.sauceLabs.screens.SalesScreen.element;
 
 public class TransfersScreen  extends HomeScreen{
+
     int[] arr = {4155632,65333756,6922869,4026422};
     public TransfersScreen(WebDriver driver) {
         super(driver);
@@ -57,21 +58,39 @@ public class TransfersScreen  extends HomeScreen{
         Thread.sleep(5000);
         return element;
     }
+    // status
+    public static WebElement selectStatus(WebDriver driver) throws InterruptedException {
+        element =driver.findElement(By.name("status"));
+        Select skills = new Select(element);
+        int dropdown_value= driver.findElements(By.cssSelector("#transfer-form > div > div.card > div > div > div:nth-child(3) > div > div > select > option")).size();
+        // #to_warehouse_id > option:nth-child(4)
+        System.out.println(dropdown_value);
+        Random random3=new Random();
+        int index= random3.nextInt(dropdown_value);
+        skills.selectByIndex(index);
+        System.out.println(index);
+        Thread.sleep(5000);
+        return element;
+    }
 
 
     @Step("open add Transfers ")
     public HomeScreen addAndViewTransfers() throws InterruptedException {
 //        WebDriverWait wait = new WebDriverWait(driver,);
+        driver.manage().timeouts().implicitlyWait(Duration.ofMillis(2000));
+
 
         driver.findElement(AddTransfer).click();
-        Thread.sleep(1000);
+        Thread.sleep(2000);
         selectWareHouse1(driver);
         Thread.sleep(1000);
 
         selectWareHouse2(driver);
         Thread.sleep(1000);
+        selectStatus(driver);
+        Thread.sleep(1000);
 
-        driver.findElement(SelectProduct).sendKeys("4155632");
+        driver.findElement(SelectProduct).sendKeys("58554172");
         Thread.sleep(1000);
 
 //        wait.until(ExpectedConditions.elementToBeClickable(SelectProduct));

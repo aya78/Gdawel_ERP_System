@@ -45,7 +45,7 @@ public class PurchasesScreen extends HomeScreen {
 //        driver.findElement(OpenPurchases).click();
         driver.get("https://gdawel.app/dashboard/purchases/create");
 //        driver.findElement(AddInvoiceButton).click();
-        driver.findElement(ScanProductButton).sendKeys("4155632");
+        driver.findElement(ScanProductButton).sendKeys("58554172");
 //        wait.until(ExpectedConditions.elementToBeSelected(ScanProductButton));
         driver.findElement(EditQty).sendKeys("2");
         driver.findElement(SaveInvoiceButton).click();

@@ -91,6 +91,7 @@ public  class FunctionalTesting {
         extentReports.getReportId();
         String verifyAssertNull = null;
         assertNull(verifyAssertNull);
+        driver.manage().timeouts().implicitlyWait(Duration.ofMillis(2000));
     }
     @Severity(SeverityLevel.CRITICAL)
     @Story("Check Functionality of gdawel")
@@ -134,16 +135,16 @@ public  class FunctionalTesting {
 //                    .navigateToGiftCards()
 //                    .addGiftCard()
                     /***********************addCoupon done *********************************/
-//                    .navigateToCoupons()
-//                    .addCoupon()
-//                    .navigateToSales()
-//                    .addSaleInvoice()
-//                    .navigateToSales()
-//                    .addReturnSaleInvoice()
-//                    .navigateToSales()
-//                    .AddNewDelivery()
-//                    .navigateToExchange()
-//                    .navigateToReceipts()
+                    .navigateToCoupons()
+                    .addCoupon()
+                    .navigateToSales()
+                    .addSaleInvoice()
+                    .navigateToSales()
+                    .addReturnSaleInvoice()
+                    .navigateToSales()
+                    .AddNewDelivery()
+                    .navigateToExchange()
+                    .navigateToReceipts()
             ;
         } catch (Exception e) {
             File screenshotFile = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);

@@ -41,7 +41,7 @@ public class ProductCategoryScreen extends HomeScreen{
 
 //        driver.findElement(CategoryImg).sendKeys("/home/hash-pc-8/Downloads/chanel.png");
         WebElement chooseFile = driver.findElement(By.name("image"));
-        chooseFile.sendKeys("/home/hash-pc-8/Downloads/shein.png");
+        chooseFile.sendKeys("/home/hash-pc-8/Downloads/download/shein.png");
 //        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
 //        wait.until(ExpectedConditions.presenceOfElementLocated((By) chooseFile));
         driver.findElement(SaveCategory).click();

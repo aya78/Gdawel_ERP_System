@@ -17,7 +17,7 @@ public class SuppliersScreen  extends HomeScreen{
 
     //       private final By customers = By.xpath("//*[@id=\"customer-menu\"]");
     private final By AddSupplier = By.xpath("//a[@href='https://gdawel.app/dashboard/supplier/create']");
-    private final By supplierName = By.cssSelector("#content > div > section > form > div > div.card > div > div:nth-child(1) > div:nth-child(2) > div > input");
+    private final By supplierName = By.name("name");
     private final By supplierPhone = By.xpath("//input[@type='number']");
     private final By supplierEmail = By.xpath("//input[@placeholder='example@gdawel.app']");
     private final By vatNumber = By.xpath("//label[text()='الرقم الضريبي']/following::input");
@@ -67,7 +67,8 @@ public class SuppliersScreen  extends HomeScreen{
     @Step("open customer page than add new client and view exist client")
     public HomeScreen openSupplierPage() throws InterruptedException {
         Faker fakeData=new Faker();
-        driver.findElement(AddSupplier).click();
+        driver.navigate().to("https://gdawel.app/dashboard/supplier/create");
+        Thread.sleep(3000);
         driver.findElement(supplierName).sendKeys(fakeData.name().fullName());
         driver.findElement(supplierPhone).sendKeys(fakeData.number().digits(11));
         driver.findElement(supplierEmail).sendKeys(""+random+"@gmail.com");
