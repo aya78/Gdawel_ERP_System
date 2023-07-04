@@ -1,57 +1,33 @@
 package Tests;
 
-//import JsonFileManager;
-
-//import com.aventstack.extentreports.ExtentTest;
-//import com.slack.api.Slack;
-//import com.slack.api.methods.SlackApiException;
-//import cucumber.api.java.After;
 import com.relevantcodes.extentreports.ExtentReports;
 import com.relevantcodes.extentreports.ExtentTest;
 import com.relevantcodes.extentreports.LogStatus;
-import io.github.bonigarcia.wdm.WebDriverManager;
 import io.qameta.allure.*;
-//import lombok.val;
-import jdk.jfr.Description;
+
 import org.apache.commons.io.FileUtils;
-import org.junit.jupiter.api.BeforeAll;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
-//import org.testng.ITestListener;
-//import org.testng.annotations.AfterSuite;
-//import org.testng.ITestResult;
-//import org.testng.Reporter;
-//import org.testng.annotations.AfterMethod;
-//import org.testng.annotations.AfterSuite;
-import org.openqa.selenium.edge.EdgeDriver;
-import org.openqa.selenium.edge.EdgeOptions;
-import org.openqa.selenium.remote.CapabilityType;
-import org.slf4j.LoggerFactory;
-import org.openqa.selenium.remote.DesiredCapabilities;
-import org.testng.ITestResult;
+
 import org.testng.Reporter;
-import org.testng.annotations.AfterMethod;
-//import org.testng.annotations.AfterSuite;
-import org.testng.annotations.AfterSuite;
+
 import org.testng.annotations.BeforeSuite;
 import org.testng.annotations.Test;
 import com.sauceLabs.screens.HomeScreen;
-import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.WebDriverWait;
 //import com.slack.api.Slack;
+import io.qameta.allure.Epic;
+import io.qameta.allure.Story;
 
 
 import java.io.File;
 import java.io.IOException;
 import java.time.Duration;
-import java.util.concurrent.TimeUnit;
-import java.util.function.Predicate;
 
-import static java.net.Authenticator.RequestorType.PROXY;
 import static org.testng.AssertJUnit.assertNull;
+import static org.testng.AssertJUnit.assertTrue;
 //import utils.logs.Log;
 
 
@@ -82,7 +58,6 @@ public  class FunctionalTesting {
         options.addArguments("start-maximized");
         driver = new ChromeDriver(options);
         driver.manage().window().maximize();
-        driver.manage().deleteAllCookies();
         test.log(LogStatus.PASS,"browser is open and windows is maximized");
         driver.get(baseURL);
         test.log(LogStatus.PASS,"String URL is opening in  chrome browser");
@@ -132,19 +107,19 @@ public  class FunctionalTesting {
 //                    .navigateToQuotations()
 //                    .addPurchaseQuotationInvoice()
                     /*********************************Error in dropdown of client in  gift_card******************************************************************************/
-//                    .navigateToGiftCards()
-//                    .addGiftCard()
+                    .navigateToGiftCards()
+                    .addGiftCard()
                     /***********************addCoupon done *********************************/
-                    .navigateToCoupons()
-                    .addCoupon()
-                    .navigateToSales()
-                    .addSaleInvoice()
-                    .navigateToSales()
-                    .addReturnSaleInvoice()
-                    .navigateToSales()
-                    .AddNewDelivery()
-                    .navigateToExchange()
-                    .navigateToReceipts()
+//                    .navigateToCoupons()
+//                    .addCoupon()
+//                    .navigateToSales()
+//                    .addSaleInvoice()
+//                    .navigateToSales()
+//                    .addReturnSaleInvoice()
+//                    .navigateToSales()
+//                    .AddNewDelivery()
+//                    .navigateToExchange()
+//                    .navigateToReceipts()
             ;
         } catch (Exception e) {
             File screenshotFile = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);

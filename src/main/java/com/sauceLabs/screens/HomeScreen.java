@@ -3,6 +3,7 @@ package com.sauceLabs.screens;
 import com.relevantcodes.extentreports.ExtentReports;
 import com.relevantcodes.extentreports.ExtentTest;
 import com.relevantcodes.extentreports.LogStatus;
+import com.shaft.driver.SHAFT;
 import io.qameta.allure.Step;
 //import org.junit.jupiter.api.Test;
 import org.openqa.selenium.By;
@@ -12,6 +13,8 @@ import org.openqa.selenium.WebDriver;
 public class HomeScreen {
 //     public static By products = By.xpath("//*[@text='Products']");
 public final WebDriver driver;
+//    public final SHAFT.GUI.WebDriver new_driver;
+
     public ExtentTest test;
     public ExtentReports extentReports;
     public String password ="74108520";
@@ -62,6 +65,9 @@ public final WebDriver driver;
     //    public  WebDriver driver;
     public HomeScreen(WebDriver driver) {
         this.driver=driver;
+    }
+    public HomeScreen(WebDriver driver, SHAFT.GUI.WebDriver new_driver){
+        this.driver = driver;
     }
     @Step("click On Login")
     public LoginScreen clickOnLogin() {

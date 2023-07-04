@@ -6,8 +6,6 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 
-import static org.jsoup.nodes.Entities.EscapeMode.base;
-
 public class BrandScreen  extends HomeScreen{
     public BrandScreen(WebDriver driver) {
         super(driver);

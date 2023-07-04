@@ -1,15 +1,10 @@
 package com.sauceLabs.screens;
 
-import com.beust.ah.A;
 import com.github.javafaker.Faker;
-import com.relevantcodes.extentreports.ExtentReports;
-import com.relevantcodes.extentreports.LogStatus;
 import io.qameta.allure.Step;
 import org.apache.commons.lang3.RandomStringUtils;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
-import com.sauceLabs.screens.HomeScreen;
 
 public class CustomersScreen extends HomeScreen{
       public  String random = RandomStringUtils.random(6, true, true);

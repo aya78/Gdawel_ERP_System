@@ -15,8 +15,12 @@
     <properties>
         <maven.compiler.source>19</maven.compiler.source>
         <maven.compiler.target>19</maven.compiler.target>
+        <maxmem>10240m</maxmem>
+        <meminitial>1024m</meminitial>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-<!--        <ashot-version>1.5.4</ashot-version>-->
+        <shaft_engine.version>7.2.20230621</shaft_engine.version>
+
+        <!--        <ashot-version>1.5.4</ashot-version>-->
 <!--        <allure-testng-version>2.13.9</allure-testng-version>-->
 <!--        <log4j-version>2.14.1</log4j-version>-->
 <!--        <extentreports-version>5.0.8</extentreports-version>-->
@@ -26,7 +30,11 @@
     </properties>
 
     <dependencies>
-
+        <dependency>
+            <groupId>io.github.shafthq</groupId>
+            <artifactId>SHAFT_ENGINE</artifactId>
+            <version>${shaft_engine.version}</version>
+        </dependency>
         <!-- https://mvnrepository.com/artifact/com.applitools/selenium4 -->
         <dependency>
             <groupId>com.applitools</groupId>
