@@ -83,7 +83,8 @@ public class ProductsScreen extends HomeScreen{
 
 
 Thread.sleep(2000);
-        driver.findElement(AddProduct).click();
+//        driver.findElement(AddProduct).click();
+        driver.navigate().to("https://gdawel.app/dashboard/products/create");
         String v =fakeData.name().name();
         driver.findElement(ProductName).sendKeys(v);
         System.out.println(v);
@@ -131,7 +132,7 @@ Thread.sleep(2000);
 //        driver.findElement(productPrice).sendKeys(""+cost+20);
 //        driver.findElement(attachProductINAddCombo).sendKeys("1000024");
 //        driver.findElement(clickSave).click();
-        driver.findElement(ViewProduct).click();
+//        driver.findElement(ViewProduct).click();
         return new HomeScreen(driver);
     }
     @Step

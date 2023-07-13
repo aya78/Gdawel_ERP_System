@@ -37,7 +37,8 @@ public class LoginScreen  extends HomeScreen{
 
 //    public String username = "ayak77431@gmail.com";
     // horeg91128@meogl.com
-public String username = "horeg91128@meogl.com";
+    // gevosom897@meogl.com
+public String username = "gevosom897@meogl.com";
     public LoginScreen(WebDriver driver) {
         super(driver);
     }
