@@ -12,9 +12,11 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 
+import org.testng.IExecutionListener;
 import org.testng.Reporter;
 
 import org.testng.annotations.BeforeSuite;
+import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 import com.sauceLabs.screens.HomeScreen;
 //import com.slack.api.Slack;
@@ -34,7 +36,9 @@ import static org.testng.AssertJUnit.assertTrue;
 
 @Epic("Gdawel App")
 @Feature("Functional")
-public  class FunctionalTesting {
+public  class FunctionalTesting extends Helper implements IExecutionListener {
+    public static String status = "passed";
+
     public ChromeDriver driver;
     public ExtentTest test;
     //
@@ -47,6 +51,7 @@ public  class FunctionalTesting {
         System.setProperty("webdriver.chrome.driver", "/home/hash-pc-8/Downloads/gdawelTest/src/test/resources/chromedriver");
 
         extentReports = new ExtentReports("/home/hash-pc-8/Documents/vs_code/gdawel_test/ExtentReports/TestReports.html",false);
+
         String baseURL = "https://gdawel.app/";
         test =extentReports.startTest("verify open browser ");
         test.log(LogStatus.INFO,"open browser Test in initialized");
@@ -69,7 +74,11 @@ public  class FunctionalTesting {
         driver.manage().timeouts().implicitlyWait(Duration.ofMillis(2000));
     }
     @Severity(SeverityLevel.CRITICAL)
+    @Epic("SHAFT Web GUI Template")
     @Story("Check Functionality of gdawel")
+    @TmsLink("TC-001")
+    @Description("Given I am on the Home page,\nThen the browser title should be 'Google'.")
+    @Parameters({"environment"})
     @Test(description = "Check Functionality Scenario")
     public void TestScenario() throws  IOException {
         try {
@@ -83,6 +92,7 @@ public  class FunctionalTesting {
 //                    .navigateToCustomerGroup()
 //                    .openCustomerGroup()
 //                    .navigateToProducts()
+//                    .edit_product()
 //                    .addAndViewProductPage()
 //                    .navigateToProductsCategory()
 //                    .addProductCategory()
@@ -98,8 +108,8 @@ public  class FunctionalTesting {
 //                    .addBrand()
 //                    .navigateToUnits()
 //                    .addUnit()
-//                    .navigateToPurchases()
-//                    .addPurchaseInvoice()
+                    .navigateToPurchases()
+                    .addPurchaseInvoice()
 //                    .navigateToPurchases()
 //                    .addReturnPurchaseInvoice()
 //                    .navigateToQuotations()
@@ -107,8 +117,8 @@ public  class FunctionalTesting {
 //                    .navigateToQuotations()
 //                    .addPurchaseQuotationInvoice()
                     /*********************************Error in dropdown of client in  gift_card******************************************************************************/
-                    .navigateToGiftCards()
-                    .addGiftCard()
+//                    .navigateToGiftCards()
+//                    .addGiftCard()
                     /***********************addCoupon done *********************************/
 //                    .navigateToCoupons()
 //                    .addCoupon()

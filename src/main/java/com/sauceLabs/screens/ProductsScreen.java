@@ -16,6 +16,10 @@ import java.util.Random;
 
 public class ProductsScreen extends HomeScreen{
     int[] arr = {1489426,51582783,6922869,4026422};
+    int price = Integer.parseInt(RandomStringUtils.random(3, false, true));
+    Faker fakeData=new Faker();
+    int cost = Integer.parseInt(fakeData.number().digits(3));
+
     private final By AddProduct = By.xpath("(//a[@href='https://gdawel.app/dashboard/products/create'])[2]");
     // /html/body/div[2]/div[6]/div/section/form/div/div/div[1]/div/div/div/div[1]/div/input
     private final By ProductName = By.id("name");
@@ -23,17 +27,22 @@ public class ProductsScreen extends HomeScreen{
 //private final By Barcode = By.id("genbutton");
 //    private final By openBrandList  = By.cssSelector("form#product-form>div>div>div>div>div>div>div:nth-of-type(2)>div>div:nth-of-type(2)>div>button>div>div>div");
 //    private final By selectBrand = By.xpath("(//ul[@role='presentation']//a)[2]");
-    private final By productCost = By.xpath("//input[@min='0.001']");
-    private final By productPrice = By.xpath("(//input[@min='0.001'])[2]");
+    private final By productCost = By.name("cost");
+    private final By productPrice = By.name("price");
 //    private final By openUnitList  = By.xpath("//div[text()='اختر وحدة المنتج...']");
 //    private final By selectUnit = By.cssSelector("a#bs-select-8-1>span:nth-of-type(2)");
     // //input[@class='btn btn-primary']
   private final By ProductImage = By.xpath("//a[@class='dz-hidden-input']");
 
     private final By clickSave = By.xpath("//input[@value='حفظ']");
+    // submit-btn
+    private final By saveAfterEdit = By.id("submit-btn");
+
     private final By addComboProduct = By.cssSelector("#first > div > div > div:nth-child(3) > div");
     private final By attachProductINAddCombo = By.name("product_code_name");
     private final By ViewProduct = By.xpath("//a[@class='text-dark']");
+//    private final By CLICK_editProduct = By.xpath("");
+
     private static WebElement element=null;
     // name -> file
     private final By OpenImportProducts = By.cssSelector("#data-length-operations > a.btn.btn-warning.mb-2");
@@ -67,12 +76,12 @@ public class ProductsScreen extends HomeScreen{
     public ProductsScreen(WebDriver driver) {
         super(driver);
     }
+    JavascriptExecutor js = (JavascriptExecutor) driver;
 
     @Step("open product page than add And View Product")
     public HomeScreen addAndViewProductPage() throws InterruptedException {
-        Faker fakeData=new Faker();
-        int price = Integer.parseInt(RandomStringUtils.random(3, false, true));
-        int cost = Integer.parseInt(fakeData.number().digits(3));
+
+
 Thread.sleep(2000);
         driver.findElement(AddProduct).click();
         String v =fakeData.name().name();
@@ -91,7 +100,7 @@ Thread.sleep(2000);
         //scroll up a page
         a.sendKeys(Keys.PAGE_DOWN).build().perform();
         /*****************************************Scrolling using JS******************************************************/
-        JavascriptExecutor js = (JavascriptExecutor) driver;
+//        JavascriptExecutor js = (JavascriptExecutor) driver;
         //Locating element by link text and store in variable "Element"
 //        WebElement Element = driver.findElement(By.linkText("Try Selenium Testing For Free"));
 
@@ -100,6 +109,8 @@ Thread.sleep(2000);
         js.executeScript("arguments[0].scrollIntoView(200);", choose_img);
 
         choose_img.sendKeys("/home/hash-pc-8/Downloads/download/tablet.jpeg");
+//        choose_img.sendKeys("https://www.talabat.com/assets/images/img-placeholder.svg");
+
         Thread.sleep(4000);
 //        driver.findElement(openUnitList).click();
 //        driver.findElement(selectUnit).click();
@@ -121,6 +132,21 @@ Thread.sleep(2000);
 //        driver.findElement(attachProductINAddCombo).sendKeys("1000024");
 //        driver.findElement(clickSave).click();
         driver.findElement(ViewProduct).click();
+        return new HomeScreen(driver);
+    }
+    @Step
+    public HomeScreen edit_product() throws InterruptedException {
+        driver.findElement(ViewProduct).click();
+
+        driver.navigate().to("https://gdawel.app/dashboard/products/42/edit");
+        Thread.sleep(4000);
+        WebElement choose_img = driver.findElement(By.className("dz-hidden-input"));
+        js.executeScript("arguments[0].scrollIntoView(200);", choose_img);
+
+//        choose_img.sendKeys("/home/hash-pc-8/Downloads/download/tablet.jpeg");
+//        choose_img.sendKeys("https://www.talabat.com/assets/images/img-placeholder.svg");
+        driver.findElement(saveAfterEdit).click();
+
         return new HomeScreen(driver);
     }
 

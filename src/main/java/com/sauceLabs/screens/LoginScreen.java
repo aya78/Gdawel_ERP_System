@@ -35,7 +35,9 @@ public class LoginScreen  extends HomeScreen{
     // btn btn-solid-main w-100 py-3 mt-5 border round
 //    private final By LoginButton = By.className("btn btn-solid-main w-100 py-3 mt-5 border round");
 
-    public String username = "ayak77431@gmail.com";
+//    public String username = "ayak77431@gmail.com";
+    // horeg91128@meogl.com
+public String username = "horeg91128@meogl.com";
     public LoginScreen(WebDriver driver) {
         super(driver);
     }
@@ -59,8 +61,8 @@ public class LoginScreen  extends HomeScreen{
 
         //driver.findElement(UserNameField).clear();
         driver.findElement(UserNameField).sendKeys(username);
-        driver.navigate().refresh();
-        driver.findElement(UserNameField).sendKeys(username);
+        // driver.navigate().refresh();
+//        driver.findElement(UserNameField).sendKeys(username);
 
         if(driver.findElement(PasswordField).isDisplayed())
         {
