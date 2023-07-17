@@ -1,11 +1,17 @@
 package untils.ExtentReports;
 
 //import com.aventstack.extentreports.reporter.ExtentSparkReporter;
-import com.aventstack.extentreports.reporter.ExtentSparkReporter;
 import com.relevantcodes.extentreports.ExtentReports;
+import com.aventstack.extentreports.reporter.ExtentHtmlReporter;
+
 import com.relevantcodes.extentreports.ExtentTest;
 
 public class ExtentManager {
+
+    private static  ExtentReports extentReports;
+//    private static ExtentReports createInstance(){
+//
+//    }
 
 //    private static final ExtentReports extentReports = new ExtentReports();
 //
