@@ -28,7 +28,7 @@ public class ProfileScreen extends HomeScreen{
     private final By OpenMyTransaction = By.xpath("(//a[contains(@class,'nav-link fw-bold')]/following-sibling::a)[3]");
     @Step("open profile settings")
     public HomeScreen openAndEditProfile(){
-        driver.findElement(clickOnEditProfile).click();
+        driver.navigate().to("https://gdawel.app/dashboard/profile/edit");
         driver.findElement(SaveEditProfile).click();
         return  new HomeScreen(driver);
     }

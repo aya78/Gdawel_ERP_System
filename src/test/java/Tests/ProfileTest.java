@@ -18,7 +18,7 @@ public class ProfileTest {
     @BeforeSuite
     public void SetUpp() {
 
-        System.setProperty("webdriver.chrome.driver", "/home/hash-pc-8/IdeaProjects/Gadawl/src/test/resources/chromedriver");
+        System.setProperty("webdriver.chrome.driver", "/home/hash-pc-8/Downloads/gdawelTest/src/test/resources/chromedriver");
         ChromeOptions options = new ChromeOptions();
         options.setExperimentalOption("w3c", true);
         options.addArguments("--remote-allow-origins=*");
