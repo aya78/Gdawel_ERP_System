@@ -13,7 +13,7 @@ import java.util.concurrent.TimeUnit;
 
 public class Hooks {
     public static WebDriver driver;
-    @Before
+
     public static void open_browser(String URL ) throws InterruptedException {
 
 //        WebDriverManager.chromedriver().setup();

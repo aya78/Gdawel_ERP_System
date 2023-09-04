@@ -13,6 +13,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.interactions.Actions;
 import org.unitils.thirdparty.org.apache.commons.io.FileUtils;
 //import com.sauceLabs.ActionDriver.Action;
 //import com.Bayt.Base.Base;
@@ -45,7 +46,7 @@ public class LoginScreen  extends HomeScreen{
 
     @Step("login Using Valid Email And Password ==> user Name: [{username}], password: [{password}]")
 
-    public HomeScreen loginUsingValidEmailAndPassword() throws IOException {
+    public HomeScreen loginUsingValidEmailAndPassword() throws IOException, InterruptedException {
         extentReports = new ExtentReports("/home/hash-pc-8/Documents/vs_code/gdawel_test/ExtentReports/TestReports.html",false);
         test =extentReports.startTest("verify Login  ");
         test.log(LogStatus.PASS,"browser is open and windows is maximized");
@@ -86,6 +87,9 @@ public class LoginScreen  extends HomeScreen{
         extentReports.endTest(test);
         extentReports.flush();
 //        Desktop.getDesktop().browse(new File("TestReports.html").toURI());
+        Thread.sleep(6000);
+        Actions action = new Actions(driver);
+        action.moveByOffset(0, 0).click().build().perform();
 
         return new HomeScreen(driver);
     }

@@ -109,8 +109,9 @@ Thread.sleep(2000);
         WebElement choose_img = driver.findElement(By.className("dz-hidden-input"));
         js.executeScript("arguments[0].scrollIntoView(200);", choose_img);
 
-        choose_img.sendKeys("/home/hash-pc-8/Downloads/download/tablet.jpeg");
-//        choose_img.sendKeys("https://www.talabat.com/assets/images/img-placeholder.svg");
+//        choose_img.sendKeys("/home/hash-pc-8/Downloads/download/tablet.jpeg");
+////        choose_img.sendKeys("https://www.talabat.com/assets/images/img-placeholder.svg");
+//        driver.findElement(By.id("cropButton")).click();
 
         Thread.sleep(4000);
 //        driver.findElement(openUnitList).click();

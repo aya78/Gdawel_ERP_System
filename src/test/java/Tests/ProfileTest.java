@@ -45,16 +45,16 @@ public class ProfileTest {
 //        WebDriverWait wait = new WebDriverWait(driver, 10);
 //        wait.until(ExpectedConditions.invisibilityOfAllElements());
         new HomeScreen(driver)
-                .clickOnLogin()
-                .loginUsingValidEmailAndPassword()
-                .navigateToProfile()
-                .openAndEditProfile()
+//                .clickOnLogin()
+//                .loginUsingValidEmailAndPassword()
 //                .navigateToProfile()
-//                .ChangePassword()
-                .navigateToProfile()
-                .openLOGs()
-                .navigateToProfile()
-                .OpenMyTransaction()
+//                .openAndEditProfile()
+////                .navigateToProfile()
+////                .ChangePassword()
+//                .navigateToProfile()
+//                .openLOGs()
+//                .navigateToProfile()
+//                .OpenMyTransaction()
         ;
     }
 

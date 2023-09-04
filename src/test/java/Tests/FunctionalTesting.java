@@ -33,28 +33,29 @@ import static org.testng.AssertJUnit.assertTrue;
 //import utils.logs.Log;
 
 
-
 @Epic("Gdawel App")
 @Feature("Functional")
-public  class FunctionalTesting extends Helper implements IExecutionListener {
+public class FunctionalTesting extends Helper implements IExecutionListener {
     public static String status = "passed";
 
     public ChromeDriver driver;
     public ExtentTest test;
     //
     public ExtentReports extentReports;
+
     public WebDriver getDriver() {
         return driver;
     }
+
     @BeforeSuite
     public void SetUp() {
         System.setProperty("webdriver.chrome.driver", "/home/hash-pc-8/Downloads/gdawelTest/src/test/resources/chromedriver");
 
-        extentReports = new ExtentReports("/home/hash-pc-8/Documents/vs_code/gdawel_test/ExtentReports/TestReports.html",false);
+        extentReports = new ExtentReports("/home/hash-pc-8/Documents/vs_code/gdawel_test/ExtentReports/TestReports.html", false);
 
         String baseURL = "https://gdawel.app/";
-        test =extentReports.startTest("verify open browser ");
-        test.log(LogStatus.INFO,"open browser Test in initialized");
+        test = extentReports.startTest("verify open browser ");
+        test.log(LogStatus.INFO, "open browser Test in initialized");
 //
         ChromeOptions options = new ChromeOptions();
         options.setExperimentalOption("w3c", true);
@@ -63,9 +64,9 @@ public  class FunctionalTesting extends Helper implements IExecutionListener {
         options.addArguments("start-maximized");
         driver = new ChromeDriver(options);
         driver.manage().window().maximize();
-        test.log(LogStatus.PASS,"browser is open and windows is maximized");
+        test.log(LogStatus.PASS, "browser is open and windows is maximized");
         driver.get(baseURL);
-        test.log(LogStatus.PASS,"String URL is opening in  chrome browser");
+        test.log(LogStatus.PASS, "String URL is opening in  chrome browser");
         extentReports.endTest(test);
         extentReports.flush();
         extentReports.getReportId();
@@ -73,6 +74,7 @@ public  class FunctionalTesting extends Helper implements IExecutionListener {
         assertNull(verifyAssertNull);
         driver.manage().timeouts().implicitlyWait(Duration.ofMillis(2000));
     }
+
     @Severity(SeverityLevel.CRITICAL)
     @Epic("SHAFT Web GUI Template")
     @Story("Check Functionality of gdawel")
@@ -80,56 +82,56 @@ public  class FunctionalTesting extends Helper implements IExecutionListener {
     @Description("Given I am on the Home page,\nThen the browser title should be 'Google'.")
     @Parameters({"environment"})
     @Test(description = "Check Functionality Scenario")
-    public void TestScenario() throws  IOException {
+    public void TestScenario() throws IOException {
         try {
             new HomeScreen(driver)
                     .clickOnLogin()
                     .loginUsingValidEmailAndPassword()
-//                    .clickOnSideMenu()
-//                    .addAndViewCustomersPage()
-//                    .navigateToSupplierList()
-//                    .openSupplierPage()
-//                    .navigateToCustomerGroup()
-//                    .openCustomerGroup()
-//                    .navigateToProducts()
-////                    .edit_product()
+                    .clickOnSideMenu()
+                    .addAndViewCustomersPage()
+                    .navigateToSupplierList()
+                    .openSupplierPage()
+                    .navigateToCustomerGroup()
+                    .openCustomerGroup()
+                    .navigateToProducts()
+//                    .edit_product()
 //                    .addAndViewProductPage()
-//                    .navigateToProductsCategory()
-//                    .addProductCategory()
-//                  .navigateToQtyAdjustment()
-//                   .addQty_adjustment()
-//                    .navigateToStockCount()
-//                    .addStockCount()
-//                    .navigateToTransfer()
-//                    .addAndViewTransfers()
-//                    .navigateToWareHouses()
-//                    .addAndViewWareHouses()
-//                    .navigateToBrands()
-//                    .addBrand()
-//                    .navigateToUnits()
-//                    .addUnit()
+                    .navigateToProductsCategory()
+                    .addProductCategory()
+                    .navigateToQtyAdjustment()
+                    .addQty_adjustment()
+                    .navigateToStockCount()
+                    .addStockCount()
+                    .navigateToTransfer()
+                    .addAndViewTransfers()
+                    .navigateToWareHouses()
+                    .addAndViewWareHouses()
+                    .navigateToBrands()
+                    .addBrand()
+                    .navigateToUnits()
+                    .addUnit()
                     .navigateToPurchases()
                     .addPurchaseInvoice()
-//                    .navigateToPurchases()
-//                    .addReturnPurchaseInvoice()
-//                    .navigateToQuotations()
-//                    .addSaleQuotationInvoice()
-//                    .navigateToQuotations()
-//                    .addPurchaseQuotationInvoice()
+                    .navigateToPurchases()
+                    .addReturnPurchaseInvoice()
+                    .navigateToQuotations()
+                    .addSaleQuotationInvoice()
+                    .navigateToQuotations()
+                    .addPurchaseQuotationInvoice()
                     /*********************************Error in dropdown of client in  gift_card******************************************************************************/
 //                    .navigateToGiftCards()
 //                    .addGiftCard()
                     /***********************addCoupon done *********************************/
-//                    .navigateToCoupons()
-//                    .addCoupon()
-//                    .navigateToSales()
-//                    .addSaleInvoice()
-//                    .navigateToSales()
-//                    .addReturnSaleInvoice()
-//                    .navigateToSales()
-//                    .AddNewDelivery()
-//                    .navigateToExchange()
-//                    .navigateToReceipts()
+                    .navigateToCoupons()
+                    .addCoupon()
+                    .navigateToSales()
+                    .addSaleInvoice()
+                    .navigateToSales()
+                    .addReturnSaleInvoice()
+                    .navigateToSales()
+                    .AddNewDelivery()
+                    .navigateToExchange()
+                    .navigateToReceipts()
             ;
         } catch (Exception e) {
             File screenshotFile = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);

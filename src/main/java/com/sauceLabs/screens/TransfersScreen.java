@@ -77,7 +77,8 @@ public class TransfersScreen  extends HomeScreen{
         driver.manage().timeouts().implicitlyWait(Duration.ofMillis(2000));
 
 
-        driver.findElement(AddTransfer).click();
+//        driver.findElement(AddTransfer).click();
+        driver.get("https://gdawel.app/dashboard/transfers/create");
         Thread.sleep(2000);
         selectWareHouse1(driver);
         Thread.sleep(1000);

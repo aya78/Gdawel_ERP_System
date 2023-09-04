@@ -14,7 +14,7 @@ public class ProfileScreen extends HomeScreen{
     // /html/body/div[2]/div[6]/div/section/div/div/div[2]/div[1]/div[1]/a
     private final By clickOnEditProfile = By.xpath("/html/body/div[2]/div[6]/div/section/div/div/div[2]/div[1]/div[1]/a");
     // /html/body/div[2]/div[6]/div/form/section/div/div/div[2]/div/div[2]/div[4]/input
-    private final By SaveEditProfile = By.xpath("/html/body/div[2]/div[6]/div/form/section/div/div/div[2]/div/div[2]/div[4]/input");
+    private final By SaveEditProfile = By.xpath("//input[@type='submit']");
     private final By OpenEditPassword = By.xpath("//a[contains(@class,'nav-link fw-bold')]/following-sibling::a");
     private final By OldPassword = By.xpath("//input[@placeholder='كلمة المرور القديمة ']");
     private final By NewPassword = By.xpath("//input[@placeholder='كلمة المرور الجديدة']");
