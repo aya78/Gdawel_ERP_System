@@ -85,7 +85,7 @@ public class QtyAdjustmentScreen extends HomeScreen {
         int num =4155632;
         Thread.sleep(1000);
 
-        driver.findElement(SelectProduct).sendKeys(""+num);
+        driver.findElement(SelectProduct).sendKeys(""+Barcode);
         Thread.sleep(1000);
 
 //        wait.until(ExpectedConditions.elementToBeClickable(SelectProduct));

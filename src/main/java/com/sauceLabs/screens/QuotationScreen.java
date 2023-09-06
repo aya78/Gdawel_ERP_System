@@ -32,7 +32,7 @@ public class QuotationScreen extends HomeScreen {
 //        WebDriverWait wait = new WebDriverWait(driver, 10);
         driver.get("https://gdawel.app/dashboard/quotations/create");
 //        driver.findElement(AddQuotation).click();
-        driver.findElement(ScanProductButton).sendKeys("58554172");
+        driver.findElement(ScanProductButton).sendKeys(""+Barcode);
 //        wait.until(ExpectedConditions.elementToBeClickable(ScanProductButton));
 
         Actions a = new Actions(driver);
@@ -51,7 +51,7 @@ public class QuotationScreen extends HomeScreen {
 //        WebDriverWait wait = new WebDriverWait(driver, 10);
         driver.get("https://gdawel.app/dashboard/quotations/create");
         driver.findElement(OpenPurchaseQuotation).click();
-        driver.findElement(ScanProductButton).sendKeys("58554172");
+        driver.findElement(ScanProductButton).sendKeys(""+Barcode);
 //        wait.until(ExpectedConditions.elementToBeClickable(ScanProductButton));
         Actions a = new Actions(driver);
         a.sendKeys(Keys.PAGE_DOWN).build().perform();

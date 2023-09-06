@@ -15,6 +15,7 @@ import java.util.Random;
 
 
 public class ProductsScreen extends HomeScreen{
+    public String v;
     int[] arr = {1489426,51582783,6922869,4026422};
     int price = Integer.parseInt(RandomStringUtils.random(3, false, true));
     Faker fakeData=new Faker();
@@ -85,7 +86,7 @@ public class ProductsScreen extends HomeScreen{
 Thread.sleep(2000);
 //        driver.findElement(AddProduct).click();
         driver.navigate().to("https://gdawel.app/dashboard/products/create");
-        String v =fakeData.name().name();
+        v =fakeData.name().name();
         driver.findElement(ProductName).sendKeys(v);
         System.out.println(v);
         driver.findElement(Barcode).sendKeys(fakeData.number().digits(8));
@@ -125,15 +126,7 @@ Thread.sleep(2000);
 //        driver.findElement(saveImport).click();
 //        Thread.sleep(1000);
         /************************************************************************************************************************/
-//        driver.findElement(AddProduct).click();
-//        driver.findElement(addComboProduct).click();
-//        driver.findElement(ProductName).sendKeys(v);
-//        System.out.println(v);
-//        driver.findElement(Barcode).sendKeys(fakeData.number().digits(8));
-//        driver.findElement(productPrice).sendKeys(""+cost+20);
-//        driver.findElement(attachProductINAddCombo).sendKeys("1000024");
-//        driver.findElement(clickSave).click();
-//        driver.findElement(ViewProduct).click();
+
         return new HomeScreen(driver);
     }
     @Step
@@ -149,6 +142,19 @@ Thread.sleep(2000);
 //        choose_img.sendKeys("https://www.talabat.com/assets/images/img-placeholder.svg");
         driver.findElement(saveAfterEdit).click();
 
+        return new HomeScreen(driver);
+    }
+    @Step
+    public HomeScreen Add_combo_product() throws InterruptedException{
+        driver.findElement(AddProduct).click();
+        driver.findElement(addComboProduct).click();
+        driver.findElement(ProductName).sendKeys(v);
+        System.out.println(v);
+        driver.findElement(Barcode).sendKeys(fakeData.number().digits(8));
+        driver.findElement(productPrice).sendKeys(""+cost+20);
+        driver.findElement(attachProductINAddCombo).sendKeys(""+Barcode);
+        driver.findElement(clickSave).click();
+        driver.findElement(ViewProduct).click();
         return new HomeScreen(driver);
     }
 

@@ -73,7 +73,7 @@ private final By ScanProductButton = By.id("productcodeSearch");
 
         driver.findElement(ScanProductButton).sendKeys(Keys.BACK_SPACE);
 
-        driver.findElement(ScanProductButton).sendKeys("58554172");
+        driver.findElement(ScanProductButton).sendKeys(""+Barcode);
         Thread.sleep(1000);
 
 //        wait.until(ExpectedConditions.elementToBeClickable(ScanProductButton));

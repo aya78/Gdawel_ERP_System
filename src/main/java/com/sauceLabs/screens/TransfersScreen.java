@@ -31,7 +31,7 @@ public class TransfersScreen  extends HomeScreen{
 
     private final By SaveTransfer = By.id("submit-button");
     // //td[@class='sorting_1']//a[1]
-    private final By ViewTransfer = By.xpath("//a[@href='https://gdawel.app/dashboard/transfers/691f0a7c-a0af-4d24-8f86-f7beaf8f1ac5']");
+    private final By ViewTransfer = By.xpath("//a[@href='https://gdawel.app/dashboard/transfers/552b2bdc-a934-42da-acc0-9a04266f4edc']");
     private static WebElement element=null;
 
     public static WebElement selectWareHouse1(WebDriver driver) throws InterruptedException {
@@ -88,13 +88,13 @@ public class TransfersScreen  extends HomeScreen{
         selectStatus(driver);
         Thread.sleep(1000);
 
-        driver.findElement(SelectProduct).sendKeys("58554172");
+        driver.findElement(SelectProduct).sendKeys(""+Barcode);
         Thread.sleep(1000);
 
 //        wait.until(ExpectedConditions.elementToBeClickable(SelectProduct));
 //        driver.findElement(clickSpace).click();
         driver.findElement(SaveTransfer).click();
-        driver.findElement(ViewTransfer).click();
+//        driver.findElement(ViewTransfer).click();
         return new HomeScreen(driver);
     }
 }

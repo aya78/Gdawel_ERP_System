@@ -29,7 +29,8 @@ public class HomeScreen {
 
     public ExtentTest test;
     public ExtentReports extentReports;
-    public String password = "12345678";
+    public String password = "74108520";
+    public String Barcode = "21733454";
     /*********************************************************  Done ***********************************************************************/
 // https://gdawel.app/login
 //    public static By loginButton = By.cssSelector("#navbarSupportedContent > div > a.btn.btn-solid-main.login.form-btn.py-2.px-3.rounded.w-100.text-nowrap");
@@ -58,7 +59,6 @@ public class HomeScreen {
     private final By OpenTransfer = By.id("transfer-list-menu");
     // //td[@class='sorting_1']//a[1]
     private final By OpenWareHouse = By.id("warehouse-menu");
-
     private final By OpenBrands = By.cssSelector("li#brand-menu>a");
     private final By OpenUnits = By.cssSelector("li#unit-menu>a");
     private final By OpenPurchasesAndSales = By.cssSelector("ul#side-main-menu>li:nth-of-type(4)>a");
@@ -173,7 +173,7 @@ public class HomeScreen {
     @Step("click On Side Menu Then open Transfer")
     public TransfersScreen navigateToTransfer() {
         //////////////////////////////////////////////////////////////////////////////
-//        driver.findElement(productsAndWarehouseMenu).click();
+        driver.findElement(productsAndWarehouseMenu).click();
 
         driver.findElement(OpenTransfer).click();
         return new TransfersScreen(driver);

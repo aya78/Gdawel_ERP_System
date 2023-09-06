@@ -55,8 +55,11 @@ public class PurchasesScreen extends HomeScreen {
 //            driver.findElement(EditQty).sendKeys("60");
 //            Thread.sleep(15000);
 //        }
-        wait.until(ExpectedConditions.invisibilityOfElementLocated(ScanProductButton));
-        driver.findElement(ScanProductButton).sendKeys("323233");
+
+        //wait.until(ExpectedConditions.invisibilityOfElementLocated(ScanProductButton));
+        driver.findElement(ScanProductButton).sendKeys(""+Barcode);
+        new WebDriverWait(driver,Duration.ofSeconds(5))
+            .until(ExpectedConditions.visibilityOfElementLocated(EditQty));
 
 
         //Thread.sleep(10000);
