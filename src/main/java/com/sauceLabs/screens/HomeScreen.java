@@ -31,6 +31,8 @@ public class HomeScreen {
     public ExtentReports extentReports;
     public String password = "74108520";
     public String Barcode = "21733454";
+    public final By EditQty = By.xpath("//input[@class='form-control qty']");
+
     /*********************************************************  Done ***********************************************************************/
 // https://gdawel.app/login
 //    public static By loginButton = By.cssSelector("#navbarSupportedContent > div > a.btn.btn-solid-main.login.form-btn.py-2.px-3.rounded.w-100.text-nowrap");
@@ -61,6 +63,7 @@ public class HomeScreen {
     private final By OpenWareHouse = By.id("warehouse-menu");
     private final By OpenBrands = By.cssSelector("li#brand-menu>a");
     private final By OpenUnits = By.cssSelector("li#unit-menu>a");
+    // /html/body/nav/ul/li[4]/a
     private final By OpenPurchasesAndSales = By.cssSelector("ul#side-main-menu>li:nth-of-type(4)>a");
     private final By OpenQuotation = By.cssSelector("li#quotation-list-menu>a");
     private final By OpenGiftCards = By.cssSelector("li#gift-card-menu>a");
@@ -122,6 +125,8 @@ public class HomeScreen {
             System.out.println("Element is Absent");
         }
         Thread.sleep(2000);
+        new WebDriverWait(driver,Duration.ofSeconds(3))
+            .until(ExpectedConditions.visibilityOfElementLocated(customers));
         driver.findElement(customers).click();
 
         return new CustomersScreen(driver);
@@ -173,7 +178,7 @@ public class HomeScreen {
     @Step("click On Side Menu Then open Transfer")
     public TransfersScreen navigateToTransfer() {
         //////////////////////////////////////////////////////////////////////////////
-        driver.findElement(productsAndWarehouseMenu).click();
+//        driver.findElement(productsAndWarehouseMenu).click();
 
         driver.findElement(OpenTransfer).click();
         return new TransfersScreen(driver);

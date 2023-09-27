@@ -5,7 +5,9 @@ import io.qameta.allure.Step;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.time.Duration;
 import java.util.Random;
@@ -70,34 +72,29 @@ public class QtyAdjustmentScreen extends HomeScreen {
     // warehouse_id
     @Step("open QtyAdjustment ")
     public HomeScreen addQty_adjustment() throws InterruptedException {
-        driver.manage().timeouts().implicitlyWait(Duration.ofMillis(2000));
-
-//        WebDriverWait wait = new WebDriverWait(driver, 10);
-//        wait.until(ExpectedConditions.invisibilityOfAllElements());
+//        driver.manage().timeouts().implicitlyWait(Duration.ofMillis(2000));
         Faker fakeData=new Faker();
+        new WebDriverWait(driver,Duration.ofSeconds(5))
+            .until(ExpectedConditions.elementToBeClickable(AddQtyAdjustment));
         driver.findElement(AddQtyAdjustment).click();
-//        driver.findElement(OpenWareHouseList).click();
-//        driver.findElement(SelectWareHouse).click();
-        Thread.sleep(2000);
+
+//        Thread.sleep(2000);
         selectWareHouse(driver);
-//        driver.findElement(SelectProduct).click();
-//        wait.until(ExpectedConditions.visibilityOfElementLocated(SelectProduct));
-        int num =4155632;
-        Thread.sleep(1000);
+//        Thread.sleep(1000);
+        new WebDriverWait(driver,Duration.ofSeconds(5))
+            .until(ExpectedConditions.visibilityOfElementLocated((By) selectWareHouse(driver)));
 
         driver.findElement(SelectProduct).sendKeys(""+Barcode);
-        Thread.sleep(1000);
+//        Thread.sleep(1000);
+//        new WebDriverWait(driver,Duration.ofSeconds(5))
+//            .until(ExpectedConditions.visibilityOfElementLocated(EditQty));
 
-//        wait.until(ExpectedConditions.elementToBeClickable(SelectProduct));
-
-//        wait.until(ExpectedConditions.visibilityOfElementLocated(ChangQuantity));
 //        driver.findElement(ChangQuantity).sendKeys(Keys.BACK_SPACE);
-//
 //        driver.findElement(ChangQuantity).sendKeys(""+50);
-        Thread.sleep(2000);
-
           selectOperation(driver);
-        Thread.sleep(1000);
+        new WebDriverWait(driver,Duration.ofSeconds(5))
+            .until(ExpectedConditions.visibilityOfElementLocated((By) selectOperation(driver)));
+//        Thread.sleep(1000);
 
         driver.findElement(ClickSave).click();
         return new HomeScreen(driver);

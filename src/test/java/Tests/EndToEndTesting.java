@@ -1,15 +1,15 @@
 package Tests;
 
-import io.qameta.allure.Description;
-import io.qameta.allure.Epic;
-import io.qameta.allure.Story;
-import io.qameta.allure.TmsLink;
+import com.ibm.icu.util.LocalePriorityList;
+import io.qameta.allure.*;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.annotations.Test;
 
+import javax.annotation.Priority;
+
 public class EndToEndTesting  {
-    public  WebDriver driver;
-    //    private SHAFT.GUI.WebDriver new_driver;
+    public ChromeDriver driver;    //    private SHAFT.GUI.WebDriver new_driver;
     @Epic("SHAFT Web GUI Template")
     @Story("Google Basic Validations")
     @TmsLink("TC-001")

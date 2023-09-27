@@ -5,6 +5,10 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.interactions.Actions;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
+
+import java.time.Duration;
 
 public class QuotationScreen extends HomeScreen {
     public QuotationScreen(WebDriver driver) {
@@ -33,30 +37,28 @@ public class QuotationScreen extends HomeScreen {
         driver.get("https://gdawel.app/dashboard/quotations/create");
 //        driver.findElement(AddQuotation).click();
         driver.findElement(ScanProductButton).sendKeys(""+Barcode);
-//        wait.until(ExpectedConditions.elementToBeClickable(ScanProductButton));
 
         Actions a = new Actions(driver);
-        Thread.sleep(6000);
-
+//        Thread.sleep(6000);
         //scroll down a page
         a.sendKeys(Keys.PAGE_DOWN).build().perform();
-        //scroll up a page
-//        a.sendKeys(Keys.PAGE_UP).build().perform();
-        Thread.sleep(6000);
+        new WebDriverWait(driver, Duration.ofSeconds(5))
+            .until(ExpectedConditions.visibilityOfElementLocated(SaveInvoiceButton));
         driver.findElement(SaveInvoiceButton).click();
         return new HomeScreen(driver);
     }
     @Step(" add Purchase Quotation Invoice")
     public HomeScreen addPurchaseQuotationInvoice() throws InterruptedException {
-//        WebDriverWait wait = new WebDriverWait(driver, 10);
         driver.get("https://gdawel.app/dashboard/quotations/create");
         driver.findElement(OpenPurchaseQuotation).click();
         driver.findElement(ScanProductButton).sendKeys(""+Barcode);
-//        wait.until(ExpectedConditions.elementToBeClickable(ScanProductButton));
+        new WebDriverWait(driver, Duration.ofSeconds(5))
+            .until(ExpectedConditions.visibilityOfElementLocated(EditQty));
         Actions a = new Actions(driver);
         a.sendKeys(Keys.PAGE_DOWN).build().perform();
-        Thread.sleep(600);
-
+//        Thread.sleep(600);
+        new WebDriverWait(driver, Duration.ofSeconds(5))
+            .until(ExpectedConditions.visibilityOfElementLocated(SaveInvoiceButton));
         driver.findElement(SaveInvoiceButton).click();
         return new HomeScreen(driver);
     }

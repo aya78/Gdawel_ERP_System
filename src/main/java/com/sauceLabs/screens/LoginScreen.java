@@ -9,11 +9,10 @@ import io.qameta.allure.Feature;
 import io.qameta.allure.Step;
 //import org.apache.commons.io.FileUtils;
 //import org.junit.jupiter.api.Test;
-import org.openqa.selenium.By;
-import org.openqa.selenium.OutputType;
-import org.openqa.selenium.TakesScreenshot;
-import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.*;
 import org.openqa.selenium.interactions.Actions;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 import org.unitils.thirdparty.org.apache.commons.io.FileUtils;
 //import com.sauceLabs.ActionDriver.Action;
 //import com.Bayt.Base.Base;
@@ -22,6 +21,8 @@ import org.unitils.thirdparty.org.apache.commons.io.FileUtils;
 
 import java.io.File;
 import java.io.IOException;
+import java.time.Duration;
+
 //@ListenerList({TestListener.class})
 @Epic("Functional Tests")
 @Feature("Login Tests")
@@ -87,6 +88,9 @@ public class LoginScreen  extends HomeScreen{
         extentReports.endTest(test);
         extentReports.flush();
 //        Desktop.getDesktop().browse(new File("TestReports.html").toURI());
+//        WebElement modal = driver.findElement(By.xpath(""));
+//        new WebDriverWait(driver, Duration.ofSeconds(10))
+//            .until(ExpectedConditions.visibilityOfElementLocated((By) modal));
         Thread.sleep(6000);
         Actions action = new Actions(driver);
         action.moveByOffset(0, 0).click().build().perform();

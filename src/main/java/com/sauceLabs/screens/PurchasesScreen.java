@@ -17,7 +17,6 @@ public class PurchasesScreen extends HomeScreen {
     // 1000069,1000068,1000067,1000066,1000065,1000064,1000063,1000062,1000061
     // ,58554172,53027350,74684131,100002,4155632
     int arr[]={42288482};
-
     private final By AddInvoiceButton = By.xpath("//a[@href='https://gdawel.app/dashboard/purchases/create']");
     // //div[@class='search-box input-group']//input[1]
 //    private final By ScanProductButton = By.xpath("//div[@class='search-box input-group']//input[1]");
@@ -27,8 +26,7 @@ public class PurchasesScreen extends HomeScreen {
 
     // (//div[contains(@class,'d-flex align-items-center')]//button)[3]
     // //input[@class='form-control qty']
-    /*************************************************************************************************************************************/
-    private final By EditQty = By.xpath("//input[@class='form-control qty']");
+    /****************************************************************Edit Quantity *********************************************************************/
     /*************************************************************************************************************************************/
 
     private final By SaveInvoiceButton = By.xpath("(//div[contains(@class,'d-flex align-items-center')]//button)[3]");
@@ -43,26 +41,20 @@ public class PurchasesScreen extends HomeScreen {
 
     @Step(" add Purchase Invoice")
     public HomeScreen addPurchaseInvoice() throws InterruptedException {
-        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
-
-
         Faker fakeData=new Faker();
         driver.get("https://gdawel.app/dashboard/purchases/create");
-//        driver.findElement(AddInvoiceButton).click();
+        /** when user create a purchase invoice for more than one product **********************/
 //        for(int i = 0 ;i < arr.length ; i++ ){
 //            driver.findElement(ScanProductButton).sendKeys(""+arr[i]);
 //            Thread.sleep(10000);
 //            driver.findElement(EditQty).sendKeys("60");
 //            Thread.sleep(15000);
 //        }
-
+        /** ****************************************************************************************/
         //wait.until(ExpectedConditions.invisibilityOfElementLocated(ScanProductButton));
         driver.findElement(ScanProductButton).sendKeys(""+Barcode);
         new WebDriverWait(driver,Duration.ofSeconds(5))
             .until(ExpectedConditions.visibilityOfElementLocated(EditQty));
-
-
-        //Thread.sleep(10000);
 //            driver.findElement(EditQty).sendKeys("60");
 //            Thread.sleep(15000);
 ////
@@ -73,8 +65,7 @@ public class PurchasesScreen extends HomeScreen {
     }
     @Step(" add  return Purchase Invoice")
     public HomeScreen addReturnPurchaseInvoice() throws InterruptedException {
-//        WebDriverWait wait = new WebDriverWait(driver, 10);
-//        wait.until(ExpectedConditions.invisibilityOfAllElements());
+
         driver.findElement(VIewInvoiceButton).click();
         driver.findElement( ClickAction).click();
         driver.findElement(AddReturnPurchase).click();

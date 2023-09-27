@@ -38,7 +38,7 @@ public class ProfileTest {
                             "And login Using Valid Email & Password"
 
             )
-    @Severity(SeverityLevel.CRITICAL)
+    @Severity(SeverityLevel.NORMAL)
     @Story("Check Functionality of gdawel")
     @Test(description = "Check Functionality Scenario for Profile")
     public void TestProfile() throws InterruptedException, IOException {
