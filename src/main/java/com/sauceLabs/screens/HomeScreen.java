@@ -37,8 +37,9 @@ public class HomeScreen {
 // https://gdawel.app/login
 //    public static By loginButton = By.cssSelector("#navbarSupportedContent > div > a.btn.btn-solid-main.login.form-btn.py-2.px-3.rounded.w-100.text-nowrap");
     public static By loginLink = By.xpath("//a[@href='https://gdawel.app/login']");
+    //  //a[@id='customers-suppliers']
 
-    private final By openCustomerAndSupplierMenu = By.xpath("//*[@id=\"side-main-menu\"]/li[2]/a");
+    private final By openCustomerAndSupplierMenu = By.id("customers-suppliers");
     private final By customers = By.id("customer-menu");
     private final By suppliers = By.xpath("(//ul[@id='customersupplier']//a)[2]");
     /*****************************************************  Done ***************************************************************************/
@@ -47,7 +48,7 @@ public class HomeScreen {
     private final By customerGroup = By.xpath("//a[@href='https://gdawel.app/dashboard/customer_group']");
     /********************************************************************************************************************************/
 
-    private final By productsAndWarehouseMenu = By.xpath("//*[@id=\"side-main-menu\"]/li[3]/a");
+    private final By productsAndWarehouseMenu = By.id("products-menu");
     //    private final By products = By.xpath("//a[@href='https://gdawel.app/dashboard/products']");
     private final By products = By.id("product-list-menu");
 
@@ -153,7 +154,7 @@ public class HomeScreen {
 
     @Step("click On Side Menu Then open product Group")
     public ProductCategoryScreen navigateToProductsCategory() {
-//        driver.findElement(productsAndWarehouseMenu).click();
+        driver.findElement(productsAndWarehouseMenu).click();
 
         driver.findElement(product_category).click();
         return new ProductCategoryScreen(driver);
@@ -186,6 +187,7 @@ public class HomeScreen {
 
     @Step("click On Side Menu Then open WareHouses")
     public WarehousesScreen navigateToWareHouses() {
+        //
         driver.findElement(OpenWareHouse).click();
         return new WarehousesScreen(driver);
     }

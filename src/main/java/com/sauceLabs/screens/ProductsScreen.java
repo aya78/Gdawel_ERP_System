@@ -97,9 +97,7 @@ Thread.sleep(2000);
         driver.findElement(productPrice).sendKeys(""+cost+20);
         selectUnit(driver);
         Actions a = new Actions(driver);
-        //scroll down a page
 //        a.sendKeys(Keys.PAGE_DOWN).build().perform();
-        //scroll up a page
         a.sendKeys(Keys.PAGE_DOWN).build().perform();
         /*****************************************Scrolling using JS******************************************************/
 //        JavascriptExecutor js = (JavascriptExecutor) driver;

@@ -64,7 +64,7 @@ public class QtyAdjustmentScreen extends HomeScreen {
         System.out.println(dropdown_value);
         Random random3=new Random();
         int index= random3.nextInt(dropdown_value);
-        skills.selectByIndex(index);
+        skills.selectByValue("1");
         System.out.println(index);
         Thread.sleep(5000);
         return element;
@@ -79,11 +79,11 @@ public class QtyAdjustmentScreen extends HomeScreen {
         driver.findElement(AddQtyAdjustment).click();
 
 //        Thread.sleep(2000);
-        selectWareHouse(driver);
+
 //        Thread.sleep(1000);
         new WebDriverWait(driver,Duration.ofSeconds(5))
             .until(ExpectedConditions.visibilityOfElementLocated((By) selectWareHouse(driver)));
-
+        selectWareHouse(driver);
         driver.findElement(SelectProduct).sendKeys(""+Barcode);
 //        Thread.sleep(1000);
 //        new WebDriverWait(driver,Duration.ofSeconds(5))

@@ -10,6 +10,8 @@ public class BrandScreen  extends HomeScreen{
     public BrandScreen(WebDriver driver) {
         super(driver);
     }
+    // /html/body/div[2]/div[7]/div/section/div/div[1]/div/button[1]
+     //// "//tag[id='add-brand']"
     private final By AddBrand = By.xpath("//button[text()[normalize-space()='أضف علامة تجارية']]");
     private final By AddBrandName = By.xpath("//label[text()='عنوان *']/following::input");
     // image
