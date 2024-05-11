@@ -41,8 +41,8 @@ public class EndToEndTesting  {
 
     @BeforeSuite
     public void SetUp() {
-        System.setProperty("webdriver.chrome.driver", "/home/hash-pc-8/Downloads/gdawelTest/src/test/resources/Resources/chromedriver");
-
+        //System.setProperty("webdriver.chrome.driver", "/home/hash-pc-8/Downloads/gdawelTest/src/test/resources/Resources/chromedriver");
+        System.setProperty("webdriver.chrome.driver", "C:\\Users\\NANABODEY\\IdeaProjects\\Gdawel_ERP_System\\src\\test\\java\\untils\\chromedriver.exe");
         extentReports = new ExtentReports("/home/hash-pc-8/Documents/vs_code/gdawel_test/ExtentReports/TestReports.html", false);
 
         String baseURL = "https://gdawel.app/";
@@ -82,11 +82,12 @@ public class EndToEndTesting  {
 //        for(int i = 0 ;i <= 10 ; i++ ) {
 
             new HomeScreen(driver)
-
+                    .navigateToProducts()
+                    .addAndViewProductPage()
                     .navigateToPurchases()
                     .addPurchaseInvoice()
-                    .navigateToPurchases()
-                    .addReturnPurchaseInvoice()
+//                    .navigateToPurchases()
+//                    .addReturnPurchaseInvoice()
 //                    .navigateToQuotations()
 //                    .addSaleQuotationInvoice()
 //                    .navigateToQuotations()

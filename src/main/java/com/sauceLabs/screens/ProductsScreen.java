@@ -24,12 +24,11 @@ public class ProductsScreen extends HomeScreen{
     private final By AddProduct = By.xpath("(//a[@href='https://gdawel.app/dashboard/products/create'])[2]");
     // /html/body/div[2]/div[6]/div/section/form/div/div/div[1]/div/div/div/div[1]/div/input
     private final By ProductName = By.id("name");
-    private final By Barcode = By.xpath("//input[@class='form-control rounded-right']");
-//private final By Barcode = By.id("genbutton");
 //    private final By openBrandList  = By.cssSelector("form#product-form>div>div>div>div>div>div>div:nth-of-type(2)>div>div:nth-of-type(2)>div>button>div>div>div");
 //    private final By selectBrand = By.xpath("(//ul[@role='presentation']//a)[2]");
-    private final By productCost = By.name("cost");
-    private final By productPrice = By.name("price");
+    private final By Product_Unit = By.xpath("//input[@placeholder='Search or add a tag']");
+    private final By productCost = By.name("unit[0][cost]");
+    private final By productPrice = By.name("unit[0][price]");
 //    private final By openUnitList  = By.xpath("//div[text()='اختر وحدة المنتج...']");
 //    private final By selectUnit = By.cssSelector("a#bs-select-8-1>span:nth-of-type(2)");
     // //input[@class='btn btn-primary']
@@ -89,10 +88,16 @@ Thread.sleep(2000);
         v =fakeData.name().name();
         driver.findElement(ProductName).sendKeys(v);
         System.out.println(v);
-        driver.findElement(Barcode).sendKeys(fakeData.number().digits(8));
+       // driver.findElement(Barcode).sendKeys(fakeData.number().digits(8));
         selectBrand(driver);
 //        driver.findElement(openBrandList).click();
 //        driver.findElement(selectBrand).click();
+        /** *********************************************************************************/
+        driver.findElement(Product_Unit).click();
+        driver.findElement(Product_Unit).sendKeys(""+1);
+        driver.findElement(Product_Unit).sendKeys(Keys.ENTER);
+
+
         driver.findElement(productCost).sendKeys(""+cost);
         driver.findElement(productPrice).sendKeys(""+cost+20);
         selectUnit(driver);
@@ -148,7 +153,7 @@ Thread.sleep(2000);
         driver.findElement(addComboProduct).click();
         driver.findElement(ProductName).sendKeys(v);
         System.out.println(v);
-        driver.findElement(Barcode).sendKeys(fakeData.number().digits(8));
+       // driver.findElement(Barcode).sendKeys(fakeData.number().digits(8));
         driver.findElement(productPrice).sendKeys(""+cost+20);
         driver.findElement(attachProductINAddCombo).sendKeys(""+Barcode);
         driver.findElement(clickSave).click();

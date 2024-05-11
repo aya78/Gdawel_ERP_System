@@ -53,7 +53,7 @@ public class FunctionalTesting extends Helper implements IExecutionListener {
         //System.setProperty("webdriver.chrome.driver", "/home/hash-pc-8/Downloads/gdawelTest/src/test/resources/Resources/chromedriver");
         System.setProperty("webdriver.chrome.driver", "C:\\Users\\NANABODEY\\IdeaProjects\\Gdawel_ERP_System\\src\\test\\java\\untils\\chromedriver.exe");
 
-       // extentReports = new ExtentReports("/home/hash-pc-8/Documents/vs_code/gdawel_test/ExtentReports/TestReports.html", false);
+        extentReports = new ExtentReports("/home/hash-pc-8/Documents/vs_code/gdawel_test/ExtentReports/TestReports.html", false);
 
         String baseURL = "https://gdawel.app/";
         test = extentReports.startTest("verify open browser ");

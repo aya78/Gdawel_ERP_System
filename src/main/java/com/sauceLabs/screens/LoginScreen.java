@@ -37,7 +37,7 @@ public class LoginScreen  extends HomeScreen{
     // btn btn-solid-main w-100 py-3 mt-5 border round
 //    private final By LoginButton = By.className("btn btn-solid-main w-100 py-3 mt-5 border round");
 
-    public String username = "mawin14019@estudys.com";
+    public String username = "detebag627@elixirsd.com";
     // cabin73954@vikinoko.com
     // mawin14019@estudys.com
     // detebag627@elixirsd.com
@@ -93,9 +93,9 @@ public class LoginScreen  extends HomeScreen{
 //        WebElement modal = driver.findElement(By.xpath(""));
 //        new WebDriverWait(driver, Duration.ofSeconds(10))
 //            .until(ExpectedConditions.visibilityOfElementLocated((By) modal));
-        Thread.sleep(6000);
+        Thread.sleep(1000);
         Actions action = new Actions(driver);
-        action.moveByOffset(0, 0).click().build().perform();
+            action.moveByOffset(0, 0).click().build().perform();
 
         return new HomeScreen(driver);
     }
