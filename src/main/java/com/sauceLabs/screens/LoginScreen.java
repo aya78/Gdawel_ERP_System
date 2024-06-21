@@ -9,11 +9,12 @@ import io.qameta.allure.Feature;
 import io.qameta.allure.Step;
 //import org.apache.commons.io.FileUtils;
 //import org.junit.jupiter.api.Test;
+import org.apache.commons.io.FileUtils;
 import org.openqa.selenium.*;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
-import org.unitils.thirdparty.org.apache.commons.io.FileUtils;
+//import org.unitils.thirdparty.org.apache.commons.io.FileUtils;
 //import com.sauceLabs.ActionDriver.Action;
 //import com.Bayt.Base.Base;
 //import untils.ListenerList.TestListener;
@@ -93,7 +94,7 @@ public class LoginScreen  extends HomeScreen{
 //        WebElement modal = driver.findElement(By.xpath(""));
 //        new WebDriverWait(driver, Duration.ofSeconds(10))
 //            .until(ExpectedConditions.visibilityOfElementLocated((By) modal));
-        Thread.sleep(1000);
+        //Thread.sleep(1000);
         Actions action = new Actions(driver);
             action.moveByOffset(0, 0).click().build().perform();
 

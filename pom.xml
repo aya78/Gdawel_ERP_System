@@ -30,11 +30,11 @@
     </properties>
 
     <dependencies>
-        <dependency>
-            <groupId>io.github.shafthq</groupId>
-            <artifactId>SHAFT_ENGINE</artifactId>
-            <version>${shaft_engine.version}</version>
-        </dependency>
+<!--        <dependency>-->
+<!--            <groupId>io.github.shafthq</groupId>-->
+<!--            <artifactId>SHAFT_ENGINE</artifactId>-->
+<!--            <version>${shaft_engine.version}</version>-->
+<!--        </dependency>-->
         <!-- https://mvnrepository.com/artifact/com.applitools/selenium4 -->
         <dependency>
             <groupId>com.applitools</groupId>
@@ -61,7 +61,9 @@
     <dependency>
         <groupId>org.testng</groupId>
         <artifactId>testng</artifactId>
-        <version>7.8.0</version>
+<!--        <version>7.8.0</version>-->
+        <version>7.7.0</version>
+
         <scope>test</scope>
     </dependency>
 
@@ -96,11 +98,11 @@
             <version>4.9.0</version>
         </dependency>
 
-        <dependency>
-            <groupId>io.qameta.allure</groupId>
-            <artifactId>allure-java-commons</artifactId>
-            <version>2.21.0</version>
-        </dependency>
+<!--        <dependency>-->
+<!--            <groupId>io.qameta.allure</groupId>-->
+<!--            <artifactId>allure-java-commons</artifactId>-->
+<!--            <version>2.21.0</version>-->
+<!--        </dependency>-->
 
 <!--        <dependency>-->
 <!--            <groupId>com.aventstack</groupId>-->
@@ -114,12 +116,12 @@
             <artifactId>extentreports</artifactId>
             <version>2.41.2</version>
         </dependency>
-        <!-- https://mvnrepository.com/artifact/com.slack.api/slack-api-client -->
-        <dependency>
-            <groupId>com.slack.api</groupId>
-            <artifactId>slack-api-client</artifactId>
-            <version>1.29.2</version>
-        </dependency>
+<!--        &lt;!&ndash; https://mvnrepository.com/artifact/com.slack.api/slack-api-client &ndash;&gt;-->
+<!--        <dependency>-->
+<!--            <groupId>com.slack.api</groupId>-->
+<!--            <artifactId>slack-api-client</artifactId>-->
+<!--            <version>1.29.2</version>-->
+<!--        </dependency>-->
 
 
 
@@ -136,18 +138,18 @@
         </dependency>
 
 
-        <dependency>
-            <groupId>net.mm2d.log</groupId>
-            <artifactId>log</artifactId>
-            <version>0.9.4</version>
-        </dependency>
+<!--        <dependency>-->
+<!--            <groupId>net.mm2d.log</groupId>-->
+<!--            <artifactId>log</artifactId>-->
+<!--            <version>0.9.4</version>-->
+<!--        </dependency>-->
 
 
-        <dependency>
-            <groupId>org.unitils</groupId>
-            <artifactId>unitils-io</artifactId>
-            <version>3.4.6</version>
-        </dependency>
+<!--        <dependency>-->
+<!--            <groupId>org.unitils</groupId>-->
+<!--            <artifactId>unitils-io</artifactId>-->
+<!--            <version>3.4.6</version>-->
+<!--        </dependency>-->
 
         <dependency>
             <groupId>commons-io</groupId>
@@ -155,11 +157,11 @@
             <version>2.11.0</version>
         </dependency>
 
-        <dependency>
-            <groupId>com.google.guava</groupId>
-            <artifactId>guava</artifactId>
-            <version>31.1-jre</version>
-        </dependency>
+<!--        <dependency>-->
+<!--            <groupId>com.google.guava</groupId>-->
+<!--            <artifactId>guava</artifactId>-->
+<!--            <version>31.1-jre</version>-->
+<!--        </dependency>-->
 
         <dependency>
             <groupId>org.seleniumhq.selenium</groupId>
@@ -216,29 +218,12 @@
             <version>7.13.0</version>
             <scope>test</scope>
         </dependency>
+
 <!--        <dependency>-->
-<!--            <groupId>io.cucumber</groupId>-->
-<!--            <artifactId>cucumber-core</artifactId>-->
-<!--            <version>3.0.2</version>-->
-<!--            <scope>test</scope>-->
+<!--            <groupId>tcp-driver</groupId>-->
+<!--            <artifactId>tcp-driver</artifactId>-->
+<!--            <version>0.1.0</version>-->
 <!--        </dependency>-->
-<!--        <dependency>-->
-<!--            <groupId>io.cucumber</groupId>-->
-<!--            <artifactId>cucumber-testng</artifactId>-->
-<!--            <version>7.12.1</version>-->
-<!--            <scope>test</scope>-->
-<!--        </dependency>-->
-<!--        <dependency>-->
-<!--            <groupId>io.cucumber</groupId>-->
-<!--            <artifactId>cucumber-core</artifactId>-->
-<!--            <version>7.13.0</version>-->
-<!--            <scope>test</scope>-->
-<!--        </dependency>-->
-        <dependency>
-            <groupId>tcp-driver</groupId>
-            <artifactId>tcp-driver</artifactId>
-            <version>0.1.0</version>
-        </dependency>
         <!--        <dependency>-->
 <!--            <groupId>junit</groupId>-->
 <!--            <artifactId>junit</artifactId>-->
@@ -263,14 +248,21 @@
             <version>2.3.1</version>
             <scope>test</scope>
         </dependency>
+        <!-- https://mvnrepository.com/artifact/io.qameta.allure/allure-testng -->
+        <dependency>
+            <groupId>io.qameta.allure</groupId>
+            <artifactId>allure-testng</artifactId>
+            <version>2.27.0</version>
+        </dependency>
+
     </dependencies>
-    <repositories>
-        <repository>
-            <id>clojars</id>
-            <name>Clojars</name>
-            <url>https://repo.clojars.org/</url>
-        </repository>
-    </repositories>
+
+<!--    <plugin>-->
+<!--        <groupId>org.apache.maven.plugins</groupId>-->
+<!--        <artifactId>maven-surefire-plugin</artifactId>-->
+<!--        <version>2.22.0</version>-->
+<!--    </plugin>-->
+
 
 
 </project>

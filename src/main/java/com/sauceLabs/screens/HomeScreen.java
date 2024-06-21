@@ -3,7 +3,7 @@ package com.sauceLabs.screens;
 import com.relevantcodes.extentreports.ExtentReports;
 import com.relevantcodes.extentreports.ExtentTest;
 import com.relevantcodes.extentreports.LogStatus;
-import com.shaft.driver.SHAFT;
+//import com.shaft.driver.SHAFT;
 import io.qameta.allure.Step;
 //import org.junit.jupiter.api.Test;
 import org.openqa.selenium.By;
@@ -19,8 +19,6 @@ import java.awt.event.ActionEvent;
 import java.beans.PropertyChangeListener;
 import java.time.Duration;
 
-import static com.ibm.db2.jcc.am.ao.dx;
-import static com.ibm.db2.jcc.am.ao.dy;
 
 public class HomeScreen {
     //     public static By products = By.xpath("//*[@text='Products']");
@@ -83,9 +81,7 @@ public class HomeScreen {
         this.driver = driver;
     }
 
-    public HomeScreen(WebDriver driver, SHAFT.GUI.WebDriver new_driver) {
-        this.driver = driver;
-    }
+
 
     @Step("click On Login")
     public LoginScreen clickOnLogin() {

@@ -6,7 +6,7 @@ import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.remote.RemoteWebDriver;
 
-import static com.shaft.dsl.gui.Element.getDriver;
+//import static com.shaft.dsl.gui.Element.getDriver;
 
 public class Helper {
     protected static ThreadLocal<RemoteWebDriver> driver = new ThreadLocal<>();

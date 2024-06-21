@@ -1,16 +1,13 @@
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
-<suite name="MyTestSuite" thread-count="1" parallel="methods">
-    <test name="MyTest">
+<suite name="SmokeTesting" thread-count="1" parallel="methods">
+    <test name="Test" thread-count="5">
         <classes>
-            <class name="Tests.FunctionalTesting" />
+            <class name="REPORT.Hook1" />
+            <class name="REPORT.Hook2" />
+
         </classes>
     </test>
-    <parameter name="environment" value="LIVE"/>
-    <test name="Search" verbose="2" preserve-order="true" enabled="true">
-        <classes>
-            <class name="Tests.FunctionalTesting"></class>
-        </classes>
-    </test>
+
 
 
 </suite>

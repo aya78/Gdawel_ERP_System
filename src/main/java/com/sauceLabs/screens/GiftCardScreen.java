@@ -3,7 +3,7 @@ package com.sauceLabs.screens;
 //import cucumber.api.java.eo.Se;
 import com.github.javafaker.Faker;
 import io.qameta.allure.Step;
-import org.apache.commons.lang.RandomStringUtils;
+//import org.apache.commons.lang.RandomStringUtils;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
